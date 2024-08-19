@@ -29,48 +29,39 @@ class _NavigationBarState extends State<NavigationBar> {
         items: [
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              AppIcons.growUnselect,
+              AppIcons.icHome,
             ),
-            activeIcon: Image.asset(
-              AppIcons.growSelect,
-            ),
-            label: 'Grow',
+            // activeIcon: Image.asset(
+            //   'AppIcons.',
+            // ),
+            label: 'Asosiy',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              AppIcons.discoverUnselect,
+            icon: SvgPicture.asset(
+              AppIcons.icFavorite,
             ),
-            activeIcon: Image.asset(
-              AppIcons.discoverSelect,
-            ),
-            label: 'Discover',
+            // activeIcon: Image.asset(
+            //   'AppIcons.',
+            // ),
+            label: 'Saqlanganar',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              AppIcons.createUnselect,
+            icon: SvgPicture.asset(
+              AppIcons.icAdd,
             ),
-            activeIcon: Image.asset(
-              AppIcons.createSelect,
-            ),
-            label: 'Create',
+            // activeIcon: Image.asset(
+            //   'AppIcons.createSelect,'
+            // ),
+            label: "Qo'shish",
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              AppIcons.notificationsUnselect,
+            icon: SvgPicture.asset(
+              AppIcons.icProfile,
             ),
-            activeIcon: Image.asset(
-              AppIcons.notificationsSelect,
-            ),
-            label: 'Notifications',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              AppIcons.teamUnselect,
-            ),
-            activeIcon: Image.asset(
-              AppIcons.teamSelect,
-            ),
-            label: 'Team',
+            // activeIcon: Image.asset(
+            //   'AppIcons.notificationsSelect,'
+            // ),
+            label: 'Profil',
           ),
         ],
       ),
