@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kelishamiz/core/theme/theme.dart';
+import 'package:kelishamiz/router/router.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,16 +10,27 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => AppThemeViewModel(),
+        ),
+      ],
+      builder: (BuildContext context, Widget? child) {
+        return Consumer<AppThemeViewModel>(
+          builder: (context, viewModel, _) {
+            return MaterialApp.router(
+              routerConfig: router,
+              title: 'Flutter Demo',
+              theme: lightTheme(context),
+              // darkTheme: darkTheme(context),
+              themeMode: viewModel.themeMode,
+            );
+          }
+        );
+      }
     );
   }
 }
