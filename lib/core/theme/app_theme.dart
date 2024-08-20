@@ -2,7 +2,7 @@
 part of 'theme.dart';
 
 class AppThemeViewModel extends ChangeNotifier {
-  ThemeMode themeMode = ThemeMode.dark;
+  ThemeMode themeMode = ThemeMode.light;
 
   /// Theme changer
   void changeTheme(ThemeModes theme) {

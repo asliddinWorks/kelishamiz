@@ -23,10 +23,13 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           children: [
+
             SvgPicture.asset(
               AppIcons.icCar,
             ),
-            Text('asdas'),
+            Text('asdas', style: context.textTheme.bodyLarge!.copyWith(
+              fontWeight: FontWeight.w500
+            ),),
           ],
         ),
       ),

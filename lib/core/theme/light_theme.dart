@@ -13,20 +13,20 @@ ThemeData lightTheme(BuildContext context) {
     scaffoldBackgroundColor: Colors.white,
 
     /// AppBar Theme
-    appBarTheme: AppBarTheme(
-      titleTextStyle: GoogleFonts.nunito(
-        fontSize: 18,
-        color: AppColors.primaryColor,
-        fontWeight: FontWeight.w500,
-      ),
-      iconTheme: const IconThemeData(
-        size: 28,
-        color: AppColors.primaryColor,
-      ),
-      surfaceTintColor: Colors.white,
-      backgroundColor: Colors.white,
-      // foregroundColor: Colors.red
-    ),
+    // appBarTheme: AppBarTheme(
+    //   titleTextStyle: GoogleFonts.nunito(
+    //     fontSize: 18,
+    //     color: AppColors.primaryColor,
+    //     fontWeight: FontWeight.w500,
+    //   ),
+    //   iconTheme: const IconThemeData(
+    //     size: 28,
+    //     color: AppColors.primaryColor,
+    //   ),
+    //   surfaceTintColor: Colors.white,
+    //   backgroundColor: Colors.white,
+    //   // foregroundColor: Colors.red
+    // ),
 
     /// ElevatedButton Theme
     // elevatedButtonTheme: ElevatedButtonThemeData(
@@ -110,7 +110,6 @@ ThemeData lightTheme(BuildContext context) {
           fontWeight: FontWeight.w400,
         ),
       ),
-
 
 
     ),
