@@ -19,51 +19,53 @@ class _NavigationBarState extends State<NavigationBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: widget.child,
-      bottomNavigationBar: CupertinoTabBar(
-        activeColor: Colors.black,
-        inactiveColor: Colors.black,
-        onTap: (index) {
-          // context.read<HomeViewModel>().onTapNavBar(index);
-        },
-        currentIndex: 0,//context.watch<HomeViewModel>().currentIndex,
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              AppIcons.icHome,
+      bottomNavigationBar: SafeArea(
+        child: CupertinoTabBar(
+          activeColor: Colors.black,
+          inactiveColor: Colors.black,
+          onTap: (index) {
+            // context.read<HomeViewModel>().onTapNavBar(index);
+          },
+          currentIndex: 0,//context.watch<HomeViewModel>().currentIndex,
+          items: [
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                AppIcons.icHome,
+              ),
+              // activeIcon: Image.asset(
+              //   'AppIcons.',
+              // ),
+              label: 'Asosiy',
             ),
-            // activeIcon: Image.asset(
-            //   'AppIcons.',
-            // ),
-            label: 'Asosiy',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              AppIcons.icFavorite,
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                AppIcons.icFavorite,
+              ),
+              // activeIcon: Image.asset(
+              //   'AppIcons.',
+              // ),
+              label: 'Saqlanganar',
             ),
-            // activeIcon: Image.asset(
-            //   'AppIcons.',
-            // ),
-            label: 'Saqlanganar',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              AppIcons.icAdd,
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                AppIcons.icAdd,
+              ),
+              // activeIcon: Image.asset(
+              //   'AppIcons.createSelect,'
+              // ),
+              label: "Qo'shish",
             ),
-            // activeIcon: Image.asset(
-            //   'AppIcons.createSelect,'
-            // ),
-            label: "Qo'shish",
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              AppIcons.icProfile,
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                AppIcons.icProfile,
+              ),
+              // activeIcon: Image.asset(
+              //   'AppIcons.notificationsSelect,'
+              // ),
+              label: 'Profil',
             ),
-            // activeIcon: Image.asset(
-            //   'AppIcons.notificationsSelect,'
-            // ),
-            label: 'Profil',
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
