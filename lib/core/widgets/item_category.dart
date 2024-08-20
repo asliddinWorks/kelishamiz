@@ -12,27 +12,33 @@ class ItemCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          margin: const EdgeInsets.only(right: 10),
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(50),
-            boxShadow: const [
-              BoxShadow(color: AppColors.lightGrey,
-              spreadRadius: 3,
-                blurRadius: 3
+    return Padding(
+      padding: const EdgeInsets.only(right: 10),
+      child: SizedBox(
+        height: 120,
+        width: 90,
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(50),
+                boxShadow: const [
+                  BoxShadow(color: AppColors.lightGrey,
+                  spreadRadius: 3,
+                    blurRadius: 3
+                  ),
+                ]
               ),
-            ]
-          ),
-          width: 90,
-          height: 90,
-          child: icon,
+              width: 90,
+              height: 90,
+              child: icon,
+            ),
+            Text(title, style: context.textTheme.labelMedium,),
+          ],
         ),
-        Text(title, style: context.textTheme.labelMedium,),
-      ],
+      ),
     );
   }
 }
