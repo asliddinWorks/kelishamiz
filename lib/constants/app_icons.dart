@@ -15,6 +15,12 @@ class AppIcons {
   static const icProduction = '${path}ic_production.svg';
   static const icService = '${path}ic_service.svg';
 
+  /// app Bar
+  static const ic_menu = '${path}ic_menu.svg';
+  static const ic_search = '${path}ic_search.svg';
+  static const ic_filter = '${path}ic_filter.svg';
+  static const ic_grid = '${path}ic_grid.svg';
+
   /// products
 
 
