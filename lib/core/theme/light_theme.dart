@@ -10,11 +10,11 @@ ThemeData lightTheme(BuildContext context) {
     ),
 
     /// Scaffold Background Color
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: AppColors.backgroundColor,
 
     /// AppBar Theme
-    // appBarTheme: AppBarTheme(
-    //   titleTextStyle: GoogleFonts.nunito(
+    appBarTheme: const AppBarTheme(
+      // titleTextStyle: GoogleFonts.nunito(
     //     fontSize: 18,
     //     color: AppColors.primaryColor,
     //     fontWeight: FontWeight.w500,
@@ -23,10 +23,10 @@ ThemeData lightTheme(BuildContext context) {
     //     size: 28,
     //     color: AppColors.primaryColor,
     //   ),
-    //   surfaceTintColor: Colors.white,
-    //   backgroundColor: Colors.white,
-    //   // foregroundColor: Colors.red
-    // ),
+      surfaceTintColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.backgroundColor,
+      // foregroundColor: Colors.red
+    ),
 
     /// ElevatedButton Theme
     // elevatedButtonTheme: ElevatedButtonThemeData(
