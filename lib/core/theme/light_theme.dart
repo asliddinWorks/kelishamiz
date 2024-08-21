@@ -3,17 +3,23 @@ part of 'theme.dart';
 
 ThemeData lightTheme(BuildContext context) {
   return ThemeData(
-    colorScheme: ColorScheme.fromSeed(
-      // primary: AppColors.primaryColor,
-      seedColor: AppColors.primaryColor,
-      secondary: AppColors.secondaryColor,
-    ),
+    primaryColor: colorLightScheme.primary,
+    colorScheme: colorLightScheme,
+    // colorScheme: ColorScheme.fromSeed(
+    //   primary: colorLightScheme.primary,
+    //   seedColor: AppColors.primaryColor,
+    //   secondary: AppColors.secondaryColor,
+    // ),
+
+    extensions: <ThemeExtension<dynamic>>[
+      AppColors.light,
+    ],
 
     /// Scaffold Background Color
-    scaffoldBackgroundColor: AppColors.backgroundColor,
+    scaffoldBackgroundColor: AppColors.light.backgroundColor,
 
     /// AppBar Theme
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       // titleTextStyle: GoogleFonts.nunito(
     //     fontSize: 18,
     //     color: AppColors.primaryColor,
@@ -23,8 +29,8 @@ ThemeData lightTheme(BuildContext context) {
     //     size: 28,
     //     color: AppColors.primaryColor,
     //   ),
-      surfaceTintColor: AppColors.backgroundColor,
-      backgroundColor: AppColors.backgroundColor,
+      surfaceTintColor: AppColors.light.backgroundColor,
+      backgroundColor: AppColors.light.backgroundColor,
       // foregroundColor: Colors.red
     ),
 

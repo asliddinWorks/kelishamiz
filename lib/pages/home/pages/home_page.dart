@@ -44,20 +44,20 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: [RectangleIconButton(child: SvgPicture.asset(AppIcons.icMenu)),
                         const SizedBox(width: 5),
-                        const Expanded(
+                        Expanded(
                           child: SizedBox(
                             height: 36,
                             child: TextField(
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.w500),
                               cursorColor: Colors.black54,
                               textAlignVertical: TextAlignVertical.top,
                               textAlign: TextAlign.start,
                               decoration: InputDecoration(
                                   filled: true,
-                                  fillColor: AppColors.iconBackgroundColor,
-                                  contentPadding: EdgeInsets.all(5),
-                                  enabledBorder: OutlineInputBorder(
+                                  fillColor: context.color.iconBackgroundColor,
+                                  contentPadding: const EdgeInsets.all(5),
+                                  enabledBorder: const OutlineInputBorder(
                                     borderRadius:
                                     BorderRadius.all(Radius.circular(10)),
                                     borderSide:
@@ -65,12 +65,12 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
+                                    const BorderRadius.all(Radius.circular(5)),
                                     borderSide:
-                                    BorderSide(width: 2, color: AppColors.lightGrey),
+                                    BorderSide(width: 2, color: context.color.lightGrey),
                                   ),
                                   alignLabelWithHint: true,
-                                  border: OutlineInputBorder(
+                                  border: const OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Colors.grey,
                                       ))),
@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                   width: 380,
                   height: 210,
                   decoration: BoxDecoration(
-                    color: AppColors.secondaryColor,
+                    color: context.colorScheme.secondary,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Image.asset("assets/images/vacancy.png", fit: BoxFit.cover,),
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: AppColors.primaryColor,
+                          color: context.colorScheme.primary,
                         ),
                         height: 35,
                         width: 140,
@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                             color: Colors.white, fontWeight: FontWeight.bold , fontSize: 14)),
                       ),
                        Text("ro'yxatdan \no'tish !", style: context.textTheme.bodyLarge!.copyWith(
-                          color: AppColors.primaryColor, fontWeight: FontWeight.bold , fontSize: 14)),
+                          color: context.colorScheme.primary, fontWeight: FontWeight.bold , fontSize: 14)),
                     ],
                   ),
                 )

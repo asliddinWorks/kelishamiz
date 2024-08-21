@@ -24,8 +24,8 @@ class ItemCategory extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(50),
-                boxShadow: const [
-                  BoxShadow(color: AppColors.lightGrey,
+                boxShadow: [
+                  BoxShadow(color: context.color.lightGrey,
                   spreadRadius: 3,
                     blurRadius: 3
                   ),
