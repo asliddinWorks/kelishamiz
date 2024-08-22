@@ -18,6 +18,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  int axisCount = 1;
+
+  bool isCount(){
+    if(axisCount == 1){
+      return  true;
+    }
+    return false;
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -159,37 +171,37 @@ class _HomePageState extends State<HomePage> {
               fontWeight: FontWeight.bold,
             )),
             GridView.count(
-              crossAxisCount: 2,
+              crossAxisCount: axisCount,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
-              childAspectRatio: 1/1.45,
+              childAspectRatio: isCount()? 1/.35 : 1/1.45,
               children: [
                 ItemTopProduct(image: Image.asset(FakeImages.car, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
-                  title:"120km Flagship Full pozitsiya faqat naqtga",
+                  title:"120km Flagship Full pozitsiya faqat naxtga",
                   amount: 370196800, where: 'Toshkent',
-                  date: '02.02.22', hour: '15:33'),
+                  date: '02.02.22', hour: '15:33', axisCount: axisCount,),
                 ItemTopProduct(image: Image.asset(FakeImages.laptop, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
-                    title:"120km Flagship Full pozitsiya faqat naqtga",
+                    title:"120km Flagship Full pozitsiya faqat naxtga",
                   amount: 370196800, where: 'Toshkent',
-                  date: '02.02.22', hour: '15:33'),
+                  date: '02.02.22', hour: '15:33', axisCount: axisCount),
                 ItemTopProduct(image: Image.asset(FakeImages.top, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
-                  title:"120km Flagship Full pozitsiya faqat naqtga",
+                  title:"120km Flagship Full pozitsiya faqat naxtga",
                   amount: 370196800, where: 'Toshkent',
-                  date: '02.02.22', hour: '15:33'),
+                  date: '02.02.22', hour: '15:33', axisCount: axisCount),
                 ItemTopProduct(image: Image.asset(FakeImages.headphone, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
-                    title:"120km Flagship Full pozitsiya faqat naqtga",
+                    title:"120km Flagship Full pozitsiya faqat naxtga",
                   amount: 370196800, where: 'Toshkent',
-                  date: '02.02.22', hour: '15:33'),
+                  date: '02.02.22', hour: '15:33', axisCount: axisCount),
                 ItemTopProduct(image: Image.asset(FakeImages.car, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
-                  title:"120km Flagship Full pozitsiya faqat naqtga",
+                  title:"120km Flagship Full pozitsiya faqat naxtga",
                   amount: 370196800, where: 'Toshkent',
-                  date: '02.02.22', hour: '15:33'),
+                  date: '02.02.22', hour: '15:33', axisCount: axisCount),
                 ItemTopProduct(image: Image.asset(FakeImages.laptop, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
-                    title:"120km Flagship Full pozitsiya, faqat naqtga",
+                    title:"120km Flagship Full pozitsiya, faqat naxtga",
                   amount: 370196800, where: 'Toshkent',
-                  date: '02.02.22', hour: '15:33'),
+                  date: '02.02.22', hour: '15:33', axisCount: axisCount),
               ],
             )
           ],
