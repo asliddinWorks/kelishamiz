@@ -2,8 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kelishamiz/constants/app_icons.dart';
+import 'package:kelishamiz/constants/fake_image.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/widgets/item_category.dart';
+import 'package:kelishamiz/core/widgets/item_top_product.dart';
 import 'package:kelishamiz/core/widgets/rectangle_icon_button.dart';
 
 import '../../../constants/app_colors.dart';
@@ -99,6 +101,7 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   width: 380,
                   height: 210,
+                  clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
                     color: AppColors.secondaryColor,
                     borderRadius: BorderRadius.circular(10),
@@ -139,13 +142,56 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.horizontal,
                 children: [
                   ItemCategory(icon: SvgPicture.asset(AppIcons.icCar), title: 'Transport'),
-                  ItemCategory(icon: SvgPicture.asset(AppIcons.icCar), title: 'Transport'),
-                  ItemCategory(icon: SvgPicture.asset(AppIcons.icCar), title: 'Transport'),
-                  ItemCategory(icon: SvgPicture.asset(AppIcons.icCar), title: 'Transport'),
-                  ItemCategory(icon: SvgPicture.asset(AppIcons.icCar), title: 'Transport'),
+                  ItemCategory(icon: SvgPicture.asset(AppIcons.icCategoryHome), title: "Ko'chmas mulk"),
+                  ItemCategory(icon: SvgPicture.asset(AppIcons.icService), title: 'Ish va xizmatlar'),
+                  ItemCategory(icon: SvgPicture.asset(AppIcons.icElectronics), title: 'Elektronika va texnika'),
+                  ItemCategory(icon: SvgPicture.asset(AppIcons.icFurniture), title: "Uy-bog', mebel "),
+                  ItemCategory(icon: SvgPicture.asset(AppIcons.icConstructions), title: 'Qurulish mollari'),
+                  ItemCategory(icon: SvgPicture.asset(AppIcons.icProduction), title: 'Ishlab chiqarish'),
+                  ItemCategory(icon: SvgPicture.asset(AppIcons.icEquipment), title: 'Asbob uskunalar'),
+                  ItemCategory(icon: SvgPicture.asset(AppIcons.icItems), title: 'Shaxsiy buyumlar'),
+                  ItemCategory(icon: SvgPicture.asset(AppIcons.icOthers), title: 'boshqalar'),
                 ],
               ),
             ),
+            const SizedBox(height: 25),
+            Text('Top mahsulotlar', style: context.textTheme.labelLarge!.copyWith(
+              fontWeight: FontWeight.bold,
+            )),
+            GridView.count(
+              crossAxisCount: 2,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: 1/1.45,
+              children: [
+                ItemTopProduct(image: Image.asset(FakeImages.car, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
+                  title:"120km Flagship Full pozitsiya faqat naqtga",
+                  amount: 370196800, where: 'Toshkent',
+                  date: '02.02.22', hour: '15:33'),
+                ItemTopProduct(image: Image.asset(FakeImages.laptop, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
+                    title:"120km Flagship Full pozitsiya faqat naqtga",
+                  amount: 370196800, where: 'Toshkent',
+                  date: '02.02.22', hour: '15:33'),
+                ItemTopProduct(image: Image.asset(FakeImages.top, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
+                  title:"120km Flagship Full pozitsiya faqat naqtga",
+                  amount: 370196800, where: 'Toshkent',
+                  date: '02.02.22', hour: '15:33'),
+                ItemTopProduct(image: Image.asset(FakeImages.headphone, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
+                    title:"120km Flagship Full pozitsiya faqat naqtga",
+                  amount: 370196800, where: 'Toshkent',
+                  date: '02.02.22', hour: '15:33'),
+                ItemTopProduct(image: Image.asset(FakeImages.car, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
+                  title:"120km Flagship Full pozitsiya faqat naqtga",
+                  amount: 370196800, where: 'Toshkent',
+                  date: '02.02.22', hour: '15:33'),
+                ItemTopProduct(image: Image.asset(FakeImages.laptop, fit: BoxFit.cover,), name: 'BYD Chazor DMI',
+                    title:"120km Flagship Full pozitsiya, faqat naqtga",
+                  amount: 370196800, where: 'Toshkent',
+                  date: '02.02.22', hour: '15:33'),
+              ],
+            )
           ],
         ),
       )

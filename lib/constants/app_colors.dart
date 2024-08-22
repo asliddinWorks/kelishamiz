@@ -7,4 +7,5 @@ class AppColors {
   static const lightGrey = Color(0xffF4F4F4);
   static const iconBackgroundColor = Color(0xffF9F9F9);
   static const backgroundColor = Color(0xffFAFAFA);
+  static const backgroundLike = Color(0xff000000);
 }
