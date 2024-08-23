@@ -14,7 +14,7 @@ class AppIcons {
   static const icOthers = '${path}ic_others.svg';
   static const icProduction = '${path}ic_production.svg';
   static const icService = '${path}ic_service.svg';
-
+  static const icCategoryHome = '${path}ic_category_home.svg';
   /// app Bar
   static const icMenu = '${path}ic_menu.svg';
   static const icSearch = '${path}ic_search.svg';
@@ -29,4 +29,7 @@ class AppIcons {
   static const icHome = '${pathNav}ic_home.svg';
   static const icProfile = '${pathNav}ic_profile.svg';
 
+  ///item
+
+  static const icFavoriteItem = '${path}ic_favorite_item.svg';
 }

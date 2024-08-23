@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kelishamiz/constants/app_colors.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
@@ -18,9 +17,10 @@ class ItemCategory extends StatelessWidget {
         height: 120,
         width: 90,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(25),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(50),
@@ -35,7 +35,7 @@ class ItemCategory extends StatelessWidget {
               height: 90,
               child: icon,
             ),
-            Text(title, style: context.textTheme.labelMedium,),
+            Text(title, style: context.textTheme.labelMedium, textAlign: TextAlign.center,),
           ],
         ),
       ),
