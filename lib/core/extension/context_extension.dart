@@ -1,6 +1,17 @@
 
 import 'package:flutter/material.dart';
 
+import '../../constants/app_colors.dart';
+
 extension ContextExtension on BuildContext {
-  TextTheme get textTheme => Theme.of(this).textTheme;
+
+  ThemeData get theme => Theme.of(this);
+
+  TextTheme get textTheme => theme.textTheme;
+
+  ColorScheme get colorScheme => theme.colorScheme;
+
+  AppColors get color => theme.extension<AppColors>()!;
+
+
 }
