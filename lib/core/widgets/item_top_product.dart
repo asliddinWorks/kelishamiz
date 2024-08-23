@@ -3,8 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kelishamiz/constants/app_icons.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 
-import '../../constants/app_colors.dart';
-
 class ItemTopProduct extends StatelessWidget {
   const ItemTopProduct({super.key, required this.image, required this.name,
     required this.title, required this.amount, required this.where,
@@ -19,18 +17,16 @@ class ItemTopProduct extends StatelessWidget {
   final String hour;
   final int axisCount;
 
-  bool isCount(){
-    if(axisCount == 1){
-      return  true;
-    }
-    return false;
-  }
-
+  // bool isCount(){
+  //   if(axisCount == 1){
+  //     return  true;
+  //   }
+  //   return false;
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return isCount()
-        ?
+    return (axisCount == 1) ?
     AspectRatio(
         aspectRatio: 1/.35,
     child: Stack(
@@ -39,8 +35,8 @@ class ItemTopProduct extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
-              boxShadow: const [
-                BoxShadow(color: AppColors.lightGrey,
+              boxShadow: [
+                BoxShadow(color: context.color.lightGrey,
                     spreadRadius: 2,
                     blurRadius: 1
                 ),
@@ -117,11 +113,15 @@ class ItemTopProduct extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(where, style: context.textTheme.labelSmall!.copyWith(color: Colors.grey, fontSize: 10),),
+                          Text(where, style:
+
                           Row(
                             children: [
-                              Text('$date | ', style: context.textTheme.labelSmall!.copyWith(color: Colors.grey, fontSize: 10)),
-                              Text(hour, style: context.textTheme.labelSmall!.copyWith(color: Colors.grey, fontSize: 10))
+                              Text('$date | ', style:
+
+                              Text(hour, style:
+
+
                             ],
                           )
                         ],
@@ -142,7 +142,7 @@ class ItemTopProduct extends StatelessWidget {
               height: 26,
               width: 26,
               decoration: BoxDecoration(
-                  color: AppColors.backgroundLike.withOpacity(0.24),
+                  color: context.color.backgroundLike,
                   shape: BoxShape.circle
               ),
               child: SvgPicture.asset(AppIcons.icFavoriteItem),
@@ -151,13 +151,13 @@ class ItemTopProduct extends StatelessWidget {
         )
       ],
     ),
-    )
-    : Container(
+    ) :
+    Container(
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: const [
-        BoxShadow(color: AppColors.lightGrey,
+        boxShadow: [
+        BoxShadow(color: context.color.lightGrey,
             spreadRadius: 2,
             blurRadius: 1
         ),
@@ -185,7 +185,7 @@ class ItemTopProduct extends StatelessWidget {
                       height: 26,
                       width: 26,
                       decoration: BoxDecoration(
-                        color: AppColors.backgroundLike.withOpacity(0.24),
+                        color: context.color.backgroundLike,
                         shape: BoxShape.circle
                       ),
                       child: SvgPicture.asset(AppIcons.icFavoriteItem),

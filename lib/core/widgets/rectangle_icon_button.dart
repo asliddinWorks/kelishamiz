@@ -1,7 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kelishamiz/constants/app_colors.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 
 class RectangleIconButton extends StatelessWidget {
@@ -16,7 +15,8 @@ class RectangleIconButton extends StatelessWidget {
       decoration: BoxDecoration(
         color: context.color.iconBackgroundColor,
         border: Border.all(color: context.color.lightGrey),
-        borderRadius: BorderRadius.circular(5)),
+        borderRadius: BorderRadius.circular(5),
+      ),
       height: 36,
       width: 36,
       child: child,

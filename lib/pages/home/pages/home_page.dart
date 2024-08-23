@@ -144,8 +144,9 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 25),
-            Text('Kategoriyalar', style: context.textTheme.labelLarge!.copyWith(
-                fontWeight: FontWeight.bold)),
+            Text('Kategoriyalar',
+                style: context.textStyle.titleLarge,
+            ),
             const SizedBox(height: 15),
             SizedBox(
               height: 130,
