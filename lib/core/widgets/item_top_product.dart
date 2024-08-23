@@ -168,46 +168,48 @@ class ProductHorizontal extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 7, left: 0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: MediaQuery.sizeOf(context).width/2.4,
-                                child: Stack(
-                                    children: [
-                                      RichText(
-                                        maxLines: 4,
-                                        overflow: TextOverflow.ellipsis,
-                                        text: TextSpan(
-                                          children: <TextSpan>[
-                                            TextSpan(text: productModel.title, style: context.textStyle.productTitle),
-                                            TextSpan(text: ' ${productModel.description}', style: context.textStyle.productDescription),
-                                          ],
-                                        ),
-                                      ),
-                                    ]
-                                ),
-                              ),
-                              const SizedBox(height: 5),
-                              SizedBox(
-                                width: MediaQuery.sizeOf(context).width/2.2,
-                                child: Row(
+                        Expanded(
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: SizedBox(
+                              width: MediaQuery.sizeOf(context).width/2.4,
+                              child: Stack(
                                   children: [
-                                    Text(productModel.price.toString(), style: context.textStyle.price,),
-                                    Text(" so'm", style: context.textTheme.bodyMedium,),
-                                  ],
-                                ),
+                                    RichText(
+                                      maxLines: 3,
+                                      overflow: TextOverflow.ellipsis,
+                                      text: TextSpan(
+                                        children: <TextSpan>[
+                                          TextSpan(text: productModel.title, style: context.textStyle.productTitle),
+                                          TextSpan(text: ' ${productModel.description}', style: context.textStyle.productDescription),
+                                        ],
+                                      ),
+                                    ),
+                                  ]
                               ),
-                              Divider(
-                                height: 1,
-                                thickness: 1,
-                                color: context.color.dividerColor,
+                            ),
+                          ) ,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+
+                            const SizedBox(height: 5),
+                            SizedBox(
+                              width: MediaQuery.sizeOf(context).width/2.2,
+                              child: Row(
+                                children: [
+                                  Text(productModel.price.toString(), style: context.textStyle.price,),
+                                  Text(" so'm", style: context.textTheme.bodyMedium,),
+                                ],
                               ),
-                              const SizedBox(height: 5),
-                            ],
-                          ),
+                            ),
+                            Divider(
+                              height: 3,
+                              thickness: 1,
+                              color: context.color.dividerColor,
+                            ),
+                          ],
                         ),
 
                         SizedBox(

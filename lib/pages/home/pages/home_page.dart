@@ -7,11 +7,10 @@ import 'package:kelishamiz/core/data/models/product_model.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
+import 'package:kelishamiz/core/widgets/app_button.dart';
 import 'package:kelishamiz/core/widgets/item_category.dart';
 import 'package:kelishamiz/core/widgets/item_top_product.dart';
 import 'package:kelishamiz/core/widgets/rectangle_icon_button.dart';
-
-import '../../../constants/app_colors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -69,11 +68,11 @@ class _HomePageState extends State<HomePage> {
                                 filled: true,
                                 fillColor: context.color.iconBackgroundColor,
                                 contentPadding: const EdgeInsets.all(5),
-                                enabledBorder: const OutlineInputBorder(
+                                enabledBorder: OutlineInputBorder(
                                   borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
+                                  const BorderRadius.all(Radius.circular(10)),
                                   borderSide:
-                                  BorderSide(width: 2, color: Colors.grey),
+                                  BorderSide(width: 2, color: context.color.lightGrey),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius:
@@ -153,7 +152,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ).padding(const EdgeInsets.all(10)),
           25.hGap,
-          Text('Kategoriyalar', style: context.textTheme.titleLarge,).padding(const EdgeInsets.all(10)),
+          Text('Kategoriyalar', style: context.textTheme.titleMedium,).padding(const EdgeInsets.all(10)),
           15.hGap,
           SizedBox(
             height: 130,
@@ -187,7 +186,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisCount: axisCount,
             ),
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: 10,
+            itemCount: 6,
             itemBuilder: (context, index) {
               return ItemTopProduct(
                 productModel: ProductModel(
@@ -202,6 +201,49 @@ class _HomePageState extends State<HomePage> {
               );
             },
           ),
+          AppButton(
+            onPressed: (){},
+            height: 47,
+            text: "Ko'proq ko'rsatish",
+          ).padding(const EdgeInsets.symmetric(horizontal: 10, vertical: 25)),
+
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset('assets/images/reklama.png'),
+          ).padding(const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 30)),
+
+          Text('Hamma mahsulotlar', style: context.textTheme.titleMedium!).padding(const EdgeInsets.all(10)),
+          GridView.builder(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: axisCount == 1 ? 1/.35 : 1/1.45,
+              crossAxisCount: axisCount,
+            ),
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 6,
+            itemBuilder: (context, index) {
+              return ItemTopProduct(
+                productModel: ProductModel(
+                  title: 'BYD Chazor DMI',
+                  description: '120km Flagship Full pozitsiya faqat naxtga',
+                  price: '370 196 800',
+                  location: 'Toshkent',
+                  date: '02.02.22 | 13:22',
+                  image: FakeImages.car,
+                ),
+                axisCount: axisCount,
+              );
+            },
+          ),
+
+          AppButton(
+            onPressed: (){},
+            height: 47,
+            text: "Ko'proq ko'rsatish",
+          ).padding(const EdgeInsets.only(left:  10,right: 10,  top:  25, bottom: 50)),
         ],
       )
     );
