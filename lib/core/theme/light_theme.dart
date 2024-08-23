@@ -94,19 +94,20 @@ ThemeData lightTheme(BuildContext context) {
       //   ),
       // ),
       //
-      // bodyLarge: GoogleFonts.poppins(
-      //   textStyle: const TextStyle(
-      //     fontSize: 15,
-      //     fontWeight: FontWeight.w400,
-      //   ),
-      // ),
-      //
-      // bodyMedium: GoogleFonts.poppins(
-      //   textStyle: const TextStyle(
-      //     fontSize: 13,
-      //     fontWeight: FontWeight.w400,
-      //   ),
-      // ),
+      bodyLarge: GoogleFonts.poppins(
+        textStyle: const TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+
+      bodyMedium: GoogleFonts.poppins(
+        textStyle: TextStyle(
+          fontSize: 13,
+          fontWeight: FontWeight.w400,
+          color: AppColors.light.black,
+        ),
+      ),
       //
       // bodySmall: GoogleFonts.poppins(
       //   textStyle: const TextStyle(

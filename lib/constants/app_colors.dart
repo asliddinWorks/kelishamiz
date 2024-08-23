@@ -23,6 +23,7 @@ class AppColors extends ThemeExtension<AppColors> {
     required this.black,
     required this.grey,
     required this.dividerColor,
+    required this.white,
   });
 
   final Color lightGrey;
@@ -32,6 +33,7 @@ class AppColors extends ThemeExtension<AppColors> {
   final Color black;
   final Color grey;
   final Color dividerColor;
+  final Color white;
 
   static AppColors light = AppColors(
     lightGrey: const Color(0xffF4F4F4),
@@ -41,6 +43,7 @@ class AppColors extends ThemeExtension<AppColors> {
     black: const Color(0xff130F1E),
     grey: const Color(0xff959EA7),
     dividerColor: const Color(0xffD2D2D2),
+    white: const Color(0xffFFFFFF),
   );
 
   @override
@@ -52,6 +55,7 @@ class AppColors extends ThemeExtension<AppColors> {
     Color? black,
     Color? grey,
     Color? dividerColor,
+    Color? white,
   }) {
     return AppColors(
       lightGrey: lightGrey ?? this.lightGrey,
@@ -61,6 +65,7 @@ class AppColors extends ThemeExtension<AppColors> {
       black: black ?? this.black,
       grey: grey ?? this.grey,
       dividerColor: dividerColor ?? this.dividerColor,
+      white: white ?? this.white,
     );
   }
 
@@ -77,6 +82,7 @@ class AppColors extends ThemeExtension<AppColors> {
       black: Color.lerp(black, other.black, t)!,
       grey: Color.lerp(grey, other.grey, t)!,
       dividerColor: Color.lerp(dividerColor, other.dividerColor, t)!,
+      white: Color.lerp(white, other.white, t)!,
     );
   }
 }
