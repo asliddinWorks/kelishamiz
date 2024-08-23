@@ -2,197 +2,76 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kelishamiz/constants/app_icons.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
+import 'package:kelishamiz/core/extension/num_extension.dart';
 
-import '../../constants/app_colors.dart';
+import '../data/models/product_model.dart';
 
 class ItemTopProduct extends StatelessWidget {
-  const ItemTopProduct({super.key, required this.image, required this.name,
-    required this.title, required this.amount, required this.where,
-    required this.date, required this.hour, required this.axisCount,});
+  const ItemTopProduct({super.key, required this.productModel, required this.axisCount});
 
-  final Widget image;
-  final String name;
-  final String title;
-  final int amount;
-  final String where;
-  final String date;
-  final String hour;
+  final ProductModel productModel;
   final int axisCount;
-
-  bool isCount(){
-    if(axisCount == 1){
-      return  true;
-    }
-    return false;
-  }
-
 
   @override
   Widget build(BuildContext context) {
-    return isCount()
-        ?
-    AspectRatio(
-        aspectRatio: 1/.35,
-    child: Stack(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: const [
-                BoxShadow(color: AppColors.lightGrey,
-                    spreadRadius: 2,
-                    blurRadius: 1
-                ),
-              ]
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Stack(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(right: 7),
-                        height: 120,
-                        width: 104,
-                        decoration: BoxDecoration(
-                          color: Colors.orangeAccent,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        clipBehavior: Clip.hardEdge,
-                        child: image,
-                      ),
-                    ]
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 7, left: 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: MediaQuery.sizeOf(context).width/2.4,
-                            child: Stack(
-                                children: [
-                                  RichText(
-                                    maxLines: 4,
-                                    overflow: TextOverflow.ellipsis,
-                                    text: TextSpan(
-                                      children: <TextSpan>[
-                                        TextSpan(text: name, style: context.textTheme.labelLarge!.copyWith(
-                                            fontWeight: FontWeight.bold, fontSize: 14)),
-                                        TextSpan(text: ' $title', style: context.textTheme.labelMedium!.copyWith(fontSize: 14)),
-                                      ],
-                                    ),
-                                  ),
-                                ]
-                            ),
-                          ),
-                          const SizedBox(height: 5),
-                          SizedBox(
-                            width: MediaQuery.sizeOf(context).width/2.2,
-                            child: Row(
-                              children: [
-                                Text(amount.toString(), style: context.textTheme.labelMedium!.copyWith(fontWeight: FontWeight.bold),),
-                                Text(" so'm", style: context.textTheme.labelSmall),
-                              ],
-                            ),
-                          ),
-                          const Divider(
-                            height: 1,
-                            endIndent: 4,indent: 4,
-                            thickness: 1,
-                            color: Colors.black,
-                          ),
-                          const SizedBox(height: 5),
-                        ],
-                      ),
-                    ),
+    return (axisCount == 1) ?
+    ProductHorizontal(productModel: productModel) :
+    ProductGrid(productModel: productModel);
+  }
+}
 
-                    SizedBox(
-                      width: MediaQuery.sizeOf(context).width/1.6,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(where, style: context.textTheme.labelSmall!.copyWith(color: Colors.grey, fontSize: 10),),
-                          Row(
-                            children: [
-                              Text('$date | ', style: context.textTheme.labelSmall!.copyWith(color: Colors.grey, fontSize: 10)),
-                              Text(hour, style: context.textTheme.labelSmall!.copyWith(color: Colors.grey, fontSize: 10))
-                            ],
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Container(
-              margin: const EdgeInsets.all(6),
-              padding: const EdgeInsets.all(5),
-              height: 26,
-              width: 26,
-              decoration: BoxDecoration(
-                  color: AppColors.backgroundLike.withOpacity(0.24),
-                  shape: BoxShape.circle
-              ),
-              child: SvgPicture.asset(AppIcons.icFavoriteItem),
-            )
-          ],
-        )
-      ],
-    ),
-    )
-    : Container(
+/// ProductGrid
+class ProductGrid extends StatelessWidget {
+  const ProductGrid({super.key, required this.productModel});
+
+  final ProductModel productModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: const [
-        BoxShadow(color: AppColors.lightGrey,
-            spreadRadius: 2,
-            blurRadius: 1
-        ),
-        ]
+        boxShadow: [
+          BoxShadow(
+            color: context.color.grey.withOpacity(.3),
+            offset: const Offset(0, 1),
+            blurRadius: 3,
+          ),
+        ],
       ),
       child: Column(
         children: [
           AspectRatio(
             aspectRatio: 1/.78,
             child: Stack(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    clipBehavior: Clip.hardEdge,
+                    child: Image(
+                      image: AssetImage(productModel.image!),
+                    ),
                   ),
-                  clipBehavior: Clip.hardEdge,
-                  child: image,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.all(6),
-                      padding: const EdgeInsets.all(5),
-                      height: 26,
-                      width: 26,
-                      decoration: BoxDecoration(
-                        color: AppColors.backgroundLike.withOpacity(0.24),
-                        shape: BoxShape.circle
-                      ),
-                      child: SvgPicture.asset(AppIcons.icFavoriteItem),
-                    )
-                  ],
-                )
-              ]
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.all(6),
+                        padding: const EdgeInsets.all(5),
+                        height: 26,
+                        width: 26,
+                        decoration: BoxDecoration(
+                            color: context.color.backgroundLike,
+                            shape: BoxShape.circle
+                        ),
+                        child: SvgPicture.asset(AppIcons.icFavoriteItem),
+                      )
+                    ],
+                  )
+                ]
             ),
           ),
           Padding(
@@ -204,37 +83,38 @@ class ItemTopProduct extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   text: TextSpan(
                     children: <TextSpan>[
-                      TextSpan(text: name, style: context.textTheme.labelLarge!.copyWith(
-                          fontWeight: FontWeight.bold, fontSize: 14)),
-                      TextSpan(text: ' $title', style: context.textTheme.labelMedium!.copyWith(fontSize: 14)),
+                      TextSpan(text: productModel.title, style: context.textStyle.productTitle),
+                      TextSpan(text: ' ${productModel.description}', style: context.textStyle.productDescription),
                     ],
                   ),
                 ),
                 const SizedBox(height: 12),
                 Row(
                   children: [
-                    Text(amount.toString(), style: context.textTheme.labelMedium!.copyWith(fontWeight: FontWeight.bold),),
-                    Text(" so'm", style: context.textTheme.labelSmall),
+                    Text(productModel.price.toString(), style: context.textStyle.price),
+                    Text(" so'm", style: context.textTheme.bodyMedium),
                   ],
                 ),
                 const SizedBox(height: 12),
-                const Divider(
+                Divider(
                   height: 1,
-                  endIndent: 4,indent: 4,
+                  // indent: 4,
+                  // endIndent: 4,
                   thickness: 1,
-                  color: Colors.grey,
+                  color: context.color.dividerColor,
                 ),
                 const SizedBox(height: 5),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(where, style: context.textTheme.labelSmall!.copyWith(color: Colors.grey, fontSize: 10),),
-                    Row(
-                      children: [
-                        Text('$date | ', style: context.textTheme.labelSmall!.copyWith(color: Colors.grey, fontSize: 10)),
-                        Text(hour, style: context.textTheme.labelSmall!.copyWith(color: Colors.grey, fontSize: 10))
-                      ],
-                    )
+                    Text(productModel.location ?? '', style: context.textStyle.productDate),
+                    Text('${productModel.date}', style: context.textStyle.productDate),
+                    // Row(
+                    //   children: [
+                    //     Text('$date | ', style: context.textTheme.labelSmall!.copyWith(color: Colors.grey, fontSize: 10)),
+                    //     Text(hour, style: context.textTheme.labelSmall!.copyWith(color: Colors.grey, fontSize: 10))
+                    //   ],
+                    // )
                   ],
                 )
               ],
@@ -245,3 +125,134 @@ class ItemTopProduct extends StatelessWidget {
     );
   }
 }
+
+/// ProductHorizontal
+class ProductHorizontal extends StatelessWidget {
+  const ProductHorizontal({super.key, required this.productModel});
+
+  final ProductModel productModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
+      aspectRatio: 1 / .35,
+      child: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: context.color.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: context.color.grey.withOpacity(.3),
+                  offset: const Offset(0, 1),
+                  blurRadius: 3,
+                ),
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(5),
+                    child: Image(
+                      height: double.infinity,
+                      width: .28.wp(context),
+                      fit: BoxFit.cover,
+                      image: AssetImage(productModel.image!),
+                    ),
+                  ),
+                  10.wGap,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 7, left: 0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.sizeOf(context).width/2.4,
+                                child: Stack(
+                                    children: [
+                                      RichText(
+                                        maxLines: 4,
+                                        overflow: TextOverflow.ellipsis,
+                                        text: TextSpan(
+                                          children: <TextSpan>[
+                                            TextSpan(text: productModel.title, style: context.textStyle.productTitle),
+                                            TextSpan(text: ' ${productModel.description}', style: context.textStyle.productDescription),
+                                          ],
+                                        ),
+                                      ),
+                                    ]
+                                ),
+                              ),
+                              const SizedBox(height: 5),
+                              SizedBox(
+                                width: MediaQuery.sizeOf(context).width/2.2,
+                                child: Row(
+                                  children: [
+                                    Text(productModel.price.toString(), style: context.textStyle.price,),
+                                    Text(" so'm", style: context.textTheme.bodyMedium,),
+                                  ],
+                                ),
+                              ),
+                              Divider(
+                                height: 1,
+                                thickness: 1,
+                                color: context.color.dividerColor,
+                              ),
+                              const SizedBox(height: 5),
+                            ],
+                          ),
+                        ),
+
+                        SizedBox(
+                          width: MediaQuery.sizeOf(context).width/1.6,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(productModel.location ?? '', style: context.textStyle.productDate),
+                              Row(
+                                children: [
+                                  Text(productModel.date ?? '', style: context.textStyle.productDate),
+                                  // Text('$date | ', style: context.textStyle.productDate),
+                                  // Text(hour, style: context.textStyle.productDate),
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                margin: const EdgeInsets.all(6),
+                padding: const EdgeInsets.all(5),
+                height: 26,
+                width: 26,
+                decoration: BoxDecoration(
+                  color: context.color.backgroundLike,
+                  shape: BoxShape.circle,
+                ),
+                child: SvgPicture.asset(AppIcons.icFavoriteItem),
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
