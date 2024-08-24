@@ -13,6 +13,7 @@ ThemeData lightTheme(BuildContext context) {
 
     extensions: <ThemeExtension<dynamic>>[
       AppColors.light,
+      AppTextStyle.light,
     ],
 
     /// Scaffold Background Color
@@ -69,33 +70,30 @@ ThemeData lightTheme(BuildContext context) {
     textTheme: TextTheme(
 
       titleLarge: GoogleFonts.poppins(
-        textStyle: const TextStyle(
-          fontSize: 34,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
+      fontSize: 24,
+      fontWeight: FontWeight.w500,
+      color: AppColors.light.black,
+    ),
 
       titleMedium: GoogleFonts.poppins(
-        textStyle: const TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
+      fontSize: 18,
+      fontWeight: FontWeight.w500,
+      color: AppColors.light.black,
+    ),
 
       titleSmall: GoogleFonts.poppins(
-        textStyle: const TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
+      fontSize: 13,
+      fontWeight: FontWeight.w500,
+      color: AppColors.light.black,
+    ),
 
-      labelLarge: GoogleFonts.poppins(
-        textStyle: const TextStyle(
-          fontSize: 17,
-          fontWeight: FontWeight.w400,
-        ),
-      ),
-
+      // labelLarge: GoogleFonts.poppins(
+      //   textStyle: const TextStyle(
+      //     fontSize: 17,
+      //     fontWeight: FontWeight.w400,
+      //   ),
+      // ),
+      //
       bodyLarge: GoogleFonts.poppins(
         textStyle: const TextStyle(
           fontSize: 15,
@@ -104,18 +102,19 @@ ThemeData lightTheme(BuildContext context) {
       ),
 
       bodyMedium: GoogleFonts.poppins(
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           fontSize: 13,
           fontWeight: FontWeight.w400,
+          color: AppColors.light.black,
         ),
       ),
-
-      bodySmall: GoogleFonts.poppins(
-        textStyle: const TextStyle(
-          fontSize: 10,
-          fontWeight: FontWeight.w400,
-        ),
-      ),
+      //
+      // bodySmall: GoogleFonts.poppins(
+      //   textStyle: const TextStyle(
+      //     fontSize: 10,
+      //     fontWeight: FontWeight.w400,
+      //   ),
+      // ),
 
 
     ),
