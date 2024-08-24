@@ -32,4 +32,15 @@ class AppIcons {
   ///item
 
   static const icFavoriteItem = '${path}ic_favorite_item.svg';
+
+  /// category icon
+  static const icCategoryFilter = '${path}ic_category_filter.svg';
+  static const icCategoryGrid = '${path}ic_category_grid.svg';
+
+ /// category Transport icon
+  static const icTransportAccessory = '${path}transport_accessory.svg';
+  static const icTransportCar = '${path}transport_car.svg';
+  static const icTransportMotorcycle = '${path}transport_motorcycle.svg';
+  static const icTransportOthers = '${path}transport_others.svg';
+  static const icTransportTruck = '${path}transport_truck.svg';
 }

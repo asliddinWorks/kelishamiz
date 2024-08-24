@@ -4,6 +4,7 @@ part of 'router.dart';
 sealed class RouteNames {
   // static const splash = '/';
   static const home = '/home';
+  static const category = '/category';
 
 }
 
@@ -19,6 +20,13 @@ final GoRouter router = GoRouter(
           path: RouteNames.home,
           builder: (context, state) {
             return const HomePage();
+          },
+        ),
+        GoRoute(
+          path: RouteNames.category,
+          builder: (context, state) {
+            final int id = state.extra as int;
+            return CategoryPage(id: id,);
           },
         ),
       ],
