@@ -77,7 +77,7 @@ class _CategoryPageState extends State<CategoryPage> {
                   ItemCategoryPage(icon: SvgPicture.asset(AppIcons.icOthers), title: 'boshqalar'),
                 ],
               ),
-            ).padding(const EdgeInsets.all(10)),
+            ).padding(const EdgeInsets.symmetric(horizontal: 10)),
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
