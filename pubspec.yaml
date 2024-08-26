@@ -30,6 +30,9 @@ flutter:
   assets:
     - assets/icons/
     - assets/icons/nav_icons/
+    - assets/icons/transport_icons/
+    - assets/icons/real_estate_icons/
+    - assets/icons/service_icons/
     - assets/images/
 
   # fonts:

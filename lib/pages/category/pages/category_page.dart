@@ -6,8 +6,10 @@ import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/item_category_each.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/widgets/item_category_page.dart';
+import '../view_model/category_view_model.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({super.key, required this.id});
@@ -19,8 +21,19 @@ class CategoryPage extends StatefulWidget {
 }
 
 class _CategoryPageState extends State<CategoryPage> {
+
+  @override
+  void initState() {
+    context.read<CategoryViewModel>().initialize();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+
+    final read = context.read<CategoryViewModel>();
+    final watch = context.watch<CategoryViewModel>();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -56,44 +69,53 @@ class _CategoryPageState extends State<CategoryPage> {
           ],
         ),
       ),
-      body: Expanded(
-        child: Row(
-          children: [
-            SizedBox(
-              width: 103,
-              child: GridView.count(
-                mainAxisSpacing: 5,
-                crossAxisCount: 1,
-                children: [
-                  ItemCategoryPage(icon: SvgPicture.asset(AppIcons.icCar), title: 'Transport'),
-                  ItemCategoryPage(icon: SvgPicture.asset(AppIcons.icCategoryHome), title: "Ko'chmas mulk"),
-                  ItemCategoryPage(icon: SvgPicture.asset(AppIcons.icService), title: 'Ish va xizmatlar'),
-                  ItemCategoryPage(icon: SvgPicture.asset(AppIcons.icElectronics), title: 'Elektronika va texnika'),
-                  ItemCategoryPage(icon: SvgPicture.asset(AppIcons.icFurniture), title: "Uy-bog', mebel "),
-                  ItemCategoryPage(icon: SvgPicture.asset(AppIcons.icConstructions), title: 'Qurulish mollari'),
-                  ItemCategoryPage(icon: SvgPicture.asset(AppIcons.icProduction), title: 'Ishlab chiqarish'),
-                  ItemCategoryPage(icon: SvgPicture.asset(AppIcons.icEquipment), title: 'Asbob uskunalar'),
-                  ItemCategoryPage(icon: SvgPicture.asset(AppIcons.icItems), title: 'Shaxsiy buyumlar'),
-                  ItemCategoryPage(icon: SvgPicture.asset(AppIcons.icOthers), title: 'boshqalar'),
-                ],
-              ),
-            ).padding(const EdgeInsets.symmetric(horizontal: 10)),
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                children: [
-                  ItemCategoryEach(icon: SvgPicture.asset(AppIcons.icTransportCar), title: 'Yengil avtomobil'),
-                  ItemCategoryEach(icon: SvgPicture.asset(AppIcons.icTransportTruck), title: "Yuk tashish va maxsus transport"),
-                  ItemCategoryEach(icon: SvgPicture.asset(AppIcons.icTransportMotorcycle), title: 'Mototsikl va mototexnika'),
-                  ItemCategoryEach(icon: SvgPicture.asset(AppIcons.icTransportAccessory), title: 'Ehtiyot qismlar va aksesurarlar'),
-                  ItemCategoryEach(icon: SvgPicture.asset(AppIcons.icTransportOthers), title: "Boshqalari"),
-                ],
-              ),
+      body: Row(
+        children: [
+          SizedBox(
+            width: 103,
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1, mainAxisSpacing: 5),
+              itemCount: read.mainCategory.length,
+              itemBuilder: (context, index) {
+                return ItemCategoryPage(
+                  onTap: (){
+                    read.onTapMainCategory(index);
+                  },
+                  title: read.mainCategory[index],
+                  icon: read.mainCategoryIcons[index],
+                  isActive: watch.mainCategorySelection[index],
+                );
+              },
             ),
-          ],
-        ),
+          ).padding(const EdgeInsets.symmetric(horizontal: 10)),
+          // AspectRatio(
+          //   aspectRatio: 1/2.65,
+          //   child: GridView.count(
+          //     padding: const EdgeInsets.only(right: 10),
+          //     crossAxisCount: 2,
+          //     mainAxisSpacing: 10,
+          //     crossAxisSpacing: 10,
+          //     // children: [
+          //     //   ItemCategoryEach(icon: SvgPicture.asset(AppIcons.icTransportCar), title: 'Yengil avtomobil'),
+          //     //   ItemCategoryEach(icon: SvgPicture.asset(AppIcons.icTransportTruck), title: "Yuk tashish va maxsus transport"),
+          //     //   ItemCategoryEach(icon: SvgPicture.asset(AppIcons.icTransportMotorcycle), title: 'Mototsikl va mototexnika'),
+          //     //   ItemCategoryEach(icon: SvgPicture.asset(AppIcons.icTransportAccessory), title: 'Ehtiyot qismlar va aksesurarlar'),
+          //     //   ItemCategoryEach(icon: SvgPicture.asset(AppIcons.icTransportOthers), title: "Boshqalari"),
+          //     // ],
+          //   ),
+          // ),
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 5),
+              itemCount: read.categoryLists[read.selectedMainIndex].length,
+              itemBuilder: (context, index) {
+                return ItemCategoryEach(
+                  categoryEachModel: read.categoryLists[read.selectedMainIndex][index],
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

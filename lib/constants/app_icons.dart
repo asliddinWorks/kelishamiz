@@ -3,10 +3,13 @@ class AppIcons {
 
   static const path = 'assets/icons/';
   static const pathNav = 'assets/icons/nav_icons/';
+  static const pathTransport = 'assets/icons/transport_icons/';
+  static const pathRealEstate = 'assets/icons/real_estate_icons/';
+  static const pathService = 'assets/icons/service_icons/';
 
   /// category
   static const icCar = '${path}ic_car.svg';
-  static const icConstructions = '${path}ic_construction.svg';
+  static const icConstructions = '${path}ic_service_construction.svg';
   static const icElectronics = '${path}ic_electronics.svg';
   static const icEquipment = '${path}ic_equipment.svg';
   static const icFurniture = '${path}ic_furniture.svg';
@@ -38,9 +41,24 @@ class AppIcons {
   static const icCategoryGrid = '${path}ic_category_grid.svg';
 
  /// category Transport icon
-  static const icTransportAccessory = '${path}transport_accessory.svg';
-  static const icTransportCar = '${path}transport_car.svg';
-  static const icTransportMotorcycle = '${path}transport_motorcycle.svg';
-  static const icTransportOthers = '${path}transport_others.svg';
-  static const icTransportTruck = '${path}transport_truck.svg';
+  static const icTransportAccessory = '${pathTransport}transport_accessory.svg';
+  static const icTransportCar = '${pathTransport}transport_car.svg';
+  static const icTransportMotorcycle = '${pathTransport}transport_motorcycle.svg';
+  static const icTransportOthers = '${pathTransport}transport_others.svg';
+  static const icTransportTruck = '${pathTransport}transport_truck.svg';
+
+/// category real estate icon
+  static const icEstateApartment = '${pathRealEstate}ic_estate_apartment.svg';
+  static const icEstateEarth = '${pathRealEstate}ic_estate_earth.svg';
+  static const icEstateHouse = '${pathRealEstate}ic_estate_house.svg';
+  static const icEstateOther = '${pathRealEstate}ic_estate_other.svg';
+
+  /// category service icon
+  static const icServiceCarService = '${pathService}ic_service_car_service.svg';
+  static const icServiceConstruction = '${pathService}ic_service_construction.svg.svg';
+  static const icServiceDailyChores = '${pathService}ic_service_daily_chores.svg';
+  static const icServiceIt = '${pathService}ic_service_it.svg';
+  static const icServiceOther = '${pathService}ic_service_other.svg';
+  static const icServicePlumbing = '${pathService}ic_service_plumbing.svg';
+  static const icServiceTraining = '${pathService}ic_service_training.svg';
 }
