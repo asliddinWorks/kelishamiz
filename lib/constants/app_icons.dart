@@ -6,10 +6,14 @@ class AppIcons {
   static const pathTransport = 'assets/icons/transport_icons/';
   static const pathRealEstate = 'assets/icons/real_estate_icons/';
   static const pathService = 'assets/icons/service_icons/';
+  static const pathElectronics = 'assets/icons/electronics_icons/';
+  static const pathGarden = 'assets/icons/garden_icons/';
+  static const pathConstruction = 'assets/icons/construction_icons/';
+  static const pathPersonal = 'assets/icons/personal_icons/';
 
   /// category
   static const icCar = '${path}ic_car.svg';
-  static const icConstructions = '${path}ic_service_construction.svg';
+  static const icConstructions = '${path}ic_construction.svg';
   static const icElectronics = '${path}ic_electronics.svg';
   static const icEquipment = '${path}ic_equipment.svg';
   static const icFurniture = '${path}ic_furniture.svg';
@@ -61,4 +65,42 @@ class AppIcons {
   static const icServiceOther = '${pathService}ic_service_other.svg';
   static const icServicePlumbing = '${pathService}ic_service_plumbing.svg';
   static const icServiceTraining = '${pathService}ic_service_training.svg';
+
+  /// category electronics icon
+  static const icElectronicsComputer = '${pathElectronics}ic_electronics_computer.svg';
+  static const icElectronicsComputerParts = '${pathElectronics}ic_electronics_computer_parts.svg';
+  static const icElectronicsGames = '${pathElectronics}ic_electronics_games.svg';
+  static const icElectronicsHeadphone = '${pathElectronics}ic_electronics_headphone.svg';
+  static const icElectronicsLaptop = '${pathElectronics}ic_electronics_laptop.svg';
+  static const icElectronicsOffice = '${pathElectronics}ic_electronics_office.svg';
+  static const icElectronicsOther = '${pathElectronics}ic_electronics_other.svg';
+  static const icElectronicsPhoto = '${pathElectronics}ic_electronics_computer.svg';
+  static const icElectronicsTablet = '${pathElectronics}ic_electronics_tablet.svg';
+  static const icElectronicsTv = '${pathElectronics}ic_electronics_tv.svg';
+
+  /// category garden icon
+  static const icGardenChemical = '${pathGarden}ic_garden_chemical.svg';
+  static const icGardenFurniture = '${pathGarden}ic_garden_furniture.svg';
+  static const icGardenGarden = '${pathGarden}ic_garden_garden.svg';
+  static const icGardenInternet = '${pathGarden}ic_garden_internet.svg';
+  static const icGardenKitchen = '${pathGarden}ic_garden_kitchen.svg';
+  static const icGardenLight = '${pathGarden}ic_garden_light.svg';
+  static const icGardenOther = '${pathGarden}ic_garden_other.svg';
+
+  // category construction icon
+  static const icConstructionCommon = '${pathConstruction}ic_construction_common.svg';
+  static const icConstructionOther = '${pathConstruction}ic_construction_other.svg';
+  static const icConstructionPlumbing = '${pathConstruction}ic_construction_plumbing.svg';
+  static const icConstructionRepair = '${pathConstruction}ic_construction_repair.svg';
+
+  /// category personal icon
+  static const icPersonalChildren = '${pathPersonal}ic_personal_children.svg';
+  static const icPersonalMen = '${pathPersonal}ic_personal_men.svg';
+  static const icPersonalOther = '${pathPersonal}ic_personal_other.svg';
+  static const icPersonalWomen = '${pathPersonal}ic_personal_women.svg';
 }
+
+
+
+
+

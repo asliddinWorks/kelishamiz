@@ -105,12 +105,118 @@ class CategoryViewModel extends ChangeNotifier {
       title: "Boshqalar",
     ),
   ];
-  List<CategoryEachModel> electricityItem = [];
-  List<CategoryEachModel> furnitureItem = [];
-  List<CategoryEachModel> constructionItem = [];
+  List<CategoryEachModel> electricityItem = [
+    CategoryEachModel(
+      icon: AppIcons.icElectronicsComputerParts,
+      title: 'Komputer va ehtiyot qismlar',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icElectronicsLaptop,
+      title: 'Noutbook va ehtiyot  qismlar',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icElectronicsTablet,
+      title: 'Planshet',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icElectronicsHeadphone,
+      title: 'Telefon va aksseuarlar',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icElectronicsTv,
+      title: 'TV, Vedio, Audio',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icElectronicsGames,
+      title: 'O’yinlar va pristavkalar',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icElectronicsPhoto,
+      title: 'Fototexnika',
+    ),CategoryEachModel(
+      icon: AppIcons.icElectronicsOffice,
+      title: 'Orgtexnika va ofis uchun',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icElectronicsComputer,
+      title: 'Komputer tovarlari',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icElectronicsOther,
+      title: 'Boshqalar',
+    ),
+
+
+
+  ];
+  List<CategoryEachModel> furnitureItem = [
+    CategoryEachModel(
+      icon: AppIcons.icGardenFurniture,
+      title: 'Mebel',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icGardenInternet,
+      title: 'Internet',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icGardenKitchen,
+      title: 'Idishlar va oshxona uchun',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icGardenLight,
+      title: 'Yoritgichlar',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icGardenChemical,
+      title: 'Maishiy kimyoviy vositalar',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icGardenGarden,
+      title: 'Bog’',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icGardenOther,
+      title: 'Boshqalar',
+    ),
+  ];
+  List<CategoryEachModel> constructionItem = [
+    CategoryEachModel(
+      icon: AppIcons.icConstructionCommon,
+      title: 'Umumiy qurulish',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icConstructionPlumbing,
+      title: 'Santexnika',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icConstructionRepair,
+      title: 'Remont uchun',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icConstructionOther,
+      title: 'Boshqalar',
+    ),
+  ];
   List<CategoryEachModel> productItem = [];
   List<CategoryEachModel> equipmentItem = [];
-  List<CategoryEachModel> personalItem = [];
+  List<CategoryEachModel> personalItem = [
+    CategoryEachModel(
+      icon: AppIcons.icPersonalMen,
+      title: 'Erkaklar kiyimi',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icPersonalWomen,
+      title: 'Ayollar kiyimi',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icPersonalChildren,
+      title: 'Bolalar kiyimi',
+    ),
+    CategoryEachModel(
+      icon: AppIcons.icPersonalOther,
+      title: 'Boshqalar',
+    ),
+  ];
   List<CategoryEachModel> otherItem = [];
 
   List<List<CategoryEachModel>> categoryLists = [];
