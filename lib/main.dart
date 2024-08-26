@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kelishamiz/core/theme/theme.dart';
+import 'package:kelishamiz/pages/category/view_model/category_view_model.dart';
 import 'package:kelishamiz/router/router.dart';
 import 'package:provider/provider.dart';
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => AppThemeViewModel(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CategoryViewModel(),
         ),
       ],
       builder: (BuildContext context, Widget? child) {

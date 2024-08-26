@@ -17,7 +17,7 @@ ThemeData lightTheme(BuildContext context) {
     ],
 
     /// Scaffold Background Color
-    scaffoldBackgroundColor: AppColors.light.backgroundColor,
+    scaffoldBackgroundColor: AppColors.light.white,
 
     /// AppBar Theme
     appBarTheme: AppBarTheme(

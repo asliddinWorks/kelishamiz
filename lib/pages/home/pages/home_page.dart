@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.color.backgroundColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
         child: AppBar(
@@ -204,7 +205,7 @@ class _HomePageState extends State<HomePage> {
           AppButton(
             onPressed: (){},
             height: 47,
-            text: "Ko'proq ko'rsatish",
+            text: "Ko'proq ko'rsatish", active: true,
           ).padding(const EdgeInsets.symmetric(horizontal: 10, vertical: 25)),
 
           ClipRRect(
@@ -242,7 +243,7 @@ class _HomePageState extends State<HomePage> {
           AppButton(
             onPressed: (){},
             height: 47,
-            text: "Ko'proq ko'rsatish",
+            text: "Ko'proq ko'rsatish", active: true,
           ).padding(const EdgeInsets.only(left:  10,right: 10,  top:  25, bottom: 50)),
         ],
       )
