@@ -22,8 +22,10 @@ class ItemCategoryEach extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1/1,
         child: Container(
+          margin: const EdgeInsets.all(5),
           decoration: BoxDecoration(
             color: context.color.white,
+            borderRadius: BorderRadius.circular(5),
             boxShadow: [
               BoxShadow(
                 color: context.color.categoryItem,
