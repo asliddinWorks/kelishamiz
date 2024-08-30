@@ -3,6 +3,7 @@ part of 'router.dart';
 
 sealed class RouteNames {
   // static const splash = '/';
+  static const main = '/';
   static const home = '/home';
   static const category = '/category';
   static const product = '/product';
@@ -10,13 +11,19 @@ sealed class RouteNames {
 }
 
 final GoRouter router = GoRouter(
-  initialLocation: '/home',
+  initialLocation: '/',
   routes: [
     ShellRoute(
       builder: (context, state, child) {
         return NavigationBar(child: child);
       },
       routes: [
+        GoRoute(
+          path: RouteNames.main,
+          builder: (context, state) {
+            return const MainPage();
+          },
+        ),
         GoRoute(
           path: RouteNames.home,
           builder: (context, state) {

@@ -1,32 +1,22 @@
 
 import 'package:flutter/material.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
-import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
-import 'package:kelishamiz/pages/category/data/models/category_each_model.dart';
 
 import '../../../constants/fake_image.dart';
 import '../../../core/data/models/product_model.dart';
 import '../../../core/widgets/app_bar.dart';
 import '../../../core/widgets/item_top_product.dart';
 
-class ProductsPage extends StatefulWidget {
-  const ProductsPage({super.key, required this.categoryEachModel,});
-
-  final CategoryEachModel categoryEachModel;
+class FavoritePage extends StatefulWidget {
+  const FavoritePage({super.key});
 
   @override
-  State<ProductsPage> createState() => _ProductsPageState();
+  State<FavoritePage> createState() => _FavoritePageState();
 }
 
-class _ProductsPageState extends State<ProductsPage> {
-
+class _FavoritePageState extends State<FavoritePage> {
   int axisCount = 1;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,28 +37,17 @@ class _ProductsPageState extends State<ProductsPage> {
       ),
       body: ListView(
         children: [
-
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(widget.categoryEachModel.title, style: context.textTheme.titleLarge),
-
-              Text("20 000 ta e'lon", style: context.textTheme.titleSmall?.copyWith(
-                  color: context.color.grey.withOpacity(0.6)),
-              ),
-            ],
+          RichText(
+            text: TextSpan(
+                children: <TextSpan>[
+                  TextSpan(text: 'Saqlqnganlar', style: context.textTheme.titleLarge),
+                  TextSpan(text: "  ", style: context.textTheme.bodyLarge),
+                  TextSpan(text: "200 000 ta e'lon", style: context.textTheme.titleSmall?.copyWith(
+                      color: context.color.grey.withOpacity(0.6)),
+                  ),
+                ]
+            ),
           ).padding(const EdgeInsets.symmetric(horizontal: 10)),
-
-          // RichText(
-          //   text: TextSpan(
-          //     children: <TextSpan>[
-          //       TextSpan(text: widget.categoryEachModel.title, style: context.textTheme.titleLarge),
-          //       TextSpan(text: "200 000 ta e'lon", style: context.textTheme.titleSmall?.copyWith(
-          //           color: context.color.grey.withOpacity(0.6)),
-          //       ),
-          //     ]
-          //   ),
-          // ).padding(EdgeInsets.symmetric(horizontal: 10)),
           GridView.builder(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             shrinkWrap: true,

@@ -5,6 +5,7 @@ import 'package:kelishamiz/pages/home/pages/home_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/pages/products/pages/products_page.dart';
 
+import '../pages/main/pages/main_page.dart';
 import '../pages/navigation_bar/pages/navigation_bar.dart';
 
 part 'app_router.dart';
