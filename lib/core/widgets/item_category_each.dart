@@ -1,9 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/pages/category/data/models/category_each_model.dart';
+
+import '../../router/router.dart';
 
 class ItemCategoryEach extends StatelessWidget {
   const ItemCategoryEach({super.key, required this.categoryEachModel});
@@ -14,6 +17,10 @@ class ItemCategoryEach extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        context.push(
+          RouteNames.product,
+          extra: categoryEachModel,
+        );
         // context.push(
         //   RouteNames.category,
         //   extra: 1,
@@ -22,7 +29,9 @@ class ItemCategoryEach extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1/1,
         child: Container(
+          margin: const EdgeInsets.all(5),
           decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
             color: context.color.white,
             boxShadow: [
               BoxShadow(

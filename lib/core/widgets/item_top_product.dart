@@ -7,10 +7,10 @@ import 'package:kelishamiz/core/extension/num_extension.dart';
 import '../data/models/product_model.dart';
 
 class ItemTopProduct extends StatelessWidget {
-  const ItemTopProduct({super.key, required this.productModel, required this.axisCount});
+  const ItemTopProduct({super.key, required this.productModel, this.axisCount,});
 
   final ProductModel productModel;
-  final int axisCount;
+  final int? axisCount;
 
   @override
   Widget build(BuildContext context) {

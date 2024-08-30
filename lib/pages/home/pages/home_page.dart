@@ -8,9 +8,10 @@ import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
-import 'package:kelishamiz/core/widgets/item_category.dart';
+import 'package:kelishamiz/pages/home/pages/widgets/item_category.dart';
 import 'package:kelishamiz/core/widgets/item_top_product.dart';
-import 'package:kelishamiz/core/widgets/rectangle_icon_button.dart';
+
+import '../../../core/widgets/app_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,91 +28,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: context.color.backgroundColor,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(80),
-        child: AppBar(
-          flexibleSpace: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Logo', style: context.textTheme.bodyLarge,),
-                      Row(
-                        children: [
-                          Text('Toshkent', style: context.textTheme.bodyMedium!.copyWith(
-                            color: Colors.grey,
-                          )),
-                          const Icon(Icons.chevron_right, color: Colors.grey)
-                        ],
-                      )],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      RectangleIconButton(
-                        onTap: () {},
-                        child: SvgPicture.asset(AppIcons.icMenu),
-                      ),
-                      const SizedBox(width: 5),
-                      Expanded(
-                        child: SizedBox(
-                          height: 36,
-                          child: TextField(
-                            style: const TextStyle(
-                                fontWeight: FontWeight.w500),
-                            cursorColor: Colors.black54,
-                            textAlignVertical: TextAlignVertical.top,
-                            textAlign: TextAlign.start,
-                            decoration: InputDecoration(
-                                filled: true,
-                                fillColor: context.color.iconBackgroundColor,
-                                contentPadding: const EdgeInsets.all(5),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                  const BorderRadius.all(Radius.circular(10)),
-                                  borderSide:
-                                  BorderSide(width: 2, color: context.color.lightGrey),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius:
-                                  const BorderRadius.all(Radius.circular(5)),
-                                  borderSide:
-                                  BorderSide(width: 2, color: context.color.lightGrey),
-                                ),
-                                alignLabelWithHint: true,
-                                border: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.grey,
-                                    ))),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 5),
-                      RectangleIconButton(
-                        onTap: () {},
-                        child: SvgPicture.asset(
-                          AppIcons.icFilter,
-                        ),
-                      ),
-                      const SizedBox(width: 5),
-                      RectangleIconButton(
-                        onTap: () {
-                          axisCount = axisCount == 1 ? 2 : 1;
-                          setState(() {});
-                        },
-                        child: SvgPicture.asset(
-                          AppIcons.icGrid,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ),
+      appBar: AppBar(
+        toolbarHeight: 80,
+        flexibleSpace: CustomAppBar(
+          onTapGrid: () {
+            axisCount = axisCount == 1 ? 2 : 1;
+            setState(() {});
+          },
+          onTapFilter: () {},
+          onChangeSearch: () {},
+          onTapMenu: () {},
+          onTapSearch: () {},
         ),
       ),
       body: ListView(
@@ -162,16 +89,16 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               scrollDirection: Axis.horizontal,
               children: [
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icCar), title: 'Transport'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icCategoryHome), title: "Ko'chmas mulk"),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icService), title: 'Ish va xizmatlar'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icElectronics), title: 'Elektronika va texnika'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icFurniture), title: "Uy-bog', mebel "),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icConstructions), title: 'Qurulish mollari'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icProduction), title: 'Ishlab chiqarish'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icEquipment), title: 'Asbob uskunalar'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icItems), title: 'Shaxsiy buyumlar'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icOthers), title: 'boshqalar'),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icCar), title: 'Transport', index: 0,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icCategoryHome), title: "Ko'chmas mulk",index: 1,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icService), title: 'Ish va xizmatlar',index: 2,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icElectronics), title: 'Elektronika va texnika',index: 3,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icFurniture), title: "Uy-bog', mebel ",index: 4,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icConstructions), title: 'Qurulish mollari',index: 5,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icProduction), title: 'Ishlab chiqarish',index: 6,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icEquipment), title: 'Asbob uskunalar',index: 7,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icItems), title: 'Shaxsiy buyumlar',index: 8,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icOthers), title: 'boshqalar',index: 9,),
               ],
             ),
           ),

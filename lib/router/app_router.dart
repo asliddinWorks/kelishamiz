@@ -5,6 +5,7 @@ sealed class RouteNames {
   // static const splash = '/';
   static const home = '/home';
   static const category = '/category';
+  static const product = '/product';
 
 }
 
@@ -27,6 +28,13 @@ final GoRouter router = GoRouter(
           builder: (context, state) {
             final int id = state.extra as int;
             return CategoryPage(id: id,);
+          },
+        ),
+        GoRoute(
+          path: RouteNames.product,
+          builder: (context, state) {
+            final CategoryEachModel category = state.extra as CategoryEachModel;
+            return ProductsPage(categoryEachModel: category,);
           },
         ),
       ],
