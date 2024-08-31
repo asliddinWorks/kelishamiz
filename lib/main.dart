@@ -8,9 +8,8 @@ import 'package:provider/provider.dart';
 
 import 'core/view_model/app_view_model.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await AppLocalData.getGridAxisCount();
   runApp(const MyApp());
 }
 

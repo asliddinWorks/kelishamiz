@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:kelishamiz/core/view_model/app_view_model.dart';
 import 'package:kelishamiz/main.dart';
 import 'package:kelishamiz/pages/favorite/pages/favorite_page.dart';
 import 'package:kelishamiz/pages/home/pages/home_page.dart';
@@ -14,6 +15,13 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+
+  @override
+  void initState() {
+    context.read<AppViewModel>().getGridAxisCount();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
