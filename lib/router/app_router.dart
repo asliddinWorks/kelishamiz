@@ -6,6 +6,7 @@ sealed class RouteNames {
   static const main = '/';
   static const home = '/home';
   static const category = '/category';
+  static const products = '/products';
   static const product = '/product';
 
 }
@@ -38,10 +39,17 @@ final GoRouter router = GoRouter(
           },
         ),
         GoRoute(
-          path: RouteNames.product,
+          path: RouteNames.products,
           builder: (context, state) {
             final CategoryEachModel category = state.extra as CategoryEachModel;
             return ProductsPage(categoryEachModel: category,);
+          },
+        ),
+        GoRoute(
+          path: RouteNames.product,
+          builder: (context, state) {
+            final ProductModel product = state.extra as ProductModel;
+            return ProductPage(productModel: product,);
           },
         ),
       ],

@@ -98,6 +98,11 @@ class AppIcons {
   static const icPersonalMen = '${pathPersonal}ic_personal_men.svg';
   static const icPersonalOther = '${pathPersonal}ic_personal_other.svg';
   static const icPersonalWomen = '${pathPersonal}ic_personal_women.svg';
+
+  ///Product icon
+  static const icHeart = '${path}ic_heart.svg';
+  static const icMessage = '${path}ic_message.svg';
+  static const icCall = '${path}ic_call.svg';
 }
 
 
