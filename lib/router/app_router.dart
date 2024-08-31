@@ -45,14 +45,14 @@ final GoRouter router = GoRouter(
             return ProductsPage(categoryEachModel: category,);
           },
         ),
-        GoRoute(
-          path: RouteNames.product,
-          builder: (context, state) {
-            final ProductModel product = state.extra as ProductModel;
-            return ProductPage(productModel: product,);
-          },
-        ),
       ],
+    ),
+    GoRoute(
+      path: RouteNames.product,
+      builder: (context, state) {
+        final ProductModel product = state.extra as ProductModel;
+        return ProductPage(productModel: product,);
+      },
     ),
   ],
 );

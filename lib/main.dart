@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:kelishamiz/core/data/data_source/local/app_local_data.dart';
 import 'package:kelishamiz/core/theme/theme.dart';
 import 'package:kelishamiz/pages/category/view_model/category_view_model.dart';
 import 'package:kelishamiz/pages/main/view_model/main_view_model.dart';
 import 'package:kelishamiz/router/router.dart';
 import 'package:provider/provider.dart';
 
+import 'core/view_model/app_view_model.dart';
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -18,6 +22,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => AppThemeViewModel(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => AppViewModel(),
         ),
         ChangeNotifierProvider(
           create: (context) => CategoryViewModel(),
