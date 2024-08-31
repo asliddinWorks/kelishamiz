@@ -25,12 +25,17 @@ class _ProductPageState extends State<ProductPage> {
       appBar: AppBar(
         backgroundColor: context.color.white,
         automaticallyImplyLeading: false,
-        title: Row(
-          children: [
-            const Icon(Icons.chevron_left),
-            5.wGap,
-            Text('Orqaga', style: context.textTheme.bodyMedium),
-          ],
+        centerTitle: false,
+        title: InkWell(
+          onTap: () => Navigator.pop(context),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.chevron_left),
+              5.wGap,
+              Text('Orqaga', style: context.textTheme.bodyMedium),
+            ],
+          ),
         ),
       ),
       body: productComplete(widget.productModel)
