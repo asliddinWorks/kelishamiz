@@ -5,10 +5,11 @@ import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/router/router.dart';
 
 class ItemCategory extends StatelessWidget {
-  const ItemCategory({super.key, required this.icon, required this.title});
+  const ItemCategory({super.key, required this.icon, required this.title, required this.index});
 
   final Widget icon;
   final String title;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class ItemCategory extends StatelessWidget {
       onTap: () {
         context.push(
           RouteNames.category,
-          extra: 1,
+          extra: index,
         );
       },
       child: Padding(

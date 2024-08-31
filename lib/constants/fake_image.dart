@@ -6,4 +6,5 @@ class FakeImages{
   static const headphone = '${path}headphone.png';
   static const laptop = '${path}laptop.png';
   static const top = '${path}top.png';
+  static const user = '${path}user.png';
 }

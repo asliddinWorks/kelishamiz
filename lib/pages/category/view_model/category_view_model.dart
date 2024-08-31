@@ -221,9 +221,10 @@ class CategoryViewModel extends ChangeNotifier {
 
   List<List<CategoryEachModel>> categoryLists = [];
 
-  void initialize() {
+  void initialize(int id) {
     mainCategorySelection = List.generate(10, (index) => false);
-    mainCategorySelection.first = true;
+    mainCategorySelection[id] = true;
+    selectedMainIndex = id;
 
     categoryLists.clear();
     categoryLists.addAll([
@@ -238,7 +239,6 @@ class CategoryViewModel extends ChangeNotifier {
       personalItem,
       otherItem
     ]);
-    notifyListeners();
   }
 
   int selectedMainIndex = 0;

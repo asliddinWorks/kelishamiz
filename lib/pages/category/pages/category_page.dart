@@ -24,7 +24,7 @@ class _CategoryPageState extends State<CategoryPage> {
 
   @override
   void initState() {
-    context.read<CategoryViewModel>().initialize();
+    context.read<CategoryViewModel>().initialize(widget.id);
     super.initState();
   }
 
@@ -87,7 +87,7 @@ class _CategoryPageState extends State<CategoryPage> {
                 );
               },
             ),
-          ).padding(const EdgeInsets.symmetric(horizontal: 10)),
+          ).padding(const EdgeInsets.only(left: 10, right: 5)),
           // AspectRatio(
           //   aspectRatio: 1/2.65,
           //   child: GridView.count(
@@ -106,7 +106,7 @@ class _CategoryPageState extends State<CategoryPage> {
           // ),
           Expanded(
             child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 5),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
               itemCount: read.categoryLists[read.selectedMainIndex].length,
               itemBuilder: (context, index) {
                 return ItemCategoryEach(
