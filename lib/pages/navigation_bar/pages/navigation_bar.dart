@@ -2,10 +2,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
-
-import '../../../../constants/app_icons.dart';
-import '../../main/view_model/main_view_model.dart';
 
 class NavigationBar extends StatefulWidget {
   const NavigationBar({super.key, required this.child});

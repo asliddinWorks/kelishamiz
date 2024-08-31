@@ -10,4 +10,6 @@ import '../pages/main/pages/main_page.dart';
 import '../pages/navigation_bar/pages/navigation_bar.dart';
 import '../pages/product/pages/product_page.dart';
 
+import '../pages/navigation_bar/pages/navigation_bar.dart';
+
 part 'app_router.dart';
