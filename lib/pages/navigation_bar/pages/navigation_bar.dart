@@ -2,7 +2,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
+import 'package:kelishamiz/core/widgets/app_bar.dart';
+import 'package:kelishamiz/router/router.dart';
 import 'package:provider/provider.dart';
 
 import '../../../constants/app_icons.dart';
@@ -29,6 +32,7 @@ class _NavigationBarState extends State<NavigationBar> {
           backgroundColor: context.color.white,
           onTap: (index) {
             context.read<MainViewModel>().onTapNavBar(index);
+            if (index == 3) context.push(RouteNames.signUp);
           },
           currentIndex: 0,//context.watch<HomeViewModel>().currentIndex,
           items: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kelishamiz/constants/app_colors.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 
 class AppButton extends StatelessWidget {
@@ -6,7 +7,7 @@ class AppButton extends StatelessWidget {
 
   final double? height;
   final double? width;
-  final void Function() onPressed;
+  final void Function()? onPressed;
   final String text;
   final bool active;
   final Color? textColor;
@@ -25,6 +26,8 @@ class AppButton extends StatelessWidget {
       color: context.colorScheme.primary,
       minWidth: width,
       height: height,
+      disabledColor: context.color.grey,
+      disabledTextColor: Colors.black,
       child: Text(text, style: context.textStyle.buttonMediumActive,),
     )
         :

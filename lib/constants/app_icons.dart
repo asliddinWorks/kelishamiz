@@ -103,6 +103,13 @@ class AppIcons {
   static const icHeart = '${path}ic_heart.svg';
   static const icMessage = '${path}ic_message.svg';
   static const icCall = '${path}ic_call.svg';
+
+  /// Sign Up
+  static const icApple = '${path}ic_apple.svg';
+  static const icGoogle = '${path}ic_google.svg';
+  static const icTelegram = '${path}ic_telegram.svg';
+  static const icX = '${path}ic_x.svg';
+  static const icPulse = '${path}ic_+.svg';
 }
 
 

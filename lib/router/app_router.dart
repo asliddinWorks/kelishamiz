@@ -8,6 +8,9 @@ sealed class RouteNames {
   static const category = '/category';
   static const products = '/products';
   static const product = '/product';
+  static const signUp = '/sign_up';
+  static const confirmation = '/sign_up/confirmation';
+  static const rules = '/sign_up/rules';
 
 }
 
@@ -52,6 +55,24 @@ final GoRouter router = GoRouter(
       builder: (context, state) {
         final ProductModel product = state.extra as ProductModel;
         return ProductPage(productModel: product,);
+      },
+    ),
+    GoRoute(
+      path: RouteNames.signUp,
+      builder: (context, state) {
+        return const SignUpPage();
+      },
+    ),
+    GoRoute(
+      path: RouteNames.confirmation,
+      builder: (context, state) {
+        return const ConfirmationPage();
+      },
+    ),
+    GoRoute(
+      path: RouteNames.rules,
+      builder: (context, state) {
+        return const RulesPage();
       },
     ),
   ],

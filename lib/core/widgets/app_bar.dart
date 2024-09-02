@@ -1,8 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
-
+import 'package:kelishamiz/router/router.dart';
 import '../../constants/app_icons.dart';
 import 'rectangle_icon_button.dart';
 
@@ -88,7 +89,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     ),
                     const SizedBox(width: 5),
                     RectangleIconButton(
-                      onTap: () {},
+                      onTap: () {
+                        context.push(RouteNames.signUp);
+                      },
                       child: SvgPicture.asset(
                         AppIcons.icFilter,
                       ),
