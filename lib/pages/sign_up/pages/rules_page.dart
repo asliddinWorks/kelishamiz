@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
-import 'package:kelishamiz/pages/sign_up/widgets/sign_up_widget.dart';
+import 'package:kelishamiz/pages/sign_up/pages/widgets/sign_up_widget.dart';
+import 'package:provider/provider.dart';
+
+import '../view_model/sign_up_view_model.dart';
 
 class RulesPage extends StatefulWidget {
   const RulesPage({super.key});
@@ -14,6 +17,9 @@ class RulesPage extends StatefulWidget {
 class _RulesPageState extends State<RulesPage> {
   @override
   Widget build(BuildContext context) {
+
+    final read = context.read<SignUpViewModel>();
+    final watch = context.watch<SignUpViewModel>();
 
     return Scaffold(
       body: Padding(
@@ -27,8 +33,19 @@ class _RulesPageState extends State<RulesPage> {
               style: context.textTheme.bodyMedium),
             20.hGap,
 
-            const SignUpWidget(),
-            const SignUpWidget(),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: read.rules.length,
+              itemBuilder: (context, index){
+                return SignUpWidget(
+                  bodyRules: read.rulesCount[index],
+                  titleRules: read.rules[index],
+                );
+              },
+            ),
+            // const SignUpWidget(),
+            // const SignUpWidget(),
 
           ],
         ),

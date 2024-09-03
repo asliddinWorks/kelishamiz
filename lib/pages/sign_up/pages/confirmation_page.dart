@@ -49,45 +49,17 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
                   ],
                 ),
                 5.hGap,
-                Container(
-                  width: MediaQuery.sizeOf(context).width,
-                  height: 45,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: context.color.lightGrey, width: 1),
-                    color: context.color.iconBackgroundColor,
-                    borderRadius: BorderRadius.circular(5)
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        height: 45,
-                        width: MediaQuery.sizeOf(context).width * .7,
-                        child: TextField(
-                          decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                              const BorderRadius.all(Radius.circular(10)),
-                              borderSide: BorderSide(
-                                width: 1,
-                                color: AppColors.light.lightGrey,
-                              ),
-                            ),
-                            focusedBorder:  const OutlineInputBorder(
-                              borderRadius:  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide.none,
-                            ),
-                            alignLabelWithHint: true,
-                            border:  const OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                            ),
-                            fillColor: Colors.transparent,
-                            hintText: 'SMS kodini kiriting',
-                          ),
-                        ),
-                      ),
-                      Text('00:00  ', style: context.textTheme.bodyMedium!.copyWith(color: Colors.redAccent),),
-                    ],
+                TextField(
+                  maxLength: 6,
+                  decoration: InputDecoration(
+                    counterText: '',
+                    hintText: 'SMS kodini kiriting',
+                    suffixIcon: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('00:00  ', style: context.textTheme.bodyMedium!.copyWith(color: Colors.redAccent),),
+                      ],
+                    ),
                   ),
                 ),
                 15.hGap,
@@ -98,7 +70,8 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
                     Text('SMS kod kelmadi.', style: context.textTheme.bodyMedium!.copyWith(
                         fontSize: 12),
                     ),
-                    GestureDetector(
+                    InkWell(
+                      onTap: (){},
                       child: Text(' Qayta yuboring', style: context.textTheme.bodyMedium!.copyWith(
                           fontSize: 12,
                           color: context.colorScheme.primary),
@@ -138,8 +111,9 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
                       width: 60,
                       height: 60,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(color: context.color.grey.withOpacity(.4), width: 1)),
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(color: context.color.grey.withOpacity(.4), width: 1,),
+                      ),
                       child: SvgPicture.asset(AppIcons.icApple),
                     ),
                   ],
@@ -150,15 +124,8 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
                   height: 47,
                   width: MediaQuery.sizeOf(context).width,
                   text: 'Tasdiqlash',
-                  active: true,
                 ),
-                30.hGap,
-                Text('Ro’yhatdan o’tganmisiz?', style: context.textTheme.bodyMedium),
-                GestureDetector(
-                  child: Text('Sign In', style: context.textTheme.bodyMedium!.copyWith(
-                      color: context.colorScheme.primary)),
-                ),
-                30.hGap
+                50.hGap,
               ],
             ),
           ],

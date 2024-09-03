@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
           AppButton(
             onPressed: (){},
             height: 47,
-            text: "Ko'proq ko'rsatish", active: true,
+            text: "Ko'proq ko'rsatish",
           ).padding(const EdgeInsets.symmetric(horizontal: 10, vertical: 25)),
 
           ClipRRect(
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
           AppButton(
             onPressed:  (){},
             height: 47,
-            text: "Ko'proq ko'rsatish", active: true,
+            text: "Ko'proq ko'rsatish",
           ).padding(const EdgeInsets.only(left:  10,right: 10,  top:  25, bottom: 50)),
         ],
       )

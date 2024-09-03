@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/constants/app_icons.dart';
@@ -7,6 +8,7 @@ import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
 import 'package:kelishamiz/router/router.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 
 import '../view_model/sign_up_view_model.dart';
@@ -19,6 +21,7 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+
   @override
   Widget build(BuildContext context) {
 
@@ -45,8 +48,16 @@ class _SignUpPageState extends State<SignUpPage> {
                 50.hGap,
                 Text('telefon raqamni kiriting', style: context.textTheme.titleSmall),
                 5.hGap,
-                const TextField(
-                  decoration: InputDecoration(
+                TextField(
+                  keyboardType: TextInputType.phone,
+                  inputFormatters: [
+                    MaskTextInputFormatter(
+                      mask: '+998 ## ### ## ##',
+                      filter: { "#": RegExp(r'[0-9]') },
+                      type: MaskAutoCompletionType.lazy,
+                    ),
+                  ],
+                  decoration: const InputDecoration(
                     hintText: '+998 90 123 45 67',
                   ),
                 ),
@@ -123,7 +134,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   height: 47,
                   width: MediaQuery.sizeOf(context).width,
                   text: 'Davom etish',
-                  active: true,
                 ),
                 30.hGap,
                 Text('Ro’yhatdan o’tganmisiz?', style: context.textTheme.bodyMedium),
@@ -138,5 +148,40 @@ class _SignUpPageState extends State<SignUpPage> {
         ),
       ),
     );
+  }
+}
+
+
+class PhoneNumberFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
+    if (newValue.text.isEmpty) {
+      return newValue.copyWith(text: '');
+    } else if (newValue.text.compareTo(oldValue.text) != 0) {
+      var newText = newValue.text;
+
+      if (newText.length >= 14) {
+        newText = newText.substring(0, 14);
+      }
+
+      if (newText.length > 4) {
+        newText = newText.replaceRange(4, 5, ' ');
+      }
+      if (newText.length > 7) {
+        newText = newText.replaceRange(7, 8, ' ');
+      }if (newText.length > 10) {
+        newText = newText.replaceRange(10, 11, '-');
+      }
+      if (newText.length > 13) {
+        newText = newText.replaceRange(13, 14, '-');
+      }
+
+      return newValue.copyWith(
+          text: newText,
+          selection: TextSelection.collapsed(offset: newText.length));
+    } else {
+    return newValue;
+    }
   }
 }
