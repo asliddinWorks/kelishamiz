@@ -13,6 +13,7 @@ sealed class RouteNames {
   static const rules = '/sign_up/rules';
   static const profile = '/profile';
   static const message = '/message';
+  static const announcements = '/announcements';
 
 }
 
@@ -62,6 +63,12 @@ final GoRouter router = GoRouter(
             return const MessagePage();
           },
         ),
+        GoRoute(
+          path: RouteNames.message,
+          builder: (context, state) {
+            return const MessagePage();
+          },
+        ),
       ],
     ),
     GoRoute(
@@ -84,9 +91,9 @@ final GoRouter router = GoRouter(
       },
     ),
     GoRoute(
-      path: RouteNames.rules,
+      path: RouteNames.announcements,
       builder: (context, state) {
-        return const RulesPage();
+        return const AnnouncementsPage();
       },
     ),
   ],

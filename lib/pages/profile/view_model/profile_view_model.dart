@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:kelishamiz/router/router.dart';
 import '../../../constants/app_icons.dart';
 
 class ProfileViewModel extends ChangeNotifier {
@@ -30,5 +31,14 @@ class ProfileViewModel extends ChangeNotifier {
     const Color(0xff757790),
     Colors.brown.shade300,
     Colors.brown.shade300,
+  ];
+
+  List page = [
+    RouteNames.announcements,
+    RouteNames.message,
+    RouteNames.message,
+    RouteNames.message,
+    RouteNames.message,
+    RouteNames.message
   ];
 }

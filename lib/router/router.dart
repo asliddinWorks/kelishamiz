@@ -1,5 +1,6 @@
 
 import 'package:kelishamiz/core/data/models/product_model.dart';
+import 'package:kelishamiz/pages/announcements/pages/announcements_page.dart';
 import 'package:kelishamiz/pages/category/data/models/category_each_model.dart';
 import 'package:kelishamiz/pages/category/pages/category_page.dart';
 import 'package:kelishamiz/pages/home/pages/home_page.dart';

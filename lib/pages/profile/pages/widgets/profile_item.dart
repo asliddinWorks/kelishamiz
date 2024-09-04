@@ -1,27 +1,20 @@
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 
-import '../../../../router/router.dart';
-
 class ProfileItem extends StatelessWidget {
-  const ProfileItem({super.key, required this.icon, required this.title, required this.index, required this.color});
+  const ProfileItem({super.key, required this.icon, required this.title, required this.index, required this.color, required this.onTap});
 
   final Widget icon;
   final String title;
   final Color color;
   final int index;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
     return  GestureDetector(
-      onTap: () {
-        context.push(
-          RouteNames.message,
-          // extra: index,
-        );
-      },
+      onTap: onTap,
       child: SizedBox(
         height: 120,
         width: 90,
@@ -38,7 +31,7 @@ class ProfileItem extends StatelessWidget {
               height: 73,
               child: icon,
             ),
-            Text(title, style: context.textStyle.categoryCaptionSmall!.copyWith(height: 1.1), textAlign: TextAlign.center,),
+            Text(title, style: context.textStyle.categoryCaptionSmall.copyWith(height: 1.1), textAlign: TextAlign.center,),
           ],
         ),
       ),

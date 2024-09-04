@@ -11,6 +11,7 @@ class AppIcons {
   static const pathConstruction = 'assets/icons/construction_icons/';
   static const pathPersonal = 'assets/icons/personal_icons/';
   static const pathProfile = 'assets/icons/profile_icons/';
+  static const pathAnnouncement = 'assets/icons/announcement_icons/';
 
   /// category
   static const icCar = '${path}ic_car.svg';
@@ -119,6 +120,13 @@ class AppIcons {
   static const icProfileSaved = '${pathProfile}ic_profile_saved.svg';
   static const icProfileSearch = '${pathProfile}ic_profile_search.svg';
   static const icProfileSettings = '${pathProfile}ic_profile_settings.svg';
+
+  /// Announcement icon
+  static const icAnnouncementCall = '${pathAnnouncement}ic_announcement_call.svg';
+  static const icAnnouncementComment = '${pathAnnouncement}ic_announcement_comment.svg';
+  static const icAnnouncementDelete = '${pathAnnouncement}ic_announcement_delete.svg';
+  static const icAnnouncementLikes = '${pathAnnouncement}ic_announcement_likes.svg';
+  static const icAnnouncementSeen = '${pathAnnouncement}ic_announcement_seen.svg';
 }
 
 
