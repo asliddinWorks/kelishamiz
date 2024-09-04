@@ -32,7 +32,6 @@ class _NavigationBarState extends State<NavigationBar> {
           backgroundColor: context.color.white,
           onTap: (index) {
             context.read<MainViewModel>().onTapNavBar(index);
-            if (index == 3) context.push(RouteNames.signUp);
           },
           currentIndex: 0,//context.watch<HomeViewModel>().currentIndex,
           items: [

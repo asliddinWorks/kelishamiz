@@ -42,6 +42,7 @@ flutter:
     - assets/icons/personal_icons/
     - assets/icons/production_icons/
     - assets/icons/other_icons/
+    - assets/icons/profile_icons/
     - assets/images/
 
   # fonts:

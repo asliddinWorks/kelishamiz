@@ -10,6 +10,7 @@ class AppIcons {
   static const pathGarden = 'assets/icons/garden_icons/';
   static const pathConstruction = 'assets/icons/construction_icons/';
   static const pathPersonal = 'assets/icons/personal_icons/';
+  static const pathProfile = 'assets/icons/profile_icons/';
 
   /// category
   static const icCar = '${path}ic_car.svg';
@@ -110,6 +111,14 @@ class AppIcons {
   static const icTelegram = '${path}ic_telegram.svg';
   static const icX = '${path}ic_x.svg';
   static const icPulse = '${path}ic_+.svg';
+
+  /// Profile icon
+  static const icProfileAccount = '${pathProfile}ic_profile_account.svg';
+  static const icProfileAnnouncement = '${pathProfile}ic_profile_announcement.svg';
+  static const icProfileNews = '${pathProfile}ic_profile_news.svg';
+  static const icProfileSaved = '${pathProfile}ic_profile_saved.svg';
+  static const icProfileSearch = '${pathProfile}ic_profile_search.svg';
+  static const icProfileSettings = '${pathProfile}ic_profile_settings.svg';
 }
 
 

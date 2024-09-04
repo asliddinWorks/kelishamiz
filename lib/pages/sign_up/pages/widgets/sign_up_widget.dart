@@ -8,21 +8,24 @@ import '../../../../constants/app_icons.dart';
 import '../../view_model/sign_up_view_model.dart';
 
 class SignUpWidget extends StatelessWidget {
-  const SignUpWidget({super.key, required this.bodyRules, required this.titleRules});
+  const SignUpWidget({super.key, required this.bodyRules, required this.titleRules, required this.onTap, required this.isActive,});
 
   final String bodyRules;
   final String titleRules;
+  final void Function() onTap;
+  final bool isActive ;
+
   @override
   Widget build(BuildContext context) {
 
-    final read = context.read<SignUpViewModel>();
-    final watch = context.watch<SignUpViewModel>();
+    // final read = context.read<SignUpViewModel>();
+    // final watch = context.watch<SignUpViewModel>();
 
     return Column(
       children: [
         GestureDetector(
           onTap: (){
-            read.onTapPulse();
+            onTap();
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,7 +33,7 @@ class SignUpWidget extends StatelessWidget {
               Expanded(
                 child: Text(bodyRules, style: context.textTheme.titleMedium!.copyWith(fontSize: 15)),
               ),
-              watch.isPulse ? SvgPicture.asset(AppIcons.icX, width: 15, height: 15) :
+              isActive ? SvgPicture.asset(AppIcons.icX, width: 15, height: 15) :
               SvgPicture.asset(AppIcons.icPulse, width: 17, height: 17),
             ],
           ),
@@ -39,7 +42,7 @@ class SignUpWidget extends StatelessWidget {
           color: context.color.grey.withOpacity(.5),
           height: 40,
         ),
-        watch.isPulse? Column(
+        isActive? Column(
           children: [
             Text(titleRules),
             // const Text("Ushbu Shartnomada quyidagi atamalar quyidagi ma'nolarga ega: Veb-sayt - ma'muriyati Pudratchining zimmasiga yuklangan veb-sayti; Pudratchi -  veb-saytining ma'muriyati (moderator); foydalanuvchi - ushbu Shartnoma shartlarini qabul qilgan va Pudratchining xizmatlaridan foydalanadigan har qanday qobiliyatli jismoniy yoki yuridik shaxs; E'lon - foydalanuvchining cheksiz ko'p miqdordagi boshqa foydalanuvchilarga fuqarolik-huquqiy bitim tuzish bo'yicha ommaviy taklifi (taklifi) (tovarlarni sotib olish / sotish, ijaraga berish, xizmatlar ko'rsatish va hk)"),

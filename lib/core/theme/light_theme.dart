@@ -30,8 +30,8 @@ ThemeData lightTheme(BuildContext context) {
     //     size: 28,
     //     color: AppColors.primaryColor,
     //   ),
-      surfaceTintColor: AppColors.light.backgroundColor,
-      backgroundColor: AppColors.light.backgroundColor,
+      surfaceTintColor: AppColors.light.white,
+      backgroundColor: AppColors.light.white,
       // foregroundColor: Colors.red
     ),
 

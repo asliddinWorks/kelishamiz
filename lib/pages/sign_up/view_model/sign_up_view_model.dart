@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 
 class SignUpViewModel extends ChangeNotifier {
 
+  List<bool> rulesSelection = [];
+
   List<String> rules = [
     "1 Ushbu Shartnomada quyidagi atamalar quyidagi ma'nolarga ega: Veb-sayt - ma'muriyati Pudratchining zimmasiga yuklangan veb-sayti; Pudratchi -  veb-saytining ma'muriyati (moderator); foydalanuvchi - ushbu Shartnoma shartlarini qabul qilgan va Pudratchining xizmatlaridan foydalanadigan har qanday qobiliyatli jismoniy yoki yuridik shaxs; E'lon - foydalanuvchining cheksiz ko'p miqdordagi boshqa foydalanuvchilarga fuqarolik-huquqiy bitim tuzish bo'yicha ommaviy taklifi (taklifi) (tovarlarni sotib olish / sotish, ijaraga berish, xizmatlar ko'rsatish va hk)",
     "2 Ushbu Shartnomada quyidagi atamalar quyidagi ma'nolarga ega: Veb-sayt - ma'muriyati Pudratchining zimmasiga yuklangan veb-sayti; Pudratchi -  veb-saytining ma'muriyati (moderator); foydalanuvchi - ushbu Shartnoma shartlarini qabul qilgan va Pudratchining xizmatlaridan foydalanadigan har qanday qobiliyatli jismoniy yoki yuridik shaxs; E'lon - foydalanuvchining cheksiz ko'p miqdordagi boshqa foydalanuvchilarga fuqarolik-huquqiy bitim tuzish bo'yicha ommaviy taklifi (taklifi) (tovarlarni sotib olish / sotish, ijaraga berish, xizmatlar ko'rsatish va hk)",
@@ -24,6 +26,7 @@ class SignUpViewModel extends ChangeNotifier {
     "7. Shartnomaning amal qilish muddati"
     ];
 
+  bool isActiveButton = false;
   bool isPulse = false;
   bool isChecked = false;
   void onTapCheckBox() {
@@ -31,9 +34,26 @@ class SignUpViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void onTapPulse() {
-    isPulse = !isPulse;
+  // void onTapPulse() {
+  //   isPulse = !isPulse;
+  //   notifyListeners();
+  // }
+
+  void onTapButton(String value) {
+    isActiveButton = value.length == 6;
     notifyListeners();
   }
 
+  void initialize() {
+    rulesSelection = List.generate(7, (index) => false);
+    notifyListeners();
+  }
+
+  int rulesIndex = 0;
+  void onTapRules(int index) {
+    rulesIndex = index;
+    // rulesSelection = List.generate(7, (index) => false);
+    rulesSelection[index] = !rulesSelection[index];
+    notifyListeners();
+  }
 }

@@ -4,8 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:provider/provider.dart';
-
-import '../../../constants/app_colors.dart';
 import '../../../constants/app_icons.dart';
 import '../../../core/widgets/app_button.dart';
 import '../view_model/sign_up_view_model.dart';
@@ -51,6 +49,9 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
                 5.hGap,
                 TextField(
                   maxLength: 6,
+                  onChanged: (value){
+                    read.onTapButton(value);
+                  },
                   decoration: InputDecoration(
                     counterText: '',
                     hintText: 'SMS kodini kiriting',
@@ -120,7 +121,7 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
                 ),
                 30.hGap,
                 AppButton(
-                  onPressed: (){},
+                  onPressed: watch.isActiveButton ? (){} : null,
                   height: 47,
                   width: MediaQuery.sizeOf(context).width,
                   text: 'Tasdiqlash',

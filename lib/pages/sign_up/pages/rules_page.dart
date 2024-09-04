@@ -15,6 +15,12 @@ class RulesPage extends StatefulWidget {
 }
 
 class _RulesPageState extends State<RulesPage> {
+
+  @override
+  void initState() {
+    context.read<SignUpViewModel>().initialize();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -39,8 +45,12 @@ class _RulesPageState extends State<RulesPage> {
               itemCount: read.rules.length,
               itemBuilder: (context, index){
                 return SignUpWidget(
+                  onTap: (){
+                    read.onTapRules(index);
+                  },
                   bodyRules: read.rulesCount[index],
                   titleRules: read.rules[index],
+                  isActive: watch.rulesSelection[index],
                 );
               },
             ),

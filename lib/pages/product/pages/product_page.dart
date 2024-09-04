@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:kelishamiz/constants/app_colors.dart';
 import 'package:kelishamiz/constants/app_icons.dart';
 import 'package:kelishamiz/constants/fake_image.dart';
 import 'package:kelishamiz/core/data/models/product_model.dart';
