@@ -90,7 +90,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     const SizedBox(width: 5),
                     RectangleIconButton(
                       onTap: () {
-                        context.push(RouteNames.signUp);
+                        context.push(RouteNames.login);
                       },
                       child: SvgPicture.asset(
                         AppIcons.icFilter,

@@ -1,8 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
+import 'package:kelishamiz/router/router.dart';
 import 'package:provider/provider.dart';
 import '../../../constants/app_icons.dart';
 import '../../../core/widgets/app_button.dart';
@@ -121,7 +123,9 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
                 ),
                 30.hGap,
                 AppButton(
-                  onPressed: watch.isActiveButton ? (){} : null,
+                  onPressed: watch.isActiveButton ? (){
+                    context.push(RouteNames.register);
+                  } : null,
                   height: 47,
                   width: MediaQuery.sizeOf(context).width,
                   text: 'Tasdiqlash',

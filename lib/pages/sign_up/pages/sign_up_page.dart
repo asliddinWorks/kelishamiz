@@ -138,7 +138,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 30.hGap,
                 Text('Ro’yhatdan o’tganmisiz?', style: context.textTheme.bodyMedium),
                 GestureDetector(
-                  child: Text('Sign In', style: context.textTheme.bodyMedium!.copyWith(
+                  onTap: (){
+                    context.push(RouteNames.login);
+                  },
+                  child: Text('Kirish', style: context.textTheme.bodyMedium!.copyWith(
                       color: context.colorScheme.primary)),
                 ),
                 30.hGap
