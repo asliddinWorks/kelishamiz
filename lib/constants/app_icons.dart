@@ -10,6 +10,8 @@ class AppIcons {
   static const pathGarden = 'assets/icons/garden_icons/';
   static const pathConstruction = 'assets/icons/construction_icons/';
   static const pathPersonal = 'assets/icons/personal_icons/';
+  static const pathProfile = 'assets/icons/profile_icons/';
+  static const pathAnnouncement = 'assets/icons/announcement_icons/';
 
   /// category
   static const icCar = '${path}ic_car.svg';
@@ -103,6 +105,28 @@ class AppIcons {
   static const icHeart = '${path}ic_heart.svg';
   static const icMessage = '${path}ic_message.svg';
   static const icCall = '${path}ic_call.svg';
+
+  /// Sign Up
+  static const icApple = '${path}ic_apple.svg';
+  static const icGoogle = '${path}ic_google.svg';
+  static const icTelegram = '${path}ic_telegram.svg';
+  static const icX = '${path}ic_x.svg';
+  static const icPulse = '${path}ic_+.svg';
+
+  /// Profile icon
+  static const icProfileAccount = '${pathProfile}ic_profile_account.svg';
+  static const icProfileAnnouncement = '${pathProfile}ic_profile_announcement.svg';
+  static const icProfileNews = '${pathProfile}ic_profile_news.svg';
+  static const icProfileSaved = '${pathProfile}ic_profile_saved.svg';
+  static const icProfileSearch = '${pathProfile}ic_profile_search.svg';
+  static const icProfileSettings = '${pathProfile}ic_profile_settings.svg';
+
+  /// Announcement icon
+  static const icAnnouncementCall = '${pathAnnouncement}ic_announcement_call.svg';
+  static const icAnnouncementComment = '${pathAnnouncement}ic_announcement_comment.svg';
+  static const icAnnouncementDelete = '${pathAnnouncement}ic_announcement_delete.svg';
+  static const icAnnouncementLikes = '${pathAnnouncement}ic_announcement_likes.svg';
+  static const icAnnouncementSeen = '${pathAnnouncement}ic_announcement_seen.svg';
 }
 
 

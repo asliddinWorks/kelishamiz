@@ -1,10 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:kelishamiz/core/view_model/app_view_model.dart';
-import 'package:kelishamiz/main.dart';
 import 'package:kelishamiz/pages/favorite/pages/favorite_page.dart';
 import 'package:kelishamiz/pages/home/pages/home_page.dart';
 import 'package:kelishamiz/pages/main/view_model/main_view_model.dart';
+import 'package:kelishamiz/pages/profile/pages/profile_page.dart';
+import 'package:kelishamiz/pages/sign_up/pages/sign_up_page.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
@@ -27,9 +28,11 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       body: IndexedStack(
         index: context.watch<MainViewModel>().currentIndex,
-        children: [
+        children: const [
           HomePage(),
           FavoritePage(),
+          SizedBox(),
+          ProfilePage(),
         ],
       ),
     );

@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:kelishamiz/constants/app_colors.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 
 class AppButton extends StatelessWidget {
-  const AppButton({super.key, this.height, this.width, required this.onPressed, required this.text, required this.active, this.textColor});
+  const AppButton({super.key, this.height, this.width, required this.onPressed, required this.text,
+    this.appButtonType = AppButtonType.filled,
+    this.textColor,
+  });
 
   final double? height;
   final double? width;
-  final void Function() onPressed;
+  final void Function()? onPressed;
   final String text;
-  final bool active;
+  final AppButtonType appButtonType;
   final Color? textColor;
 
   @override
   Widget build(BuildContext context) {
-    return active
-        ?
+    return AppButtonType.filled == appButtonType ?
     MaterialButton(
       onPressed: onPressed,
       highlightElevation: 0,
@@ -25,6 +28,8 @@ class AppButton extends StatelessWidget {
       color: context.colorScheme.primary,
       minWidth: width,
       height: height,
+      disabledColor: context.color.grey,
+      disabledTextColor: Colors.black,
       child: Text(text, style: context.textStyle.buttonMediumActive,),
     )
         :
@@ -52,3 +57,4 @@ class AppButton extends StatelessWidget {
   }
 }
 
+enum AppButtonType { filled, outlined }

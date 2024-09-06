@@ -30,9 +30,38 @@ ThemeData lightTheme(BuildContext context) {
     //     size: 28,
     //     color: AppColors.primaryColor,
     //   ),
-      surfaceTintColor: AppColors.light.backgroundColor,
-      backgroundColor: AppColors.light.backgroundColor,
+      surfaceTintColor: AppColors.light.white,
+      backgroundColor: AppColors.light.white,
       // foregroundColor: Colors.red
+    ),
+
+    /// TextField Theme
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      // fillColor: context.color.iconBackgroundColor,
+      fillColor: AppColors.light.backgroundColor,
+      contentPadding: const EdgeInsets.all(5),
+      hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+        color: AppColors.light.grey,
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius:
+        const BorderRadius.all(Radius.circular(10)),
+        borderSide: BorderSide(
+          width: 1,
+          color: AppColors.light.lightGrey,
+        ),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: const BorderRadius.all(Radius.circular(5)),
+        borderSide: BorderSide(width: 2, color: AppColors.light.lightGrey),
+      ),
+      alignLabelWithHint: true,
+      border: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: AppColors.light.grey,
+        ),
+      ),
     ),
 
     /// ElevatedButton Theme
@@ -95,18 +124,15 @@ ThemeData lightTheme(BuildContext context) {
       // ),
       //
       bodyLarge: GoogleFonts.poppins(
-        textStyle: const TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.w400,
-        ),
+        fontSize: 15,
+        fontWeight: FontWeight.w400,
+        color: AppColors.light.black,
       ),
 
       bodyMedium: GoogleFonts.poppins(
-        textStyle: TextStyle(
-          fontSize: 13,
-          fontWeight: FontWeight.w400,
-          color: AppColors.light.black,
-        ),
+        fontSize: 13,
+        fontWeight: FontWeight.w400,
+        color: AppColors.light.black,
       ),
       //
       // bodySmall: GoogleFonts.poppins(

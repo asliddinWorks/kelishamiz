@@ -40,7 +40,6 @@ class AppColors extends ThemeExtension<AppColors> {
   final Color buttonBorder;
   final Color buttonText;
   final Color categoryItem;
-
   static AppColors light = AppColors(
     lightGrey: const Color(0xffF4F4F4),
     iconBackgroundColor: const Color(0xffF9F9F9),
