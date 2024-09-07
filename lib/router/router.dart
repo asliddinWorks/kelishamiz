@@ -3,6 +3,7 @@ import 'package:kelishamiz/core/data/models/product_model.dart';
 import 'package:kelishamiz/pages/announcements/pages/announcements_page.dart';
 import 'package:kelishamiz/pages/category/data/models/category_each_model.dart';
 import 'package:kelishamiz/pages/category/pages/category_page.dart';
+import 'package:kelishamiz/pages/fill_account/pages/fill_account_page.dart';
 import 'package:kelishamiz/pages/home/pages/home_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/pages/sign_up/pages/login_page.dart';

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kelishamiz/core/theme/theme.dart';
 import 'package:kelishamiz/pages/announcements/view_model/announcements_view_model.dart';
 import 'package:kelishamiz/pages/category/view_model/category_view_model.dart';
+import 'package:kelishamiz/pages/fill_account/view_model/fill_view_model.dart';
 import 'package:kelishamiz/pages/main/view_model/main_view_model.dart';
 import 'package:kelishamiz/pages/message/view_model/message_view_model.dart';
 import 'package:kelishamiz/pages/profile/view_model/profile_view_model.dart';
@@ -46,6 +47,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => AnnouncementsViewModel(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => FillViewModel(),
         ),
 
       ],

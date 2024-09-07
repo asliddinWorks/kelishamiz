@@ -1,11 +1,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/constants/app_icons.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
 import 'package:kelishamiz/pages/announcements/data/model/announcements_model.dart';
+import 'package:kelishamiz/router/router.dart';
 
 class AnnouncementsItem extends StatelessWidget {
   const AnnouncementsItem({super.key, required this.model});
@@ -90,7 +92,9 @@ class AnnouncementsItem extends StatelessWidget {
             AppButton(
               height: 42,
               width: MediaQuery.sizeOf(context).width * .778,
-              onPressed: (){},
+              onPressed: (){
+                context.push(RouteNames.fillAccount);
+              },
               text: 'Reklama qilish',
             ),
             8.wGap,
