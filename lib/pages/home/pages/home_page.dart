@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kelishamiz/constants/app_icons.dart';
@@ -170,15 +171,17 @@ class _HomePageState extends State<HomePage> {
           ),
 
           TextFieldWithTitle(
-            padding: const EdgeInsets.all(10),
-            controller: TextEditingController(),
+            controller: controller,
             title: 'Tovar turlari',
-            mask: '+998 ## ### ## ##',
-            textInputType: TextInputType.phone,
+            // mask: '+998 ## ### ## ##',
+            // keyboardType: TextInputType.phone,
+            padding: const EdgeInsets.all(10),
           ),
 
           DropDownWithTitle(
             title: 'Tovar turlari',
+            dropdownValue: dropdownValue,
+            padding: const EdgeInsets.all(10),
             onChanged: (value) {
               dropdownValue = value.toString();
               setState(() {});
@@ -186,7 +189,6 @@ class _HomePageState extends State<HomePage> {
             items: items.map((e) {
               return e;
             },).toList(),
-            dropdownValue: dropdownValue,
           ),
 
           AppButton(
@@ -199,10 +201,14 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  String dropdownValue = 'qwdqdw';
+  TextEditingController controller = TextEditingController();
+  String dropdownValue = '';
   List<String> items = [
     'qwdqdw',
-    'wqdhi'
+    'wqdhi',
+    'wqdh1i',
+
+
   ];
 
 }

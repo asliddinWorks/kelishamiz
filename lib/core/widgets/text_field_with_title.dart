@@ -14,8 +14,8 @@ class TextFieldWithTitle extends StatelessWidget {
     this.titleStyle,
     this.hintStyle,
     this.minLines,
-    this.maxLines,
-    this.textInputType,
+    this.maxLines = 1,
+    this.keyboardType,
     this.mask,
 
   });
@@ -30,7 +30,7 @@ class TextFieldWithTitle extends StatelessWidget {
   final TextStyle? hintStyle;
   final int? minLines;
   final int? maxLines;
-  final TextInputType? textInputType;
+  final TextInputType? keyboardType;
   final String? mask;
 
   @override
@@ -47,10 +47,11 @@ class TextFieldWithTitle extends StatelessWidget {
             controller: controller,
             minLines: minLines,
             maxLines: maxLines,
-            keyboardType: const TextInputType.numberWithOptions(signed: true, decimal: true),
+            keyboardType: keyboardType,
             inputFormatters: [
               MaskTextInputFormatter(
                 mask: mask,
+                filter: { "#": RegExp(r'[0-9]'), "*" : RegExp(r'[a-zA-Z0-9]') },
                 // filter: { "#": RegExp(r'[0-9]') },
                 // type: MaskAutoCompletionType.lazy,
               ),
