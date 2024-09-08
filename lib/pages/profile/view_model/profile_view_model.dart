@@ -38,7 +38,7 @@ class ProfileViewModel extends ChangeNotifier {
     RouteNames.message,
     RouteNames.message,
     RouteNames.message,
-    RouteNames.message,
+    RouteNames.paymentTable,
     RouteNames.message
   ];
 }

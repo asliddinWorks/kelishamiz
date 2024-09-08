@@ -17,6 +17,8 @@ sealed class RouteNames {
   static const login = '/sign_up/login';
   static const register = '/sign_up/register';
   static const fillAccount = '/fill_account';
+  static const fill = '/fill_account/fill_page';
+  static const paymentTable = '/fill_account/payment_table';
 
 }
 
@@ -115,6 +117,18 @@ final GoRouter router = GoRouter(
       path: RouteNames.fillAccount,
       builder: (context, state) {
         return const FillAccountPage();
+      },
+    ),
+    GoRoute(
+      path: RouteNames.fill,
+      builder: (context, state) {
+        return const FillPage();
+      },
+    ),
+    GoRoute(
+      path: RouteNames.paymentTable,
+      builder: (context, state) {
+        return const PaymentTablePage();
       },
     ),
   ],

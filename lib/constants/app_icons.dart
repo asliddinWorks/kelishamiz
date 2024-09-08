@@ -127,6 +127,10 @@ class AppIcons {
   static const icAnnouncementDelete = '${pathAnnouncement}ic_announcement_delete.svg';
   static const icAnnouncementLikes = '${pathAnnouncement}ic_announcement_likes.svg';
   static const icAnnouncementSeen = '${pathAnnouncement}ic_announcement_seen.svg';
+
+  /// Table icon
+  static const icInput = '${path}ic_input.svg';
+  static const icOutput = '${path}ic_output.svg';
 }
 
 

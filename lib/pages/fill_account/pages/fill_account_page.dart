@@ -24,12 +24,12 @@ class _FillAccountPageState extends State<FillAccountPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
-        child: ListView.builder(
-          // gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          //   crossAxisCount: 1,
-          //   childAspectRatio: 1/1,
-          //   mainAxisSpacing: 7,
-          // ),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 1,
+            childAspectRatio: 1/1,
+            mainAxisSpacing: 7,
+          ),
           itemCount: read.tariffs.length,
           itemBuilder: (context, index) => FillItem(
             model: read.tariffs[index],
