@@ -46,22 +46,25 @@ ThemeData lightTheme(BuildContext context) {
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius:
-        const BorderRadius.all(Radius.circular(10)),
+        const BorderRadius.all(Radius.circular(5)),
         borderSide: BorderSide(
           width: 1,
-          color: AppColors.light.lightGrey,
+          color: AppColors.light.grey.withOpacity(.5),
         ),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: const BorderRadius.all(Radius.circular(5)),
-        borderSide: BorderSide(width: 2, color: AppColors.light.lightGrey),
-      ),
-      alignLabelWithHint: true,
-      border: OutlineInputBorder(
         borderSide: BorderSide(
-          color: AppColors.light.grey,
+          width: 2,
+          color: AppColors.light.grey.withOpacity(.5),
         ),
       ),
+      alignLabelWithHint: true,
+      // border: OutlineInputBorder(
+      //   borderSide: BorderSide(
+      //     color: AppColors.light.grey,
+      //   ),
+      // ),
     ),
 
     /// ElevatedButton Theme
