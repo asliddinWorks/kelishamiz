@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kelishamiz/core/theme/theme.dart';
+import 'package:kelishamiz/pages/add/view_model/add_view_model.dart';
 import 'package:kelishamiz/pages/announcements/view_model/announcements_view_model.dart';
 import 'package:kelishamiz/pages/category/view_model/category_view_model.dart';
 import 'package:kelishamiz/pages/fill_account/view_model/fill_view_model.dart';
@@ -50,6 +51,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => FillViewModel(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => AddViewModel(),
         ),
 
       ],

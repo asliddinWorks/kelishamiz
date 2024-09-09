@@ -170,6 +170,10 @@ class _HomePageState extends State<HomePage> {
             },
           ),
 
+          Transform.translate(offset: Offset(0,1),
+            child: Text('asdas'),
+          ),
+
           TextFieldWithTitle(
             controller: controller,
             title: 'Tovar turlari',

@@ -22,16 +22,16 @@ class DropDownWithTitle extends StatelessWidget {
   final EdgeInsets padding;
   final EdgeInsets? contentPadding;
   final double spaceBetweenTitleAndButton;
-  final void Function(String? value) onChanged;
-  final String dropdownValue;
+  final void Function(dynamic value) onChanged;
+  final Object dropdownValue;
   final BorderRadius? borderRadius;
-  final List<String> items;
+  final List items;
   final Widget? icon;
 
   @override
   Widget build(BuildContext context) {
 
-    String value = dropdownValue;
+    Object value = dropdownValue;
     if (!items.contains(dropdownValue)) {
       value = items.first;
     }
@@ -52,7 +52,7 @@ class DropDownWithTitle extends StatelessWidget {
                 color: context.color.grey.withOpacity(.5),
               ),
             ),
-            child: DropdownButton<String>(
+            child: DropdownButton(
               onChanged: onChanged,
               value: value,
               isExpanded: true,

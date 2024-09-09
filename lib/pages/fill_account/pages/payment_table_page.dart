@@ -71,13 +71,15 @@ class _PaymentTablePageState extends State<PaymentTablePage> {
             ),
           ),
           40.hGap,
+
           ToggleSwitch(
             borderWidth: 1,
+            dividerMargin: 10,
             borderColor: [
               context.color.grey.withOpacity(.2),
             ],
             customHeights: const [50, 50, 50],
-            customWidths: [context.width * .31, context.width * .31, context.width * .31],
+            customWidths: [.31.wp(context), .31.wp(context), .31.wp(context)],
             inactiveBgColor:
               context.color.lightGrey.withOpacity(.6),
             activeBgColor: [
@@ -85,12 +87,15 @@ class _PaymentTablePageState extends State<PaymentTablePage> {
             ],
             initialLabelIndex: watch.tableType,
             totalSwitches: 3,
+            animate: true,
+            animationDuration: 100,
             labels: const ['Barchasi', 'Chiqimlar', 'Kirimlar'],
             onToggle: (index) {
               read.changeTableType(index);
               // print('switched to: $index');
             },
           ).padding(const EdgeInsets.all(15)),
+
           Container(
             height: 58,
             margin: const EdgeInsets.symmetric(horizontal: 15),
