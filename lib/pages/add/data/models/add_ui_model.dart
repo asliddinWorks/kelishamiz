@@ -1,10 +1,17 @@
 
 import 'package:flutter/material.dart';
 
-class AddUIModel {
+class AddCategoryUIModel {
+  String title = '';
+  String selectedProductName = '';
+  List products = [];
+  AddCategoryUIModel({this.title = '', this.products = const [], this.selectedProductName = ''});
+}
+
+class AddProductUIModel {
   String title = '';
   List items = [];
-  AddUIModel({this.title = '', this.items = const []});
+  AddProductUIModel({this.title = '', this.items = const []});
 }
 
 class TextFieldModel {

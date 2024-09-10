@@ -33,7 +33,7 @@ class _AddPageState extends State<AddPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  watch.selectedAddUIModel.title,
+                  watch.selectedAddCategoryUIModel.title,
                   style: context.textTheme.titleLarge,
                 ),
                 const TextFieldWithTitle(
@@ -49,20 +49,37 @@ class _AddPageState extends State<AddPage> {
                   keyboardType: TextInputType.phone,
                 ),
                 DropDownWithTitle(
-                  title: 'Kategoriya',
-                  dropdownValue: watch.selectedAddUIModel.title,
-                  items: read.addUIModelList.map((e) {
-                    return e.title;
-                  },).toList(),
                   onChanged: (value) {
                     read.onChooseCategory(value);
                   },
+                  title: 'Kategoriya',
+                  dropdownValue: watch.selectedAddCategoryUIModel.title,
+                  items: read.addCategoryUIModelList.map((e) {
+                    return e.title;
+                  },).toList(),
                 ),
               ].paddingEach(const EdgeInsets.symmetric(horizontal: 15, vertical: 10)),
             ),
+
+            /// Select product
+            if (watch.selectedAddCategoryUIModel.products.isNotEmpty)
+            DropDownWithTitle(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              onChanged: (value) {
+                read.onChooseProduct(value);
+              },
+              title: 'Tovar turi',
+              items: read.selectedAddCategoryUIModel.products.map((e) {
+                return e.title;
+              }).toList(),
+              dropdownValue: watch.selectedAddProductUIModel!.title,
+            ),
+
             /// maxsus itemlar
+
+            if (watch.selectedAddProductUIModel != null)
             Column(
-              children: read.selectedAddUIModel.items.map((e) {
+              children: read.selectedAddProductUIModel!.items.map((e) {
                 if (e is DropdownModel) {
                   return DropDownWithTitle(
                     padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
@@ -88,6 +105,8 @@ class _AddPageState extends State<AddPage> {
               },).toList(),
             ),
 
+
+            if (watch.isCategorySelect)
             Column(
               children: [
                 const TextFieldWithTitle(
@@ -98,6 +117,16 @@ class _AddPageState extends State<AddPage> {
                   title: "Tavsif(Tavsigfa to’liqroq ma’lumot yozing)",
                   maxLines: 5,
                 ),
+                Switch.adaptive(
+                  activeColor: context.colorScheme.primary,
+                  value: true,
+                  thumbIcon: WidgetStateProperty.all(Icon(
+                    Icons.pause,
+                    color: context.color.lightGrey,
+                  )),
+                  onChanged: (value) {
+
+                },)
               ].paddingEach(const EdgeInsets.symmetric(horizontal: 15, vertical: 10)),
             ),
           ],

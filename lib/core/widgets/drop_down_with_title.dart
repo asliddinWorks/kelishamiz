@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 
@@ -11,6 +10,7 @@ class DropDownWithTitle extends StatelessWidget {
     this.contentPadding,
     this.spaceBetweenTitleAndButton = 5,
     required this.onChanged,
+    this.onTap,
     required this.dropdownValue,
     this.borderRadius,
     required this.items,
@@ -23,6 +23,7 @@ class DropDownWithTitle extends StatelessWidget {
   final EdgeInsets? contentPadding;
   final double spaceBetweenTitleAndButton;
   final void Function(dynamic value) onChanged;
+  final Function()? onTap;
   final Object dropdownValue;
   final BorderRadius? borderRadius;
   final List items;
@@ -48,12 +49,14 @@ class DropDownWithTitle extends StatelessWidget {
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
               borderRadius: borderRadius ?? BorderRadius.circular(5),
+              color: context.color.backgroundColor,
               border: Border.all(
-                color: context.color.grey.withOpacity(.5),
+                color: context.color.grey.withOpacity(.2),
               ),
             ),
             child: DropdownButton(
               onChanged: onChanged,
+              onTap: onTap,
               value: value,
               isExpanded: true,
               underline: const SizedBox.shrink(),

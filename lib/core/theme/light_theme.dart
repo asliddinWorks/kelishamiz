@@ -49,14 +49,14 @@ ThemeData lightTheme(BuildContext context) {
         const BorderRadius.all(Radius.circular(5)),
         borderSide: BorderSide(
           width: 1,
-          color: AppColors.light.grey.withOpacity(.5),
+          color: AppColors.light.grey.withOpacity(.2),
         ),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: const BorderRadius.all(Radius.circular(5)),
         borderSide: BorderSide(
           width: 2,
-          color: AppColors.light.grey.withOpacity(.5),
+          color: AppColors.light.grey.withOpacity(.2),
         ),
       ),
       alignLabelWithHint: true,
