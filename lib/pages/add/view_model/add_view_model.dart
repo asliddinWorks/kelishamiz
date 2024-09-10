@@ -5,13 +5,14 @@ import 'package:kelishamiz/pages/add/data/models/add_ui_model.dart';
 class AddViewModel extends ChangeNotifier {
   List<AddUIModel> addUIModelList = [
     AddUIModel(
-      title: 'Kompyuter',
+      title: 'Transport',
       items: [
         DropdownModel(
           items: [
-            'w',
-            '123',
-            '234',
+            'Yengil avtomobil',
+            'Yuk tashish va maxusus transport',
+            'Motosikl va mototexnika',
+            'Ehtiyot qismlar va aksesurarlar',
           ],
           title: 'pppppp',
           value: '',
@@ -37,6 +38,18 @@ class AddViewModel extends ChangeNotifier {
             '1212',
             '23r2ve',
           ],
+          title: 'Tovar turi', 
+        ),
+      ]
+    ),
+    AddUIModel(
+      title: 'Mebel',
+      items: [
+        DropdownModel(
+          items: [
+            '1212',
+            '23r2ve',
+          ],
           title: 'Tovar turi',
         ),
       ]
@@ -49,7 +62,8 @@ class AddViewModel extends ChangeNotifier {
   void onChooseCategory(String value) {
     int index = addUIModelList.indexWhere((element) {
       return element.title == value;
-    },);
+      },
+    );
     print(index);
     selectedAddUIModel = addUIModelList[index];
     notifyListeners();
