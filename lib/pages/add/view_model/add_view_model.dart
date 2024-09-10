@@ -3,71 +3,123 @@ import 'package:flutter/material.dart';
 import 'package:kelishamiz/pages/add/data/models/add_ui_model.dart';
 
 class AddViewModel extends ChangeNotifier {
-  List<AddUIModel> addUIModelList = [
-    AddUIModel(
-      title: 'Transport',
-      items: [
-        DropdownModel(
+  /// categories
+  List<AddCategoryUIModel> addCategoryUIModelList = [
+
+    AddCategoryUIModel(
+      title: "",
+    ),
+
+    AddCategoryUIModel(
+      title: 'Kompyuter jihozlari',
+      products: [
+        AddProductUIModel(
+          title: 'Klaviatura',
           items: [
-            'Yengil avtomobil',
-            'Yuk tashish va maxusus transport',
-            'Motosikl va mototexnika',
-            'Ehtiyot qismlar va aksesurarlar',
+            DropdownModel(
+              items: [
+                'Yengil avtomobil',
+                'Yuk tashish va maxusus transport',
+              ],
+              title: 'Tovar turi',
+              value: '',
+            ),
+            TextFieldModel(
+              controller: TextEditingController(),
+              title: 'asdasd',
+              hintText: 'ioijoij',
+            ),
           ],
-          title: 'pppppp',
-          value: '',
         ),
-        TextFieldModel(
-          controller: TextEditingController(),
-          title: 'asdasd',
-          hintText: 'ioijoij',
+        AddProductUIModel(
+          title: 'Sichqoncha',
         ),
-        TextFieldModel(
-          controller: TextEditingController(),
-          title: 'asdasd',
-          hintText: 'ioijoij',
+      ]
+    ),
+
+    AddCategoryUIModel(
+      title: 'Mebel',
+      products: [
+        AddProductUIModel(
+          title: 'Stol',
+        ),
+        AddProductUIModel(
+          title: 'Stul',
         ),
       ],
     ),
 
-    AddUIModel(
-      title: 'Mebel',
-      items: [
-        DropdownModel(
+    AddCategoryUIModel(
+      title: 'Uy joy',
+      products: [
+        AddProductUIModel(
+          title: 'Kvartira',
           items: [
-            '1212',
-            '23r2ve',
+            TextFieldModel(
+              controller: TextEditingController(),
+              title: 'asdasd',
+              hintText: 'ioijoij',
+            ),
+            DropdownModel(
+              title: 'Xonanalar soni',
+              value: '',
+              items: [
+                '1',
+                '2',
+              ],
+            )
           ],
-          title: 'Tovar turi', 
         ),
-      ]
-    ),
-    AddUIModel(
-      title: 'Mebel',
-      items: [
-        DropdownModel(
-          items: [
-            '1212',
-            '23r2ve',
-          ],
-          title: 'Tovar turi',
+        AddProductUIModel(
+          title: 'Xovli',
         ),
-      ]
+      ],
     ),
   ];
 
-  AddUIModel selectedAddUIModel = AddUIModel(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /// functions
+  AddCategoryUIModel selectedAddCategoryUIModel = AddCategoryUIModel(
     title: "E'lon joylash",
   );
+  AddProductUIModel? selectedAddProductUIModel;
+
+  bool isCategorySelect = false;
   void onChooseCategory(String value) {
-    int index = addUIModelList.indexWhere((element) {
+    int index = addCategoryUIModelList.indexWhere((element) {
       return element.title == value;
-      },
-    );
-    print(index);
-    selectedAddUIModel = addUIModelList[index];
+    },);
+    selectedAddCategoryUIModel = addCategoryUIModelList[index];
+    selectedAddProductUIModel = selectedAddCategoryUIModel.products.first;
+
+    if (!isCategorySelect) {
+      addCategoryUIModelList.removeAt(0);
+    }
+    isCategorySelect = true;
     notifyListeners();
   }
+
+  void onChooseProduct(String value) {
+    int index = selectedAddCategoryUIModel.products.indexWhere((element) {
+      return element.title == value;
+    },);
+    selectedAddProductUIModel = selectedAddCategoryUIModel.products[index];
+    notifyListeners();
+  }
+
 }
 
 
