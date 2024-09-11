@@ -23,7 +23,6 @@ class _SettingsPageState extends State<SettingsPage> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,11 +80,8 @@ class _SettingsPageState extends State<SettingsPage> {
 
                 ].paddingEach(const EdgeInsets.all(15)),
               ),
-
               Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Text('Profildan chiqish'),
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
