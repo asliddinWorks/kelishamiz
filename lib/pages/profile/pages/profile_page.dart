@@ -32,9 +32,9 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Padding(
           padding: const EdgeInsets.all(18),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              100.hGap,
               AspectRatio(
                 aspectRatio: 1/.57,
                 child: Container(
