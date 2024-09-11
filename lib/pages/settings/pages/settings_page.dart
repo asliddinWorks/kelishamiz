@@ -1,4 +1,6 @@
 
+import 'package:animated_toggle_switch/animated_toggle_switch.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
@@ -32,7 +34,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   ),
                   DropDownWithTitle(
                     title: 'Hudud',
-                    onChanged: (value){},
+                    onChanged: (value) {},
                     dropdownValue: '',
                     items: const [
                       'Andijon'
@@ -42,7 +44,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     title: 'Manzil',
                   ),
                   AppButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     text: 'Saqlash',
                   ),
 
@@ -52,7 +54,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     keyboardType: TextInputType.phone,
                   ),
                   AppButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     text: 'Saqlash',
                   ),
 
@@ -66,7 +68,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     title: 'Yangi parol qayta',
                   ),
                   AppButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     text: 'Saqlash',
                   ),
 
@@ -74,7 +76,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     title: 'Yangi e-mail',
                   ),
                   AppButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     text: 'Saqlash',
                   ),
 
@@ -85,12 +87,13 @@ class _SettingsPageState extends State<SettingsPage> {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: context.color.lightGrey,
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(color: context.color.grey.withOpacity(.2))
+                        color: context.color.lightGrey,
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                            color: context.color.grey.withOpacity(.2))
                     ),
                     child: AppButton(
-                      onPressed: (){},
+                      onPressed: () {},
                       text: 'Profildan chiqish',
                       width: double.infinity,
                       appButtonType: AppButtonType.outlined,
@@ -99,14 +102,16 @@ class _SettingsPageState extends State<SettingsPage> {
                   ),
 
                   TextButton(
-                    onPressed: (){},
-                    child: const Text("Profilni o'chirish", style: TextStyle(color: Colors.red),),
+                    onPressed: () {},
+                    child: const Text("Profilni o'chirish",
+                      style: TextStyle(color: Colors.red),),
                     // text: "Profildan o'chirish",
                     // width: double.infinity,
                     // appButtonType: AppButtonType.outlined,
                     // textColor: Colors.red,
                   ),
-                ].paddingEach(const EdgeInsets.symmetric(vertical: 5, horizontal: 15)),
+                ].paddingEach(
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 15)),
               ),
             ],
           ),
@@ -115,3 +120,16 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 }
+//   @override
+//   void initState() {
+//     final switchRenderObject = _switchKey.currentContext?.findRenderObject();
+//     if (switchRenderObject != null) {
+//       final switchWidth = switchRenderObject.size.width;
+//       print('Switch width: $switchWidth');
+//     }
+//     super.initState();
+//   }
+//
+// }
+//
+//
