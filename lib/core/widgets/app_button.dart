@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kelishamiz/constants/app_colors.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({super.key, this.height, this.width, required this.onPressed, required this.text,
     this.appButtonType = AppButtonType.filled,
-    this.textColor,
+    this.textColor, this.fillTextStyle, this.outlinedTextStyle,
   });
 
   final double? height;
@@ -14,6 +13,8 @@ class AppButton extends StatelessWidget {
   final String text;
   final AppButtonType appButtonType;
   final Color? textColor;
+  final TextStyle? fillTextStyle;
+  final TextStyle? outlinedTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +31,11 @@ class AppButton extends StatelessWidget {
       height: height,
       disabledColor: context.color.grey,
       disabledTextColor: Colors.black,
-      child: Text(text, style: context.textStyle.buttonMediumActive,),
-    )
-        :
+      child: Text(
+        text,
+        style: fillTextStyle ?? context.textStyle.buttonMediumActive,
+      ),
+    ) :
     MaterialButton(
       onPressed: onPressed,
       highlightElevation: 0,
@@ -49,7 +52,7 @@ class AppButton extends StatelessWidget {
       color: context.color.backgroundColor,
       child: Text(
         text,
-        style: context.textStyle.buttonMediumNotActive.copyWith(
+        style: outlinedTextStyle ?? context.textStyle.buttonMediumNotActive.copyWith(
           color: textColor ?? context.color.black,
         ),
       ),
