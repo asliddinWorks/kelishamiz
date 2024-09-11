@@ -110,7 +110,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     ProfileItem(
                       onTap: () {
-                        context.push(RouteNames.message,);
+                        // context.push(RouteNames.message,);
                       },
                       title: 'Qidiruvlar',
                       icon: SvgPicture.asset(AppIcons.icProfileSearch),
@@ -126,7 +126,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     ProfileItem(
                       onTap: () {
-                        context.push(RouteNames.message,);
+                        context.push(RouteNames.settingsPage,);
                       },
                       title: 'Sozlamalar',
                       icon: SvgPicture.asset(AppIcons.icProfileSettings),
