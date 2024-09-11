@@ -33,42 +33,37 @@ class _NavigationBarState extends State<NavigationBar> {
           onTap: (index) {
             context.read<MainViewModel>().onTapNavBar(index);
           },
-          currentIndex: 0,//context.watch<HomeViewModel>().currentIndex,
+          currentIndex: 0,
           items: [
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 AppIcons.icHome,
               ),
-              // activeIcon: Image.asset(
-              //   'AppIcons.',
-              // ),
               label: 'Asosiy',
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 AppIcons.icFavorite,
               ),
-              // activeIcon: Image.asset(
-              //   'AppIcons.',
-              // ),
               label: 'Saqlanganar',
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 AppIcons.icAdd,
               ),
-              // activeIcon: Image.asset(
-              //   'AppIcons.createSelect,'
-              // ),
               label: "Qo'shish",
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                AppIcons.icMessage,
+                colorFilter: ColorFilter.mode(context.colorScheme.primary, BlendMode.srcIn),
+              ),
+              label: 'Xabarlar',
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 AppIcons.icProfile,
               ),
-              // activeIcon: Image.asset(
-              //   'AppIcons.notificationsSelect,'
-              // ),
               label: 'Profil',
             ),
           ],
