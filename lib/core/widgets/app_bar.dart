@@ -71,7 +71,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                                 borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
                                 borderSide:
-                                BorderSide(width: 2, color: context.color.lightGrey),
+                                BorderSide(width: 1, color: context.color.lightGrey),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius:
