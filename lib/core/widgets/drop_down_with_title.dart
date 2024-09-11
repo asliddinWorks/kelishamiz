@@ -6,6 +6,7 @@ class DropDownWithTitle extends StatelessWidget {
   const DropDownWithTitle({super.key,
     required this.title,
     this.titleStyle,
+    this.style,
     this.padding = EdgeInsets.zero,
     this.contentPadding,
     this.spaceBetweenTitleAndButton = 5,
@@ -19,6 +20,7 @@ class DropDownWithTitle extends StatelessWidget {
 
   final String title;
   final TextStyle? titleStyle;
+  final TextStyle? style;
   final EdgeInsets padding;
   final EdgeInsets? contentPadding;
   final double spaceBetweenTitleAndButton;
@@ -63,6 +65,9 @@ class DropDownWithTitle extends StatelessWidget {
               borderRadius: borderRadius ?? BorderRadius.circular(5),
               padding: contentPadding ?? const EdgeInsets.symmetric(horizontal: 5),
               icon: icon,
+              style: style ?? context.textTheme.titleSmall,
+              // itemHeight: kMinInteractiveDimension + 30,
+              itemHeight: null,
               items: items.map((e) {
                 return DropdownMenuItem(
                   value: e,
