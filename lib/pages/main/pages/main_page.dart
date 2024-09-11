@@ -9,6 +9,7 @@ import 'package:kelishamiz/pages/sign_up/pages/sign_up_page.dart';
 import 'package:provider/provider.dart';
 
 import '../../add/pages/add_page.dart';
+import '../../message/pages/message_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -34,6 +35,7 @@ class _MainPageState extends State<MainPage> {
           HomePage(),
           FavoritePage(),
           AddPage(),
+          MessagePage(),
           ProfilePage(),
         ],
       ),
