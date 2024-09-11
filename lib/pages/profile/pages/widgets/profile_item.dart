@@ -1,18 +1,20 @@
 
 import 'package:flutter/material.dart';
-import 'package:kelishamiz/constants/app_colors.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 
-class ItemCategory extends StatelessWidget {
-  const ItemCategory({super.key, required this.icon, required this.title});
+class ProfileItem extends StatelessWidget {
+  const ProfileItem({super.key, required this.icon, required this.title, required this.index, required this.color, required this.onTap});
 
   final Widget icon;
   final String title;
+  final Color color;
+  final int index;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 10),
+    return  GestureDetector(
+      onTap: onTap,
       child: SizedBox(
         height: 120,
         width: 90,
@@ -22,20 +24,14 @@ class ItemCategory extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(25),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: color,
                 borderRadius: BorderRadius.circular(50),
-                boxShadow: [
-                  BoxShadow(color: context.color.lightGrey,
-                  spreadRadius: 3,
-                    blurRadius: 3
-                  ),
-                ]
               ),
-              width: 90,
-              height: 90,
+              width: 73,
+              height: 73,
               child: icon,
             ),
-            Text(title, style: context.textTheme.labelMedium, textAlign: TextAlign.center,),
+            Text(title, style: context.textStyle.categoryCaptionSmall.copyWith(height: 1.1), textAlign: TextAlign.center,),
           ],
         ),
       ),

@@ -16,6 +16,10 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_svg: ^2.0.10+1
   dio: ^5.6.0
+  hive: ^2.2.3
+  shared_preferences: ^2.3.2
+  mask_text_input_formatter: ^2.9.0
+  toggle_switch: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +34,17 @@ flutter:
   assets:
     - assets/icons/
     - assets/icons/nav_icons/
+    - assets/icons/transport_icons/
+    - assets/icons/real_estate_icons/
+    - assets/icons/service_icons/
+    - assets/icons/electronics_icons/
+    - assets/icons/construction_icons/
+    - assets/icons/garden_icons/
+    - assets/icons/personal_icons/
+    - assets/icons/production_icons/
+    - assets/icons/other_icons/
+    - assets/icons/profile_icons/
+    - assets/icons/announcement_icons/
     - assets/images/
 
   # fonts:

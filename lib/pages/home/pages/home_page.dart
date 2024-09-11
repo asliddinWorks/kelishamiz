@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kelishamiz/constants/app_icons.dart';
@@ -7,11 +8,13 @@ import 'package:kelishamiz/core/data/models/product_model.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
-import 'package:kelishamiz/core/widgets/item_category.dart';
+import 'package:kelishamiz/core/widgets/app_button.dart';
+import 'package:kelishamiz/core/widgets/text_field_with_title.dart';
+import 'package:kelishamiz/pages/home/pages/widgets/item_category.dart';
 import 'package:kelishamiz/core/widgets/item_top_product.dart';
-import 'package:kelishamiz/core/widgets/rectangle_icon_button.dart';
 
-import '../../../constants/app_colors.dart';
+import '../../../core/widgets/app_bar.dart';
+import '../../../core/widgets/drop_down_with_title.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,91 +30,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(80),
-        child: AppBar(
-          flexibleSpace: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Logo', style: context.textTheme.bodyLarge,),
-                      Row(
-                        children: [
-                          Text('Toshkent', style: context.textTheme.bodyMedium!.copyWith(
-                            color: Colors.grey,
-                          )),
-                          const Icon(Icons.chevron_right, color: Colors.grey)
-                        ],
-                      )],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      RectangleIconButton(
-                        onTap: () {},
-                        child: SvgPicture.asset(AppIcons.icMenu),
-                      ),
-                      const SizedBox(width: 5),
-                      Expanded(
-                        child: SizedBox(
-                          height: 36,
-                          child: TextField(
-                            style: const TextStyle(
-                                fontWeight: FontWeight.w500),
-                            cursorColor: Colors.black54,
-                            textAlignVertical: TextAlignVertical.top,
-                            textAlign: TextAlign.start,
-                            decoration: InputDecoration(
-                                filled: true,
-                                fillColor: context.color.iconBackgroundColor,
-                                contentPadding: const EdgeInsets.all(5),
-                                enabledBorder: const OutlineInputBorder(
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                                  borderSide:
-                                  BorderSide(width: 2, color: Colors.grey),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius:
-                                  const BorderRadius.all(Radius.circular(5)),
-                                  borderSide:
-                                  BorderSide(width: 2, color: context.color.lightGrey),
-                                ),
-                                alignLabelWithHint: true,
-                                border: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.grey,
-                                    ))),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 5),
-                      RectangleIconButton(
-                        onTap: () {},
-                        child: SvgPicture.asset(
-                          AppIcons.icFilter,
-                        ),
-                      ),
-                      const SizedBox(width: 5),
-                      RectangleIconButton(
-                        onTap: () {
-                          axisCount = axisCount == 1 ? 2 : 1;
-                          setState(() {});
-                        },
-                        child: SvgPicture.asset(
-                          AppIcons.icGrid,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ),
+      backgroundColor: context.color.backgroundColor,
+      appBar: AppBar(
+        toolbarHeight: 80,
+        flexibleSpace: CustomAppBar(
+          onTapGrid: () {
+            axisCount = axisCount == 1 ? 2 : 1;
+            setState(() {});
+          },
+          onTapFilter: () {},
+          onChangeSearch: () {},
+          onTapMenu: () {},
+          onTapSearch: () {},
         ),
       ),
       body: ListView(
@@ -153,7 +83,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ).padding(const EdgeInsets.all(10)),
           25.hGap,
-          Text('Kategoriyalar', style: context.textTheme.titleLarge,).padding(const EdgeInsets.all(10)),
+          Text('Kategoriyalar', style: context.textTheme.titleMedium,).padding(const EdgeInsets.all(10)),
           15.hGap,
           SizedBox(
             height: 130,
@@ -162,16 +92,16 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               scrollDirection: Axis.horizontal,
               children: [
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icCar), title: 'Transport'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icCategoryHome), title: "Ko'chmas mulk"),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icService), title: 'Ish va xizmatlar'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icElectronics), title: 'Elektronika va texnika'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icFurniture), title: "Uy-bog', mebel "),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icConstructions), title: 'Qurulish mollari'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icProduction), title: 'Ishlab chiqarish'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icEquipment), title: 'Asbob uskunalar'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icItems), title: 'Shaxsiy buyumlar'),
-                ItemCategory(icon: SvgPicture.asset(AppIcons.icOthers), title: 'boshqalar'),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icCar), title: 'Transport', index: 0,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icCategoryHome), title: "Ko'chmas mulk",index: 1,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icService), title: 'Ish va xizmatlar',index: 2,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icElectronics), title: 'Elektronika va texnika',index: 3,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icFurniture), title: "Uy-bog', mebel ",index: 4,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icConstructions), title: 'Qurulish mollari',index: 5,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icProduction), title: 'Ishlab chiqarish',index: 6,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icEquipment), title: 'Asbob uskunalar',index: 7,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icItems), title: 'Shaxsiy buyumlar',index: 8,),
+                ItemCategory(icon: SvgPicture.asset(AppIcons.icOthers), title: 'boshqalar',index: 9,),
               ],
             ),
           ),
@@ -187,7 +117,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisCount: axisCount,
             ),
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: 10,
+            itemCount: 6,
             itemBuilder: (context, index) {
               return ItemTopProduct(
                 productModel: ProductModel(
@@ -202,8 +132,87 @@ class _HomePageState extends State<HomePage> {
               );
             },
           ),
+          AppButton(
+            onPressed: (){},
+            height: 47,
+            text: "Ko'proq ko'rsatish",
+          ).padding(const EdgeInsets.symmetric(horizontal: 10, vertical: 25)),
+
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset('assets/images/reklama.png'),
+          ).padding(const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 30)),
+
+          Text('Hamma mahsulotlar', style: context.textTheme.titleMedium!).padding(const EdgeInsets.all(10)),
+          GridView.builder(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: axisCount == 1 ? 1/.35 : 1/1.45,
+              crossAxisCount: axisCount,
+            ),
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 6,
+            itemBuilder: (context, index) {
+              return ItemTopProduct(
+                productModel: ProductModel(
+                  title: 'BYD Chazor DMI',
+                  description: '120km Flagship Full pozitsiya faqat naxtga',
+                  price: '370 196 800',
+                  location: 'Toshkent',
+                  date: '02.02.22 | 13:22',
+                  image: FakeImages.car,
+                ),
+                axisCount: axisCount,
+              );
+            },
+          ),
+
+          Transform.translate(offset: Offset(0,1),
+            child: Text('asdas'),
+          ),
+
+          TextFieldWithTitle(
+            controller: controller,
+            title: 'Tovar turlari',
+            // mask: '+998 ## ### ## ##',
+            // keyboardType: TextInputType.phone,
+            padding: const EdgeInsets.all(10),
+          ),
+
+          DropDownWithTitle(
+            title: 'Tovar turlari',
+            dropdownValue: dropdownValue,
+            padding: const EdgeInsets.all(10),
+            onChanged: (value) {
+              dropdownValue = value.toString();
+              setState(() {});
+            },
+            items: items.map((e) {
+              return e;
+            },).toList(),
+          ),
+
+          AppButton(
+            onPressed:  (){},
+            height: 47,
+            text: "Ko'proq ko'rsatish",
+          ).padding(const EdgeInsets.only(left:  10,right: 10,  top:  25, bottom: 50)),
         ],
       )
     );
   }
+
+  TextEditingController controller = TextEditingController();
+  String dropdownValue = '';
+  List<String> items = [
+    'qwdqdw',
+    'wqdhi',
+    'wqdh1i',
+
+
+  ];
+
 }

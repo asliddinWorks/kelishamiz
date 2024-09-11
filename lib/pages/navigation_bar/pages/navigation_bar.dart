@@ -2,8 +2,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:kelishamiz/core/extension/context_extension.dart';
+import 'package:kelishamiz/core/widgets/app_bar.dart';
+import 'package:kelishamiz/router/router.dart';
+import 'package:provider/provider.dart';
 
-import '../../../../constants/app_icons.dart';
+import '../../../constants/app_icons.dart';
+import '../../main/view_model/main_view_model.dart';
 
 class NavigationBar extends StatefulWidget {
   const NavigationBar({super.key, required this.child});
@@ -23,8 +29,9 @@ class _NavigationBarState extends State<NavigationBar> {
         child: CupertinoTabBar(
           activeColor: Colors.black,
           inactiveColor: Colors.black,
+          backgroundColor: context.color.white,
           onTap: (index) {
-            // context.read<HomeViewModel>().onTapNavBar(index);
+            context.read<MainViewModel>().onTapNavBar(index);
           },
           currentIndex: 0,//context.watch<HomeViewModel>().currentIndex,
           items: [
