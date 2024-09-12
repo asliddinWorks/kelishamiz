@@ -50,14 +50,17 @@ class _HomePageState extends State<HomePage> {
           Stack(
             children: [
               Container(
-                width: 380,
+                // width: 380,
                 height: 210,
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
                   color: context.colorScheme.secondary,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Image.asset("assets/images/vacancy.png", fit: BoxFit.cover,),
+                child: Image.asset(
+                  "assets/images/vacancy.png",
+                  fit: BoxFit.cover,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(20),
@@ -170,31 +173,6 @@ class _HomePageState extends State<HomePage> {
             },
           ),
 
-          Transform.translate(offset: Offset(0,1),
-            child: Text('asdas'),
-          ),
-
-          TextFieldWithTitle(
-            controller: controller,
-            title: 'Tovar turlari',
-            // mask: '+998 ## ### ## ##',
-            // keyboardType: TextInputType.phone,
-            padding: const EdgeInsets.all(10),
-          ),
-
-          DropDownWithTitle(
-            title: 'Tovar turlari',
-            dropdownValue: dropdownValue,
-            padding: const EdgeInsets.all(10),
-            onChanged: (value) {
-              dropdownValue = value.toString();
-              setState(() {});
-            },
-            items: items.map((e) {
-              return e;
-            },).toList(),
-          ),
-
           AppButton(
             onPressed:  (){},
             height: 47,
@@ -204,15 +182,5 @@ class _HomePageState extends State<HomePage> {
       )
     );
   }
-
-  TextEditingController controller = TextEditingController();
-  String dropdownValue = '';
-  List<String> items = [
-    'qwdqdw',
-    'wqdhi',
-    'wqdh1i',
-
-
-  ];
 
 }

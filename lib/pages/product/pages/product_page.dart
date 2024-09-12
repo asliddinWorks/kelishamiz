@@ -55,7 +55,13 @@ class _ProductPageState extends State<ProductPage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Image.asset(productModel.image!, fit: BoxFit.cover,),
+              child: PageView(
+                pageSnapping: true,
+                children: [
+                  Image.asset(productModel.image!, fit: BoxFit.cover,),
+                  Image.asset(productModel.image!, fit: BoxFit.cover,),
+                ],
+              ),
             ),
           ),
           15.hGap,

@@ -37,7 +37,7 @@ class _PaymentTablePageState extends State<PaymentTablePage> {
               margin: const EdgeInsets.all(15),
               padding: const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 35),
               decoration: BoxDecoration(
-                color: context.color.lightGrey.withOpacity(.6),
+                color: context.color.lightGrey,
                 boxShadow: [
                   BoxShadow(
                     color: context.color.grey,

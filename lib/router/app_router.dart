@@ -2,23 +2,24 @@
 part of 'router.dart';
 
 sealed class RouteNames {
-  // static const splash = '/';
   static const main = '/';
   static const home = '/home';
   static const category = '/category';
   static const products = '/products';
   static const product = '/product';
   static const signUp = '/sign_up';
-  static const confirmation = '/sign_up/confirmation';
-  static const rules = '/sign_up/rules';
+  static const confirmation = '/confirmation';
+  static const rules = '/rules';
   static const profile = '/profile';
   static const message = '/message';
+  static const messageEach = '/messageEach';
   static const announcements = '/announcements';
-  static const login = '/sign_up/login';
-  static const register = '/sign_up/register';
+  static const login = '/login';
+  static const register = '/register';
   static const fillAccount = '/fill_account';
-  static const fill = '/fill_account/fill_page';
-  static const paymentTable = '/fill_account/payment_table';
+  static const fill = '/fill_page';
+  static const paymentTable = '/payment_table';
+  static const settingsPage = '/settingsPage';
 
 }
 
@@ -131,5 +132,18 @@ final GoRouter router = GoRouter(
         return const PaymentTablePage();
       },
     ),
+    GoRoute(
+      path: RouteNames.messageEach,
+      builder: (context, state) {
+        return const MessageEachPage();
+      },
+    ),
+    GoRoute(
+      path: RouteNames.settingsPage,
+      builder: (context, state) {
+        return const SettingsPage();
+      },
+    ),
+
   ],
 );

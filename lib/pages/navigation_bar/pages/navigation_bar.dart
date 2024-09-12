@@ -31,6 +31,7 @@ class _NavigationBarState extends State<NavigationBar> {
           inactiveColor: Colors.black,
           backgroundColor: context.color.white,
           onTap: (index) {
+            context.go(RouteNames.main,);
             context.read<MainViewModel>().onTapNavBar(index);
           },
           currentIndex: 0,
