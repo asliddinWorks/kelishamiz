@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:kelishamiz/core/widgets/drop_down_with_title.dart';
 import 'package:kelishamiz/pages/add/data/models/add_ui_model.dart';
 
 class AddViewModel extends ChangeNotifier {
@@ -65,12 +66,55 @@ class AddViewModel extends ChangeNotifier {
       products: [
         AddProductUIModel(
           title: 'Kvartira',
+          items: [
+            TextFieldModel(
+              controller: TextEditingController(),
+              title: 'Xonalar soni',
+            ),
+            TextFieldModel(
+              controller: TextEditingController(),
+              title: 'Uy maydoni',
+            ),
+            TextFieldModel(
+              controller: TextEditingController(),
+              title: 'Uyning qavati',
+            ),
+          ]
         ),
         AddProductUIModel(
           title: 'Hovli uy-joy',
+          items: [
+            TextFieldModel(
+              controller: TextEditingController(),
+              title: 'Uy maydoni',
+            ),
+            TextFieldModel(
+              controller: TextEditingController(),
+              title: 'Uyning qavati',
+            ),
+            TextFieldModel(
+              controller: TextEditingController(),
+              title: 'Honalar soni',
+            ),
+          ]
         ),
         AddProductUIModel(
           title: 'Yer, uchaska',
+          items: [
+            TextFieldModel(
+              controller: TextEditingController(),
+              title: 'Uy maydoni',
+            ),
+            TextFieldModel(
+              controller: TextEditingController(),
+              title: 'Uyning qavati',
+            ),
+            TextFieldModel(
+              controller: TextEditingController(),
+              title: 'Honalar soni',
+            ),
+
+          ]
         ),
         AddProductUIModel(
           title: 'Boshqalari',
@@ -83,25 +127,6 @@ class AddViewModel extends ChangeNotifier {
       products: [
         AddProductUIModel(
           title: 'Qurulish va remont',
-          items: [
-            TextFieldModel(
-              controller: TextEditingController(),
-              title: 'Kuzov',
-            ),
-            TextFieldModel(
-              controller: TextEditingController(),
-              title: 'KPP',
-            ),
-            TextFieldModel(
-              controller: TextEditingController(),
-              title: 'Dvigatel',
-            ),
-            TextFieldModel(
-              controller: TextEditingController(),
-              title: 'Rang',
-            ),
-
-          ],
         ),
         AddProductUIModel(
           title: 'Kunlik ishlar',

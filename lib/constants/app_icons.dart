@@ -61,7 +61,7 @@ class AppIcons {
 
   /// category service icon
   static const icServiceCarService = '${pathService}ic_service_car_service.svg';
-  static const icServiceConstruction = '${pathService}ic_service_construction.svg.svg';
+  static const icServiceConstruction = '${pathService}ic_service_construction.svg';
   static const icServiceDailyChores = '${pathService}ic_service_daily_chores.svg';
   static const icServiceIt = '${pathService}ic_service_it.svg';
   static const icServiceOther = '${pathService}ic_service_other.svg';

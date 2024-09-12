@@ -149,7 +149,7 @@ class _AddPageState extends State<AddPage> {
                   hintText: 'Qiymatini kiriting',
                 ),
 
-                AddImage(),
+                const AddImage(),
 
                 AppButton(
                   onPressed: (){},
@@ -170,41 +170,41 @@ class _AddPageState extends State<AddPage> {
 }
 
 
-class DashedBorderPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.black
-
-      ..strokeWidth = 2.0
-      ..style = PaintingStyle.stroke;
-
-    final dashLength = 10.0; // Adjust the dash length as needed
-    final gapLength = 5.0; // Adjust the gap length as needed
-
-    final path = Path();
-    path.moveTo(0, 0);
-    path.lineTo(size.width, 0);
-    path.lineTo(size.width, size.height);
-    path.lineTo(0, size.height);
-    path.close();
-
-
-    canvas.drawPath(path, paint);
-
-
-    // Draw the dashed lines
-    final dashPath = Path();
-    for (double x = 0; x < size.width; x += dashLength + gapLength) {
-    dashPath.moveTo(x, 0);
-    dashPath.lineTo(x + dashLength, 0);
-    dashPath.moveTo(x, size.height);
-    dashPath.lineTo(x + dashLength, size.height);
-    }
-
-    canvas.drawPath(dashPath, paint);
-    }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
+// class DashedBorderPainter extends CustomPainter {
+//   @override
+//   void paint(Canvas canvas, Size size) {
+//     final paint = Paint()
+//       ..color = Colors.black
+//
+//       ..strokeWidth = 2.0
+//       ..style = PaintingStyle.stroke;
+//
+//     const dashLength = 10.0; // Adjust the dash length as needed
+//     const gapLength = 5.0; // Adjust the gap length as needed
+//
+//     final path = Path();
+//     path.moveTo(0, 0);
+//     path.lineTo(size.width, 0);
+//     path.lineTo(size.width, size.height);
+//     path.lineTo(0, size.height);
+//     path.close();
+//
+//
+//     canvas.drawPath(path, paint);
+//
+//
+//     // Draw the dashed lines
+//     final dashPath = Path();
+//     for (double x = 0; x < size.width; x += dashLength + gapLength) {
+//     dashPath.moveTo(x, 0);
+//     dashPath.lineTo(x + dashLength, 0);
+//     dashPath.moveTo(x, size.height);
+//     dashPath.lineTo(x + dashLength, size.height);
+//     }
+//
+//     canvas.drawPath(dashPath, paint);
+//     }
+//
+//   @override
+//   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+// }

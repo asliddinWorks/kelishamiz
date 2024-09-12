@@ -19,6 +19,8 @@ sealed class RouteNames {
   static const fillAccount = '/fill_account';
   static const fill = '/fill_account/fill_page';
   static const paymentTable = '/fill_account/payment_table';
+  static const filter = '/filter';
+  static const search = '/search';
 
 }
 
@@ -72,6 +74,18 @@ final GoRouter router = GoRouter(
           path: RouteNames.message,
           builder: (context, state) {
             return const MessagePage();
+          },
+        ),
+        GoRoute(
+          path: RouteNames.filter,
+          builder: (context, state) {
+            return const FilterPage();
+          },
+        ),
+        GoRoute(
+          path: RouteNames.search,
+          builder: (context, state) {
+            return const SearchPage();
           },
         ),
       ],

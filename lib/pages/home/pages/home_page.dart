@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kelishamiz/constants/app_icons.dart';
@@ -9,12 +8,9 @@ import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
-import 'package:kelishamiz/core/widgets/text_field_with_title.dart';
 import 'package:kelishamiz/pages/home/pages/widgets/item_category.dart';
 import 'package:kelishamiz/core/widgets/item_top_product.dart';
-
 import '../../../core/widgets/app_bar.dart';
-import '../../../core/widgets/drop_down_with_title.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -170,31 +166,6 @@ class _HomePageState extends State<HomePage> {
             },
           ),
 
-          Transform.translate(offset: Offset(0,1),
-            child: Text('asdas'),
-          ),
-
-          TextFieldWithTitle(
-            controller: controller,
-            title: 'Tovar turlari',
-            // mask: '+998 ## ### ## ##',
-            // keyboardType: TextInputType.phone,
-            padding: const EdgeInsets.all(10),
-          ),
-
-          DropDownWithTitle(
-            title: 'Tovar turlari',
-            dropdownValue: dropdownValue,
-            padding: const EdgeInsets.all(10),
-            onChanged: (value) {
-              dropdownValue = value.toString();
-              setState(() {});
-            },
-            items: items.map((e) {
-              return e;
-            },).toList(),
-          ),
-
           AppButton(
             onPressed:  (){},
             height: 47,
@@ -204,15 +175,5 @@ class _HomePageState extends State<HomePage> {
       )
     );
   }
-
-  TextEditingController controller = TextEditingController();
-  String dropdownValue = '';
-  List<String> items = [
-    'qwdqdw',
-    'wqdhi',
-    'wqdh1i',
-
-
-  ];
 
 }
