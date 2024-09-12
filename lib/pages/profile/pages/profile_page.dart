@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
-import 'package:kelishamiz/core/widgets/app_bar.dart';
 import 'package:kelishamiz/pages/profile/pages/widgets/profile_item.dart';
 import 'package:provider/provider.dart';
 import '../../../constants/fake_image.dart';
-import '../../../router/router.dart';
 import '../view_model/profile_view_model.dart';
 
 class ProfilePage extends StatefulWidget {
