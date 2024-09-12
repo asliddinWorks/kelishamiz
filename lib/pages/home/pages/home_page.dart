@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kelishamiz/constants/app_icons.dart';
@@ -9,12 +8,9 @@ import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
-import 'package:kelishamiz/core/widgets/text_field_with_title.dart';
 import 'package:kelishamiz/pages/home/pages/widgets/item_category.dart';
 import 'package:kelishamiz/core/widgets/item_top_product.dart';
-
 import '../../../core/widgets/app_bar.dart';
-import '../../../core/widgets/drop_down_with_title.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -166,7 +166,7 @@ class _AddPageState extends State<AddPage> {
                       hintText: 'Qiymatini kiriting',
                     ),
 
-                    AddImage(),
+                const AddImage(),
 
                     AppButton(
                       onPressed: (){},
@@ -186,4 +186,3 @@ class _AddPageState extends State<AddPage> {
     );
   }
 }
-
