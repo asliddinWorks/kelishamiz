@@ -10,7 +10,6 @@ import 'package:kelishamiz/pages/profile/pages/widgets/profile_item.dart';
 import 'package:provider/provider.dart';
 import '../../../constants/app_icons.dart';
 import '../../../constants/fake_image.dart';
-import '../../../router/router.dart';
 import '../view_model/profile_view_model.dart';
 
 class ProfilePage extends StatefulWidget {

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
+import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
 
 class PriceTypeButton extends StatefulWidget {
@@ -43,6 +44,7 @@ class _PriceTypeButtonState extends State<PriceTypeButton> {
           'Valyuta turi',
           style: context.textTheme.titleSmall,
         ),
+        3.hGap,
         Row(
           children: [
             Expanded(

@@ -65,40 +65,23 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     Expanded(
                       child: SizedBox(
                         height: 36,
-                        child: TextField(
-                          style: const TextStyle(
-                              fontWeight: FontWeight.w500),
-                          cursorColor: Colors.black54,
-                          textAlignVertical: TextAlignVertical.top,
-                          textAlign: TextAlign.start,
-                          decoration: InputDecoration(
-                              filled: true,
-                              fillColor: context.color.iconBackgroundColor,
-                              contentPadding: const EdgeInsets.all(5),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius:
-                                const BorderRadius.all(Radius.circular(10)),
-                                borderSide:
-                                BorderSide(width: 1, color: context.color.lightGrey),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius:
-                                const BorderRadius.all(Radius.circular(5)),
-                                borderSide:
-                                BorderSide(width: 2, color: context.color.lightGrey),
-                              ),
-                              alignLabelWithHint: true,
-                              border: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.grey,
-                                  ))),
-                        ),
+                        child: GestureDetector(
+                          onTap: (){
+                            context.push(RouteNames.search);
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: context.color.lightGrey),
+                              color: context.color.backgroundColor,
+                            ),
+                          ),
+                        )
                       ),
                     ),
                     const SizedBox(width: 5),
                     RectangleIconButton(
                       onTap: () {
-                        context.push(RouteNames.login);
+                        context.push(RouteNames.filter);
                       },
                       child: SvgPicture.asset(
                         AppIcons.icFilter,

@@ -18,7 +18,6 @@ extension ContextExtension on BuildContext {
   double get height => MediaQuery.of(this).size.height;
   double get width => MediaQuery.of(this).size.width;
 
-  // bool get isKeyboardOpen => View.of(this).viewInsets.bottom > 0;
-  bool get isKeyboardOpen => MediaQuery.of(this).viewInsets.bottom > 0;
+  bool get isKeyboardOpen => View.of(this).viewInsets.bottom > 0;
   void get unFocus => FocusManager.instance.primaryFocus!.unfocus();
 }
