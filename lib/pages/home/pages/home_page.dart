@@ -173,31 +173,6 @@ class _HomePageState extends State<HomePage> {
             },
           ),
 
-          Transform.translate(offset: Offset(0,1),
-            child: Text('asdas'),
-          ),
-
-          TextFieldWithTitle(
-            controller: controller,
-            title: 'Tovar turlari',
-            // mask: '+998 ## ### ## ##',
-            // keyboardType: TextInputType.phone,
-            padding: const EdgeInsets.all(10),
-          ),
-
-          DropDownWithTitle(
-            title: 'Tovar turlari',
-            dropdownValue: dropdownValue,
-            padding: const EdgeInsets.all(10),
-            onChanged: (value) {
-              dropdownValue = value.toString();
-              setState(() {});
-            },
-            items: items.map((e) {
-              return e;
-            },).toList(),
-          ),
-
           AppButton(
             onPressed:  (){},
             height: 47,
@@ -207,15 +182,5 @@ class _HomePageState extends State<HomePage> {
       )
     );
   }
-
-  TextEditingController controller = TextEditingController();
-  String dropdownValue = '';
-  List<String> items = [
-    'qwdqdw',
-    'wqdhi',
-    'wqdh1i',
-
-
-  ];
 
 }
