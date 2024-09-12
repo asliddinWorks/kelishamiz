@@ -33,7 +33,9 @@ class AppButton extends StatelessWidget {
       disabledTextColor: Colors.black,
       child: Text(
         text,
-        style: fillTextStyle ?? context.textStyle.buttonMediumActive,
+        style: fillTextStyle ?? context.textStyle.buttonMediumActive.copyWith(
+          color: textColor ?? context.color.white,
+        ),
       ),
     ) :
     MaterialButton(

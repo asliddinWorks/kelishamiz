@@ -1,14 +1,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
+import 'package:kelishamiz/core/extension/num_extension.dart';
 
 class ProfileItem extends StatelessWidget {
-  const ProfileItem({super.key, required this.icon, required this.title, required this.index, required this.color, required this.onTap});
+  const ProfileItem({super.key, required this.icon, required this.title, required this.color, required this.onTap});
 
   final Widget icon;
   final String title;
   final Color color;
-  final int index;
   final void Function() onTap;
 
   @override
@@ -31,6 +31,7 @@ class ProfileItem extends StatelessWidget {
               height: 73,
               child: icon,
             ),
+            5.hGap,
             Text(title, style: context.textStyle.categoryCaptionSmall.copyWith(height: 1.1), textAlign: TextAlign.center,),
           ],
         ),

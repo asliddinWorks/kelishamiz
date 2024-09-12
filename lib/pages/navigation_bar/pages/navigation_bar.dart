@@ -23,61 +23,51 @@ class NavigationBar extends StatefulWidget {
 class _NavigationBarState extends State<NavigationBar> {
   @override
   Widget build(BuildContext context) {
-    return PopScope(
-      canPop: false,
-      onPopInvokedWithResult: (didPop, result) {
-        return;
-      },
-      child: Scaffold(
-        body: widget.child,
-        bottomNavigationBar: SafeArea(
-          child: CupertinoTabBar(
-            activeColor: Colors.black,
-            inactiveColor: Colors.black,
-            backgroundColor: context.color.white,
-            onTap: (index) {
-              context.read<MainViewModel>().onTapNavBar(index);
-            },
-            currentIndex: 0,//context.watch<HomeViewModel>().currentIndex,
-            items: [
-              BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  AppIcons.icHome,
-                ),
-                // activeIcon: Image.asset(
-                //   'AppIcons.',
-                // ),
-                label: 'Asosiy',
+    return Scaffold(
+      body: widget.child,
+      bottomNavigationBar: SafeArea(
+        child: CupertinoTabBar(
+          activeColor: Colors.black,
+          inactiveColor: Colors.black,
+          backgroundColor: context.color.white,
+          onTap: (index) {
+            context.go(RouteNames.main,);
+            context.read<MainViewModel>().onTapNavBar(index);
+          },
+          currentIndex: 0,
+          items: [
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                AppIcons.icHome,
               ),
-              BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  AppIcons.icFavorite,
-                ),
-                // activeIcon: Image.asset(
-                //   'AppIcons.',
-                // ),
-                label: 'Saqlanganar',
+              label: 'Asosiy',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                AppIcons.icFavorite,
               ),
-              BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  AppIcons.icAdd,
-                ),
-                // activeIcon: Image.asset(
-                //   'AppIcons.createSelect,'
-                // ),
-                label: "Qo'shish",
+              label: 'Saqlanganar',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                AppIcons.icAdd,
               ),
-              BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  AppIcons.icProfile,
-                ),
-                // activeIcon: Image.asset(
-                //   'AppIcons.notificationsSelect,'
-                // ),
-                label: 'Profil',
+              label: "Qo'shish",
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                AppIcons.icMessage,
+                colorFilter: ColorFilter.mode(context.colorScheme.primary, BlendMode.srcIn),
               ),
-            ],
-          ),
+              label: 'Xabarlar',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                AppIcons.icProfile,
+              ),
+              label: 'Profil',
+            ),
+          ],
         ),
       ),
     );

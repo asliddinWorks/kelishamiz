@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
+import 'package:kelishamiz/core/widgets/region_select_menu.dart';
 import 'package:kelishamiz/router/router.dart';
 import '../../constants/app_icons.dart';
 import 'rectangle_icon_button.dart';
@@ -37,14 +38,21 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Logo', style: context.textTheme.bodyLarge,),
-                    Row(
-                      children: [
-                        Text('Toshkent', style: context.textTheme.bodyMedium!.copyWith(
-                          color: Colors.grey,
-                        )),
-                        const Icon(Icons.chevron_right, color: Colors.grey)
-                      ],
-                    )],
+                    RegionSelectMenu(
+                      regionMenuValueType: RegionMenuValueType.provinceOnly,
+                      onChange: (value) {
+                        print(value);
+                      },
+                    ),
+                    // Row(
+                    //   children: [
+                    //     Text('Toshkent', style: context.textTheme.bodyMedium!.copyWith(
+                    //       color: Colors.grey,
+                    //     )),
+                    //     const Icon(Icons.chevron_right, color: Colors.grey)
+                    //   ],
+                    // ),
+                  ],
                 ),
                 const SizedBox(height: 10),
                 Row(

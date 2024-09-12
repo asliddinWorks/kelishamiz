@@ -10,6 +10,8 @@ import 'package:kelishamiz/pages/filter/pages/filter_page.dart';
 import 'package:kelishamiz/pages/home/pages/home_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/pages/search/pages/search.dart';
+import 'package:kelishamiz/pages/message_each/pages/message_each_page.dart';
+import 'package:kelishamiz/pages/settings/pages/settings_page.dart';
 import 'package:kelishamiz/pages/sign_up/pages/login_page.dart';
 import 'package:kelishamiz/pages/message/pages/message_page.dart';
 import 'package:kelishamiz/pages/products/pages/products_page.dart';
