@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: context.color.backgroundColor,
       appBar: AppBar(
-        toolbarHeight: 80,
+        toolbarHeight: 85,
         flexibleSpace: CustomAppBar(
           onTapGrid: () {
             axisCount = axisCount == 1 ? 2 : 1;
