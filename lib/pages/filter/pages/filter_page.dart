@@ -5,6 +5,7 @@ import 'package:kelishamiz/core/extension/num_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/app_switch_with_title.dart';
 import 'package:kelishamiz/core/widgets/drop_down_with_title.dart';
+import 'package:kelishamiz/core/widgets/region_select_menu.dart';
 import 'package:kelishamiz/core/widgets/text_field_with_title.dart';
 import 'package:kelishamiz/pages/add/pages/widgets/price_type_button.dart';
 
@@ -30,27 +31,34 @@ class _FilterPageState extends State<FilterPage> {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
           children: [
-            DropDownWithTitle(
-              titleStyle: context.textTheme.titleSmall,
-              title: 'Manzil',
-              onChanged: (_){},
-              dropdownValue: 0,
-              items: const [
-                'Toshkent',
-                'Andijon',
-                'Farg\'ona',
-                'Namangan',
-                'Sirdaryo',
-                'Jizzax',
-                'Surxondaryo',
-                'Qashqadaryo',
-                'Samarqand',
-                'Buxoro',
-                'Navoiy',
-                'Xorazm',
-                'Qoraqalpog\'iston',
-              ],
+
+            RegionSelectMenu(
+              onChange: (_) {},
+              menuType: MenuType.add,
+              title: 'Hudud',
             ),
+
+            // DropDownWithTitle(
+            //   titleStyle: context.textTheme.titleSmall,
+            //   title: 'Manzil',
+            //   onChanged: (_){},
+            //   dropdownValue: 0,
+            //   items: const [
+            //     'Toshkent',
+            //     'Andijon',
+            //     'Farg\'ona',
+            //     'Namangan',
+            //     'Sirdaryo',
+            //     'Jizzax',
+            //     'Surxondaryo',
+            //     'Qashqadaryo',
+            //     'Samarqand',
+            //     'Buxoro',
+            //     'Navoiy',
+            //     'Xorazm',
+            //     'Qoraqalpog\'iston',
+            //   ],
+            // ),
             DropDownWithTitle(
               titleStyle: context.textTheme.titleSmall,
               title: 'Kategoriya',
