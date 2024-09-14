@@ -86,45 +86,45 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
             ),
             Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      width: 60,
-                      height: 60,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(color: context.color.grey.withOpacity(.4), width: 1)),
-                      child: SvgPicture.asset(AppIcons.icGoogle),
-                    ),
-                    10.wGap,
-                    Container(
-                      padding: const EdgeInsets.all(14),
-                      width: 60,
-                      height: 60,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(color: context.color.grey.withOpacity(.4), width: 1)),
-                      child: SvgPicture.asset(AppIcons.icTelegram),
-                    ),
-                    10.wGap,
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      width: 60,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all(color: context.color.grey.withOpacity(.4), width: 1,),
-                      ),
-                      child: SvgPicture.asset(AppIcons.icApple),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     Container(
+                //       padding: const EdgeInsets.all(15),
+                //       width: 60,
+                //       height: 60,
+                //       decoration: BoxDecoration(
+                //           borderRadius: BorderRadius.circular(5),
+                //           border: Border.all(color: context.color.grey.withOpacity(.4), width: 1)),
+                //       child: SvgPicture.asset(AppIcons.icGoogle),
+                //     ),
+                //     10.wGap,
+                //     Container(
+                //       padding: const EdgeInsets.all(14),
+                //       width: 60,
+                //       height: 60,
+                //       decoration: BoxDecoration(
+                //           borderRadius: BorderRadius.circular(5),
+                //           border: Border.all(color: context.color.grey.withOpacity(.4), width: 1)),
+                //       child: SvgPicture.asset(AppIcons.icTelegram),
+                //     ),
+                //     10.wGap,
+                //     Container(
+                //       padding: const EdgeInsets.all(15),
+                //       width: 60,
+                //       height: 60,
+                //       decoration: BoxDecoration(
+                //         borderRadius: BorderRadius.circular(5),
+                //         border: Border.all(color: context.color.grey.withOpacity(.4), width: 1,),
+                //       ),
+                //       child: SvgPicture.asset(AppIcons.icApple),
+                //     ),
+                //   ],
+                // ),
                 30.hGap,
                 AppButton(
                   onPressed: watch.isActiveButton ? (){
-                    context.push(RouteNames.setupAccount);
+                    context.go(RouteNames.setupAccount);
                   } : null,
                   height: 47,
                   width: MediaQuery.sizeOf(context).width,

@@ -7,6 +7,7 @@ import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
 import 'package:kelishamiz/core/widgets/drop_down_with_title.dart';
+import 'package:kelishamiz/core/widgets/region_select_menu.dart';
 import 'package:kelishamiz/core/widgets/text_field_with_title.dart';
 import 'package:kelishamiz/router/router.dart';
 
@@ -34,14 +35,19 @@ class _SettingsPageState extends State<SettingsPage> {
                   const TextFieldWithTitle(
                     title: 'Ism',
                   ),
-                  DropDownWithTitle(
+                  RegionSelectMenu(
                     title: 'Hudud',
-                    onChanged: (value) {},
-                    dropdownValue: '',
-                    items: const [
-                      'Andijon'
-                    ],
+                    menuType: MenuType.add,
+                    onChange: (_){},
                   ),
+                  // DropDownWithTitle(
+                  //   title: 'Hudud',
+                  //   onChanged: (value) {},
+                  //   dropdownValue: '',
+                  //   items: const [
+                  //     'Andijon'
+                  //   ],
+                  // ),
                   const TextFieldWithTitle(
                     title: 'Manzil',
                   ),
@@ -97,7 +103,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                     child: AppButton(
                       onPressed: () {
-                        context.go(RouteNames.login);
+                        context.go(RouteNames.signUp);
                       },
                       text: 'Profildan chiqish',
                       width: double.infinity,

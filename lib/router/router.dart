@@ -23,6 +23,7 @@ import 'package:kelishamiz/pages/sign_up/pages/sign_up_page.dart';
 import '../pages/main/pages/main_page.dart';
 import '../pages/navigation_bar/pages/navigation_bar.dart';
 import '../pages/product/pages/product_page.dart';
+import '../pages/sign_up/pages/rules_page.dart';
 import '../pages/sign_up/pages/setup_account_page.dart';
 
 part 'app_router.dart';

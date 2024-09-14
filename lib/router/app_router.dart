@@ -165,6 +165,12 @@ final GoRouter router = GoRouter(
         return const SetupAccountPage();
       },
     ),
+    GoRoute(
+      path: RouteNames.rules,
+      builder: (context, state) {
+        return const RulesPage();
+      },
+    ),
 
   ],
 );

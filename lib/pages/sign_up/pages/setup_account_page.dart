@@ -55,7 +55,9 @@ class _SetupAccountPageState extends State<SetupAccountPage> {
               ).padding(const EdgeInsets.symmetric(horizontal: 15)),
               SafeArea(
                 child: TextButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    context.go(RouteNames.main);
+                  },
                   child: const Text("Tashlab o'tish"),
                 ),
               ),

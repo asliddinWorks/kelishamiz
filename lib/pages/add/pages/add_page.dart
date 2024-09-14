@@ -8,6 +8,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
+import 'package:kelishamiz/core/widgets/app_switch_with_title.dart';
 import 'package:kelishamiz/core/widgets/drop_down_with_title.dart';
 import 'package:kelishamiz/core/widgets/region_select_menu.dart';
 import 'package:kelishamiz/core/widgets/text_field_with_title.dart';
@@ -136,25 +137,30 @@ class _AddPageState extends State<AddPage> {
                       title: "Tavsif(Tavsigfa to’liqroq ma’lumot yozing)",
                       maxLines: 5,
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          'Narxni kelishish',
-                          style: context.textTheme.bodyLarge,
-                        ),
-                        const Spacer(),
-                        Switch(
-                          activeColor: context.colorScheme.primary,
-                          value: true,
-                          thumbIcon: WidgetStateProperty.all(Icon(
-                            Icons.pause,
-                            color: context.color.lightGrey,
-                          )),
-                          onChanged: (value) {
 
-                          },),
-                      ],
+                    AppSwitchWithTitle(
+                      title: 'Narxni kelishish',
                     ),
+
+                    // Row(
+                    //   children: [
+                    //     Text(
+                    //       'Narxni kelishish',
+                    //       style: context.textTheme.bodyLarge,
+                    //     ),
+                    //     const Spacer(),
+                    //     Switch(
+                    //       activeColor: context.colorScheme.primary,
+                    //       value: true,
+                    //       thumbIcon: WidgetStateProperty.all(Icon(
+                    //         Icons.pause,
+                    //         color: context.color.lightGrey,
+                    //       )),
+                    //       onChanged: (value) {
+                    //
+                    //       },),
+                    //   ],
+                    // ),
                     PriceTypeButton(
                       onPressed: (index) {
                         print(index);

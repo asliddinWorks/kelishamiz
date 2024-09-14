@@ -18,7 +18,7 @@ class _AppSwitchWithTitleState extends State<AppSwitchWithTitle> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(widget.title, style: context.textTheme.bodyMedium),
+        Text(widget.title, style: context.textStyle.productTitle,),
         AnimatedToggleSwitch.dual(
         current: isSwitched ? 0 : 1,
           onChanged:(value) {

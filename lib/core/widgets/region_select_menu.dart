@@ -23,183 +23,183 @@ class _RegionSelectMenuState extends State<RegionSelectMenu> {
   MenuController menuController = MenuController();
   String menuValue = 'Hududni tanlang';
   List<RegionModel> regions = [
-    RegionModel(
-      name: 'Andijon viloyati',
-      provinces: [
-        "Andijon shahri",
-        "Andijon tumani",
-        "Asaka tumani",
-        "Baliqchi tumani",
-        "Bo'z tumani",
-        "Buloqboshi tumani",
-        "Izboskan tumani",
-        "Jalolquduq tumani",
-        "Marhamat tumani",
-        "Oltinko'l tumani",
-        "Paxtaobod tumani",
-        "Qo'rg'ontepa tumani",
-        "Shahrixon tumani",
-        "Ulug'nor tumani",
-        "Xo'jaobod tumani",
-        "Xonobod shahri",
-      ],
-    ),
+    // RegionModel(
+    //   name: 'Andijon viloyati',
+    //   provinces: [
+    //     "Andijon shahri",
+    //     "Andijon tumani",
+    //     "Asaka tumani",
+    //     "Baliqchi tumani",
+    //     "Bo'z tumani",
+    //     "Buloqboshi tumani",
+    //     "Izboskan tumani",
+    //     "Jalolquduq tumani",
+    //     "Marhamat tumani",
+    //     "Oltinko'l tumani",
+    //     "Paxtaobod tumani",
+    //     "Qo'rg'ontepa tumani",
+    //     "Shahrixon tumani",
+    //     "Ulug'nor tumani",
+    //     "Xo'jaobod tumani",
+    //     "Xonobod shahri",
+    //   ],
+    // ),
+    //
+    // RegionModel(
+    //   name: 'Buxoro viloyati',
+    //   provinces: [
+    //     "Buxoro shahar",
+    //     "Olot tumani",
+    //     "Vobkent tumani",
+    //     "Buxoro tumani",
+    //     "G'ijduvon tumani",
+    //     "Jondor tumani",
+    //     "Kogon tumani",
+    //     "Qorako'l tumani",
+    //     "Romitan tumani",
+    //     "Romitan shahri",
+    //     "Shofirkon tumani",
+    //     "Peshku tumani",
+    //   ],
+    // ),
+    //
+    // RegionModel(
+    //   name: "Farg'ona viloyati",
+    //   provinces: [
+    //     "Beshariq tumani",
+    //     "Bog'dod tumani",
+    //     "Buvayda tumani",
+    //     "Dang'ara tumani",
+    //     "Farg'ona shahri",
+    //     "Farg'ona tumani",
+    //     "Furqat tumani",
+    //     "Marg'ilon shahri",
+    //     "O'zbekiston tumani",
+    //     "Oltiariq tumani",
+    //     "Qo'qon shahri",
+    //     "Qo'shtepa tumani",
+    //     "Quva tumani",
+    //     "Quvasoy shahri",
+    //     "Rishton tumani",
+    //     "So'x tumani",
+    //     "Toshloq tumani",
+    //     "Uchko'prik tumani",
+    //     "Yozyovon tumani",
+    //   ],
+    // ),
+    //
+    // RegionModel(
+    //   name: 'Jizzax viloyati',
+    //   provinces: [
+    //     "Jizzax shahar",
+    //     "Arnasoy tumani",
+    //     "Mirzacho'l tumani",
+    //     "G'allaorol tumani",
+    //     "Do'stlik tumani",
+    //     "Zarbdor tumani",
+    //     "Zafarobod tumani",
+    //     "Zomin tumani",
+    //     "Paxtakor tumani",
+    //     "Baxmal tumani",
+    //     "Sharof Rashidov tumani",
+    //     "Forish tumani",
+    //     "Yangiobod tumani",
+    //   ],
+    // ),
+    //
+    // RegionModel(
+    //   name: 'Namangan viloyati',
+    //   provinces: [
+    //     "Chortoq tumani",
+    //     "Chust tumani",
+    //     "Kosonsoy tumani",
+    //     "Mingbuloq tumani",
+    //     "Namangan shahri",
+    //     "Namangan tumani",
+    //     "Norin tumani",
+    //     "Pop tumani",
+    //     "To'raqo'rg'on tumani",
+    //     "Uchqo'rg'on tumani",
+    //     "Uychi tumani",
+    //     "Yangiqo'rgon tumani",
+    //   ],
+    // ),
+    //
+    // RegionModel(
+    //   name: 'Navoiy viloyati',
+    //   provinces: [
+    //     "Navoiy shahar",
+    //     "Navbahor tumani",
+    //     "Zarafshon shahar",
+    //     "Qiziltepa tumani",
+    //     "Konimex tumani",
+    //     "Karmana tumani",
+    //     "Nurota tumani",
+    //     "Tomdi tumani",
+    //     "Uchquduq tumani",
+    //     "Xatirchi tumani",
+    //
+    //   ],
+    // ),
+    //
+    // RegionModel(
+    //   name: 'Qashqadaryo viloyati',
+    //   provinces: [
+    //     "Qashqadaryo shahar",
+    //     "Qarshi tumani"
+    //     "G'uzor tumani",
+    //     "Dehqonobod tumani",
+    //     "Qamashi tumani",
+    //     "Kasbi tumani",
+    //     "Kitob tumani",
+    //     "Koson tumani",
+    //     "Muborak tumani",
+    //     "Mirishkor tumani",
+    //     "Nishon tumani",
+    //     "Chiroqchi tumani",
+    //     "Shahrisabz tumani",
+    //     "Yakkabog' tumani",
+    //   ],
+    // ),
+    //
+    // RegionModel(
+    //   name: 'Samarqand viloyati',
+    //   provinces: [
+    //     "Bulung'ur tumani",
+    //     "Ishtixon tumani",
+    //     "Jomboy tumani",
+    //     "Kattaqo'rg'on shahri",
+    //     "Kattaqo'rg'on tumani",
+    //     "Narpay tumani",
+    //     "Nurobod tumani",
+    //     "Oqdaryo tumani",
+    //     "Past darg'om tumani",
+    //     "Paxtachi tumani",
+    //     "Poyariq tumani",
+    //     "Qo'shrabot tumani",
+    //     "Samarqand shahri",
+    //     "Samarqand tumani",
+    //     "Toyloq tumani",
+    //     "Urgut tumani",
+    //   ],
+    // ),
+    //
+    // RegionModel(
+    //   name: 'Sirdaryo viloyati',
+    //   provinces: [
+    //     "Boyovut tumani",
+    //     "Guliston shahri",
+    //     "Guliston tumani",
+    //     "Oqoltin tumani",
+    //     "Sardoba tumani",
+    //     "Sayxunobod tumani",
+    //     "Shirin shahri",
+    //     "Sirdaryo tumani",
+    //     "Xovos tumani",
+    //     "Yangiyer shahri",
+    //   ],
+    // ),
 
-    RegionModel(
-      name: 'Buxoro viloyati',
-      provinces: [
-        "Buxoro shahar",
-        "Olot tumani",
-        "Vobkent tumani",
-        "Buxoro tumani",
-        "G'ijduvon tumani",
-        "Jondor tumani",
-        "Kogon tumani",
-        "Qorako'l tumani",
-        "Romitan tumani",
-        "Romitan shahri",
-        "Shofirkon tumani",
-        "Peshku tumani",
-      ],
-    ),
-    //
-    RegionModel(
-      name: "Farg'ona viloyati",
-      provinces: [
-        "Beshariq tumani",
-        "Bog'dod tumani",
-        "Buvayda tumani",
-        "Dang'ara tumani",
-        "Farg'ona shahri",
-        "Farg'ona tumani",
-        "Furqat tumani",
-        "Marg'ilon shahri",
-        "O'zbekiston tumani",
-        "Oltiariq tumani",
-        "Qo'qon shahri",
-        "Qo'shtepa tumani",
-        "Quva tumani",
-        "Quvasoy shahri",
-        "Rishton tumani",
-        "So'x tumani",
-        "Toshloq tumani",
-        "Uchko'prik tumani",
-        "Yozyovon tumani",
-      ],
-    ),
-    //
-    RegionModel(
-      name: 'Jizzax viloyati',
-      provinces: [
-        "Jizzax shahar",
-        "Arnasoy tumani",
-        "Mirzacho'l tumani",
-        "G'allaorol tumani",
-        "Do'stlik tumani",
-        "Zarbdor tumani",
-        "Zafarobod tumani",
-        "Zomin tumani",
-        "Paxtakor tumani",
-        "Baxmal tumani",
-        "Sharof Rashidov tumani",
-        "Forish tumani",
-        "Yangiobod tumani",
-      ],
-    ),
-    //
-    RegionModel(
-      name: 'Namangan viloyati',
-      provinces: [
-        "Chortoq tumani",
-        "Chust tumani",
-        "Kosonsoy tumani",
-        "Mingbuloq tumani",
-        "Namangan shahri",
-        "Namangan tumani",
-        "Norin tumani",
-        "Pop tumani",
-        "To'raqo'rg'on tumani",
-        "Uchqo'rg'on tumani",
-        "Uychi tumani",
-        "Yangiqo'rgon tumani",
-      ],
-    ),
-    //
-    RegionModel(
-      name: 'Navoiy viloyati',
-      provinces: [
-        "Navoiy shahar",
-        "Navbahor tumani",
-        "Zarafshon shahar",
-        "Qiziltepa tumani",
-        "Konimex tumani",
-        "Karmana tumani",
-        "Nurota tumani",
-        "Tomdi tumani",
-        "Uchquduq tumani",
-        "Xatirchi tumani",
-
-      ],
-    ),
-    //
-    RegionModel(
-      name: 'Qashqadaryo viloyati',
-      provinces: [
-        "Qashqadaryo shahar",
-        "Qarshi tumani"
-        "G'uzor tumani",
-        "Dehqonobod tumani",
-        "Qamashi tumani",
-        "Kasbi tumani",
-        "Kitob tumani",
-        "Koson tumani",
-        "Muborak tumani",
-        "Mirishkor tumani",
-        "Nishon tumani",
-        "Chiroqchi tumani",
-        "Shahrisabz tumani",
-        "Yakkabog' tumani",
-      ],
-    ),
-    //
-    RegionModel(
-      name: 'Samarqand viloyati',
-      provinces: [
-        "Bulung'ur tumani",
-        "Ishtixon tumani",
-        "Jomboy tumani",
-        "Kattaqo'rg'on shahri",
-        "Kattaqo'rg'on tumani",
-        "Narpay tumani",
-        "Nurobod tumani",
-        "Oqdaryo tumani",
-        "Past darg'om tumani",
-        "Paxtachi tumani",
-        "Poyariq tumani",
-        "Qo'shrabot tumani",
-        "Samarqand shahri",
-        "Samarqand tumani",
-        "Toyloq tumani",
-        "Urgut tumani",
-      ],
-    ),
-    //
-    RegionModel(
-      name: 'Sirdaryo viloyati',
-      provinces: [
-        "Boyovut tumani",
-        "Guliston shahri",
-        "Guliston tumani",
-        "Oqoltin tumani",
-        "Sardoba tumani",
-        "Sayxunobod tumani",
-        "Shirin shahri",
-        "Sirdaryo tumani",
-        "Xovos tumani",
-        "Yangiyer shahri",
-      ],
-    ),
-    //
     RegionModel(
       name: 'Surxondaryo viloyati',
       provinces: [
@@ -220,7 +220,7 @@ class _RegionSelectMenuState extends State<RegionSelectMenu> {
         "Sho'rchi tumani"
       ],
     ),
-
+/*
     RegionModel(
       name: 'Toshkent viloyati',
       provinces: [
@@ -301,7 +301,7 @@ class _RegionSelectMenuState extends State<RegionSelectMenu> {
         "Xo'jayli tumani",
       ],
     ),
-
+*/
   ];
 
   void onChange(String value) {
