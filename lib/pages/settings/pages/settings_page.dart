@@ -2,11 +2,13 @@
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
 import 'package:kelishamiz/core/widgets/drop_down_with_title.dart';
 import 'package:kelishamiz/core/widgets/text_field_with_title.dart';
+import 'package:kelishamiz/router/router.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -87,13 +89,16 @@ class _SettingsPageState extends State<SettingsPage> {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: context.color.lightGrey,
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all(
-                            color: context.color.grey.withOpacity(.2))
+                      color: context.color.lightGrey,
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(
+                        color: context.color.grey.withOpacity(.2),
+                      ),
                     ),
                     child: AppButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.go(RouteNames.login);
+                      },
                       text: 'Profildan chiqish',
                       width: double.infinity,
                       appButtonType: AppButtonType.outlined,

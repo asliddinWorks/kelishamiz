@@ -124,7 +124,7 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
                 30.hGap,
                 AppButton(
                   onPressed: watch.isActiveButton ? (){
-                    context.push(RouteNames.register);
+                    context.push(RouteNames.setupAccount);
                   } : null,
                   height: 47,
                   width: MediaQuery.sizeOf(context).width,

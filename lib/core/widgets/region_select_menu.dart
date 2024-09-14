@@ -6,12 +6,13 @@ class RegionSelectMenu extends StatefulWidget {
   const RegionSelectMenu({
     super.key, required this.onChange,
     this.regionMenuValueType = RegionMenuValueType.full,
-    this.menuType = MenuType.main,
+    this.menuType = MenuType.main, this.title,
   });
 
   final void Function(String value) onChange;
   final RegionMenuValueType regionMenuValueType;
   final MenuType menuType;
+  final String? title;
 
   @override
   State<RegionSelectMenu> createState() => _RegionSelectMenuState();
@@ -317,76 +318,83 @@ class _RegionSelectMenuState extends State<RegionSelectMenu> {
         context.unFocus;
         menuController.open();
       },
-      child: Container(
-        height: (MenuType.main == widget.menuType) ? 30 : 50,
-        // width: double.infinity,
-        decoration: (MenuType.main == widget.menuType) ? null :
-        BoxDecoration(
-          border: Border.all(color: context.color.lightGrey),
-          borderRadius: BorderRadius.circular(5),
-          color: context.color.backgroundColor,
-        ),
-        child: Row(
-          children: [
-            MenuBar(
-              style: MenuStyle(
-                elevation: const WidgetStatePropertyAll(0),
-                padding: const WidgetStatePropertyAll(EdgeInsets.zero),
-                // maximumSize: WidgetStatePropertyAll(Size(double.infinity, 30)),
-                maximumSize: const WidgetStatePropertyAll(Size(double.infinity, 30)),
-                backgroundColor: (MenuType.main == widget.menuType) ? null :
-                WidgetStatePropertyAll(context.color.backgroundColor),
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (widget.title != null)
+          Text(widget.title!, style: context.textStyle.productTitle,),
+          const SizedBox(height: 5,),
+          Container(
+            height: (MenuType.main == widget.menuType) ? 30 : 50,
+            decoration: (MenuType.main == widget.menuType) ? null :
+            BoxDecoration(
+              border: Border.all(color: context.color.lightGrey),
+              borderRadius: BorderRadius.circular(5),
+              color: context.color.backgroundColor,
+            ),
+            child: Row(
               children: [
-                SubmenuButton(
-                  controller: menuController,
-                  menuChildren: regions.map((region) {
-                    return SubmenuButton(
-                      menuChildren: region.provinces.map((e) {
-                        return TextButton(
-                          onPressed: (){
-                            context.unFocus;
-                            switch (widget.regionMenuValueType) {
-                              case RegionMenuValueType.full:
-                                onChange('${region.name} $e');
-                                break;
-                              case RegionMenuValueType.regionFullName:
-                                onChange(region.name);
-                                break;
-                              case RegionMenuValueType.provinceFullName:
-                                onChange(e);
-                                break;
-                              case RegionMenuValueType.regionOnly:
-                                onChange(region.name.split(' ').first);
-                                break;
-                              case RegionMenuValueType.provinceOnly:
-                                onChange(e.split(' ').first);
-                                break;
-                            }
-                            // onChange("${region.name} $e");
-                          },
-                          child: Text(e, style: TextStyle(color: context.color.black),),
+                MenuBar(
+                  style: MenuStyle(
+                    elevation: const WidgetStatePropertyAll(0),
+                    padding: const WidgetStatePropertyAll(EdgeInsets.zero),
+                    // maximumSize: WidgetStatePropertyAll(Size(double.infinity, 30)),
+                    maximumSize: const WidgetStatePropertyAll(Size(double.infinity, 30)),
+                    backgroundColor: (MenuType.main == widget.menuType) ? null :
+                    WidgetStatePropertyAll(context.color.backgroundColor),
+                  ),
+                  children: [
+                    SubmenuButton(
+                      controller: menuController,
+                      menuChildren: regions.map((region) {
+                        return SubmenuButton(
+                          menuChildren: region.provinces.map((e) {
+                            return TextButton(
+                              onPressed: (){
+                                context.unFocus;
+                                switch (widget.regionMenuValueType) {
+                                  case RegionMenuValueType.full:
+                                    onChange('${region.name} $e');
+                                    break;
+                                  case RegionMenuValueType.regionFullName:
+                                    onChange(region.name);
+                                    break;
+                                  case RegionMenuValueType.provinceFullName:
+                                    onChange(e);
+                                    break;
+                                  case RegionMenuValueType.regionOnly:
+                                    onChange(region.name.split(' ').first);
+                                    break;
+                                  case RegionMenuValueType.provinceOnly:
+                                    onChange(e.split(' ').first);
+                                    break;
+                                }
+                                // onChange("${region.name} $e");
+                              },
+                              child: Text(e, style: TextStyle(color: context.color.black),),
+                            );
+                          }).toList(),
+                          child: Text(region.name),
                         );
                       }).toList(),
-                      child: Text(region.name),
-                    );
-                  }).toList(),
-                  child: Row(
-                    children: [
-                      Text(menuValue),
-                      if (MenuType.main == widget.menuType)
-                      const Icon(Icons.chevron_right),
-                    ],
-                  ),
+                      child: Row(
+                        children: [
+                          Text(menuValue),
+                          if (MenuType.main == widget.menuType)
+                          const Icon(Icons.chevron_right),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
+                if (MenuType.add == widget.menuType)
+                  const Spacer(),
+                if (MenuType.add == widget.menuType)
+                  const Icon(Icons.arrow_drop_down),
               ],
             ),
-            if (MenuType.add == widget.menuType)
-              const Spacer(),
-            if (MenuType.add == widget.menuType)
-              const Icon(Icons.arrow_drop_down),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
