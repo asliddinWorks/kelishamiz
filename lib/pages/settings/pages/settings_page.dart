@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
+import 'package:kelishamiz/core/widgets/confirm_dialog.dart';
 import 'package:kelishamiz/core/widgets/drop_down_with_title.dart';
 import 'package:kelishamiz/core/widgets/region_select_menu.dart';
 import 'package:kelishamiz/core/widgets/text_field_with_title.dart';
@@ -102,7 +103,13 @@ class _SettingsPageState extends State<SettingsPage> {
                       ),
                     ),
                     child: AppButton(
-                      onPressed: () {
+                      onPressed: () async {
+                        bool? isYes =  await confirmDialog(
+                          context,
+                          title: 'Profildan chiqish',
+                          content: 'Profildan chiqishni xohlaysizmi?',
+                        );
+                        if (isYes == null) return;
                         context.go(RouteNames.signUp);
                       },
                       text: 'Profildan chiqish',

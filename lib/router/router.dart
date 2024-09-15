@@ -27,3 +27,5 @@ import '../pages/sign_up/pages/rules_page.dart';
 import '../pages/sign_up/pages/setup_account_page.dart';
 
 part 'app_router.dart';
+
+

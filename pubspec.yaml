@@ -16,13 +16,15 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_svg: ^2.0.10+1
   dio: ^5.6.0
-  hive: ^2.2.3
   shared_preferences: ^2.3.2
   mask_text_input_formatter: ^2.9.0
   toggle_switch: ^2.3.0
   dotted_border: ^2.1.0
   animated_toggle_switch: ^0.8.3
   flutter_keyboard_visibility: ^6.0.0
+  get_it: ^7.7.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:
