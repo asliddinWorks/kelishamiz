@@ -10,7 +10,10 @@ import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
 import 'package:kelishamiz/pages/home/pages/widgets/item_category.dart';
 import 'package:kelishamiz/core/widgets/item_top_product.dart';
+import 'package:provider/provider.dart';
+import '../../../core/view_model/app_view_model.dart';
 import '../../../core/widgets/app_bar.dart';
+import '../../../core/widgets/products_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,17 +24,21 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  int axisCount = 1;
+  // int axisCount = 1;
 
   @override
   Widget build(BuildContext context) {
+
+    final readAxisCount = context.watch<AppViewModel>();
+
     return Scaffold(
       backgroundColor: context.color.backgroundColor,
       appBar: AppBar(
-        toolbarHeight: 80,
+        toolbarHeight: 85,
         flexibleSpace: CustomAppBar(
           onTapGrid: () {
-            axisCount = axisCount == 1 ? 2 : 1;
+            // axisCount = axisCount == 1 ? 2 : 1;
+            readAxisCount.saveGridAxisCount();
             setState(() {});
           },
           onTapFilter: () {},
@@ -112,8 +119,8 @@ class _HomePageState extends State<HomePage> {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
-              childAspectRatio: axisCount == 1 ? 1/.35 : 1/1.45,
-              crossAxisCount: axisCount,
+              childAspectRatio: readAxisCount.axisCount == 1 ? 1/.35 : 1/1.45,
+              crossAxisCount: readAxisCount.axisCount,
             ),
             physics: const NeverScrollableScrollPhysics(),
             itemCount: 6,
@@ -127,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                   date: '02.02.22 | 13:22',
                   image: FakeImages.car,
                 ),
-                axisCount: axisCount,
+                axisCount: readAxisCount.axisCount,
               );
             },
           ),
@@ -149,8 +156,8 @@ class _HomePageState extends State<HomePage> {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
-              childAspectRatio: axisCount == 1 ? 1/.35 : 1/1.45,
-              crossAxisCount: axisCount,
+              childAspectRatio: readAxisCount.axisCount == 1 ? 1/.35 : 1/1.45,
+              crossAxisCount: readAxisCount.axisCount,
             ),
             physics: const NeverScrollableScrollPhysics(),
             itemCount: 6,
@@ -164,7 +171,7 @@ class _HomePageState extends State<HomePage> {
                   date: '02.02.22 | 13:22',
                   image: FakeImages.car,
                 ),
-                axisCount: axisCount,
+                axisCount: readAxisCount.axisCount,
               );
             },
           ),

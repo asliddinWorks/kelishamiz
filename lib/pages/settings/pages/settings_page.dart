@@ -2,11 +2,15 @@
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
+import 'package:kelishamiz/core/widgets/confirm_dialog.dart';
 import 'package:kelishamiz/core/widgets/drop_down_with_title.dart';
+import 'package:kelishamiz/core/widgets/region_select_menu.dart';
 import 'package:kelishamiz/core/widgets/text_field_with_title.dart';
+import 'package:kelishamiz/router/router.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -32,14 +36,19 @@ class _SettingsPageState extends State<SettingsPage> {
                   const TextFieldWithTitle(
                     title: 'Ism',
                   ),
-                  DropDownWithTitle(
+                  RegionSelectMenu(
                     title: 'Hudud',
-                    onChanged: (value) {},
-                    dropdownValue: '',
-                    items: const [
-                      'Andijon'
-                    ],
+                    menuType: MenuType.add,
+                    onChange: (_){},
                   ),
+                  // DropDownWithTitle(
+                  //   title: 'Hudud',
+                  //   onChanged: (value) {},
+                  //   dropdownValue: '',
+                  //   items: const [
+                  //     'Andijon'
+                  //   ],
+                  // ),
                   const TextFieldWithTitle(
                     title: 'Manzil',
                   ),
@@ -87,13 +96,22 @@ class _SettingsPageState extends State<SettingsPage> {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: context.color.lightGrey,
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all(
-                            color: context.color.grey.withOpacity(.2))
+                      color: context.color.lightGrey,
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(
+                        color: context.color.grey.withOpacity(.2),
+                      ),
                     ),
                     child: AppButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        bool? isYes =  await confirmDialog(
+                          context,
+                          title: 'Profildan chiqish',
+                          content: 'Profildan chiqishni xohlaysizmi?',
+                        );
+                        if (isYes == null) return;
+                        context.go(RouteNames.signUp);
+                      },
                       text: 'Profildan chiqish',
                       width: double.infinity,
                       appButtonType: AppButtonType.outlined,
