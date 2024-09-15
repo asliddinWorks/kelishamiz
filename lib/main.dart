@@ -12,9 +12,11 @@ import 'package:kelishamiz/router/router.dart';
 import 'package:provider/provider.dart';
 
 import 'core/view_model/app_view_model.dart';
+import 'di_service.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await init();
   runApp(const MyApp());
 }
 

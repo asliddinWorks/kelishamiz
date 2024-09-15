@@ -22,7 +22,7 @@ class _FavoritePageState extends State<FavoritePage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        toolbarHeight: 80,
+        toolbarHeight: 85,
         flexibleSpace: CustomAppBar(
           onTapGrid: () async {
             await readAxisCount.saveGridAxisCount();
@@ -35,7 +35,7 @@ class _FavoritePageState extends State<FavoritePage> {
       ),
       body: const ProductsView(
         title: 'Saqlanganlar',
-        productsEnum: ProductsEnum.products,
+        productsEnum: ProductsEnum.favorite,
       ),
     );
   }

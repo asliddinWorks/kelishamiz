@@ -45,6 +45,14 @@ class _SearchPageState extends State<SearchPage> {
         title:  const TextField(
           autofocus: true,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.unFocus;
+            },
+            icon: const Icon(Icons.search),
+          )
+        ],
       ),
       body:Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),

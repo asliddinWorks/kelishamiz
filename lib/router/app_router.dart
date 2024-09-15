@@ -22,6 +22,7 @@ sealed class RouteNames {
   static const fill = '/fill_page';
   static const paymentTable = '/payment_table';
   static const settingsPage = '/settingsPage';
+  static const setupAccount = '/setupAccount';
 
 }
 
@@ -156,6 +157,18 @@ final GoRouter router = GoRouter(
       path: RouteNames.settingsPage,
       builder: (context, state) {
         return const SettingsPage();
+      },
+    ),
+    GoRoute(
+      path: RouteNames.setupAccount,
+      builder: (context, state) {
+        return const SetupAccountPage();
+      },
+    ),
+    GoRoute(
+      path: RouteNames.rules,
+      builder: (context, state) {
+        return const RulesPage();
       },
     ),
 

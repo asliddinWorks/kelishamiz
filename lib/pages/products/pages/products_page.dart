@@ -31,7 +31,7 @@ class _ProductsPageState extends State<ProductsPage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        toolbarHeight: 80,
+        toolbarHeight: 85,
         flexibleSpace: CustomAppBar(
           onTapGrid: () async {
             await readAxisCount.saveGridAxisCount();
