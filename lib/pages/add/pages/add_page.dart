@@ -1,10 +1,5 @@
 
-import 'dart:async';
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:kelishamiz/core/extension/context_extension.dart';
 import 'package:kelishamiz/core/extension/widget_extension.dart';
 import 'package:kelishamiz/core/widgets/app_button.dart';
@@ -138,7 +133,7 @@ class _AddPageState extends State<AddPage> {
                       maxLines: 5,
                     ),
 
-                    AppSwitchWithTitle(
+                    const AppSwitchWithTitle(
                       title: 'Narxni kelishish',
                     ),
 

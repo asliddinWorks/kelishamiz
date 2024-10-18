@@ -1,29 +1,27 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:kelishamiz/pages/fill_account/data/model/fill_model.dart';
 import 'package:kelishamiz/pages/fill_account/data/model/table_model.dart';
 
 class FillViewModel extends ChangeNotifier {
-
   // final filteredTables = tables.where((table) => table.isInput).toList();
 
   void onCheckBox(FillModel model, int value) {
-
     model.selection[value] = !model.selection[value];
-    // if (model.selection[0]) {
-    //   model.count = model.count +0;
-    // }
-    // if (model.selection[1]) {
-    //   model.count = model.count -0;
-    // }else{
-    //   model.count = model.count +0;
-    // }
-    // if (model.selection[2]) {
-    //   model.count = model.count -20;
-    // }else{
-    //   model.count = model.count +20;
-    // }
-    // // print(model.selection);
+    if ((model.selection[1]) && (model.selection[0])) {
+      model.offset1 = -10;
+      model.offset2 = -20;
+    } else {
+      model.offset1 = 0;
+      model.offset2 = 0;
+      if (model.selection[0]) {
+        model.offset1 = -10;
+        model.offset2 = -10;
+      } else {
+        if (model.selection[1]) {
+          model.offset2 = -10;
+        }
+      }
+    }
     notifyListeners();
   }
 
@@ -47,11 +45,10 @@ class FillViewModel extends ChangeNotifier {
 
   List<TableModel> tables = [
     TableModel(
-      paymentType: 'Tezkor savdo',
-      price: 50000,
-      date: '12.01.2022',
-      isInput: false
-    ),
+        paymentType: 'Tezkor savdo',
+        price: 50000,
+        date: '12.01.2022',
+        isInput: false),
     TableModel(
       paymentType: 'Click',
       price: 250000,
@@ -59,11 +56,10 @@ class FillViewModel extends ChangeNotifier {
       isInput: true,
     ),
     TableModel(
-      paymentType: 'VIP e\'lonlar',
-      price: 6750000,
-      date: '12.01.2022',
-      isInput: false
-    ),
+        paymentType: 'VIP e\'lonlar',
+        price: 6750000,
+        date: '12.01.2022',
+        isInput: false),
     TableModel(
       paymentType: 'Click',
       price: 250000,

@@ -13,7 +13,6 @@ import 'package:kelishamiz/core/widgets/item_top_product.dart';
 import 'package:provider/provider.dart';
 import '../../../core/view_model/app_view_model.dart';
 import '../../../core/widgets/app_bar.dart';
-import '../../../core/widgets/products_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

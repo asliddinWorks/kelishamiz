@@ -3,8 +3,9 @@ class FillModel{
   String tariffName;
   int day;
   int price;
+  double offset1 = 0;
+  double offset2 = 0;
   List<bool> selection = List.generate(3, (index) => false);
-  double count = 0.0;
 
   FillModel({required this.tariffName, required this.day, required this.price});
 }

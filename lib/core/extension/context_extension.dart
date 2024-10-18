@@ -1,8 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:kelishamiz/constants/app_text_style.dart';
-import 'package:kelishamiz/constants/app_text_style.dart';
-
 import '../../constants/app_colors.dart';
 
 extension ContextExtension on BuildContext {

@@ -47,6 +47,7 @@ class TextFieldWithTitle extends StatelessWidget {
             controller: controller,
             minLines: minLines,
             maxLines: maxLines,
+
             keyboardType: keyboardType,
             inputFormatters: [
               MaskTextInputFormatter(

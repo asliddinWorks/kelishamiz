@@ -55,7 +55,7 @@ class FillItem extends StatelessWidget {
                           side: BorderSide(color: context.color.grey, width: 1.5,),
                           tristate: true,
                           value: model.selection[0],
-                          onChanged: (_){
+                          onChanged: (value){
                             read.onCheckBox(model, 0);
                           },
                         ),
@@ -131,7 +131,7 @@ class FillItem extends StatelessWidget {
                           //   child: Image.asset(AppImages.internet, width: 40),
 
                         if (model.selection[1])// ),
-                        Transform.translate(offset: const Offset(-10,0),
+                        Transform.translate(offset: Offset(model.offset1,0),
                           child: Image.asset(AppImages.telegram, width: 40),
                         ),
                         //   Positioned(
@@ -139,7 +139,7 @@ class FillItem extends StatelessWidget {
                         //     child: Image.asset(AppImages.telegram, width: 40),
                         //   ),
                         if (model.selection[2])
-                        Transform.translate(offset: const Offset(-20 ,0),
+                        Transform.translate(offset: Offset(model.offset2 ,0),
                           child: Image.asset(AppImages.instagram, width: 40),
                         ),
                         //   Positioned(

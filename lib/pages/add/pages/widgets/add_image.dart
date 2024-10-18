@@ -24,7 +24,9 @@ class AddImage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.image_outlined, color: context.color.grey,),
-                    Text('Rasm yuklash', style: context.textTheme.titleMedium!.copyWith(color: context.color.grey),),
+                    Text('Rasm yuklash',
+                      style: context.textTheme.titleMedium!.copyWith(color: context.color.grey),
+                    ),
                   ],
                 ),
               )
